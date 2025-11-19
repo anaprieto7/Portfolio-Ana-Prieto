@@ -7,7 +7,7 @@
   --color-primary: #ffeb3c;
   --color-primary-soft: rgba(255, 60, 252, 0.14);
   --color-text: #f5f5f7;
-  --color-text-muted: #9a9cb3;
+   --color-text-muted: #b0b3c7; /* antes era más oscuro */
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
     "Segoe UI", sans-serif;
   --radius-lg: 14px;
@@ -29,84 +29,83 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   color: var(--color-text);
-  background: #050608;            /* fondo base oscuro */
+  background: radial-gradient(circle at top, #171924, #050608 70%);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   position: relative;
 }
-/* AURORA BOREAL MOTION BACKGROUND */
 
-/* AURORA BOREAL MOTION + PARALLAX */
+/* BACKGROUND ORBS – WITH MOTION */
 
-.aurora-bg {
+.bg-orbs {
   position: fixed;
   inset: 0;
-  width: 100%;
-  height: 100%;
   z-index: -1;
   pointer-events: none;
-
-  /* colores por defecto (hero) — se sobreescriben según sección */
-  background:
-    radial-gradient(circle at 20% 30%, rgba(255, 0, 180, 0.25), transparent 60%),
-    radial-gradient(circle at 80% 40%, rgba(90, 160, 255, 0.28), transparent 60%),
-    radial-gradient(circle at 50% 80%, rgba(255, 140, 220, 0.22), transparent 60%);
-
-  filter: blur(140px);
-
-  /* parallax controlado por variable + animación lateral suave */
-  transform: translate3d(0, var(--aurora-parallax), 0) scale(1.2);
-  animation: auroraDrift 16s ease-in-out infinite alternate;
+  overflow: hidden;
 }
 
-@keyframes auroraDrift {
-  0% {
-    transform: translate3d(-40px, var(--aurora-parallax), 0) scale(1.16);
-  }
-  100% {
-    transform: translate3d(40px, var(--aurora-parallax), 0) scale(1.26);
-  }
+/* ORB LEFT — movimiento lento horizontal + breathing */
+.bg-orbs::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  top: -140px;
+  left: -80px;
+
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.45), transparent 55%),
+    radial-gradient(circle at 70% 80%, rgba(255, 120, 200, 0.45), transparent 70%);
+
+  opacity: 0.55;
+  filter: blur(2px);
+
+  animation: orbMoveLeft 18s ease-in-out infinite alternate,
+             orbBreath 12s ease-in-out infinite alternate;
 }
 
-/* HERO – lila + azul (default) */
-body.aurora-mode-hero .aurora-bg,
-body:not(.aurora-mode-about):not(.aurora-mode-projects):not(.aurora-mode-skills):not(.aurora-mode-contact) .aurora-bg {
+/* ORB RIGHT — movimiento vertical sutil + breathing */
+.bg-orbs::after {
+  content: "";
+  position: absolute;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  top: 10%;
+  right: -160px;
+
   background:
-    radial-gradient(circle at 20% 30%, rgba(203, 119, 255, 0.3), transparent 60%),
-    radial-gradient(circle at 80% 40%, rgba(102, 170, 255, 0.3), transparent 60%),
-    radial-gradient(circle at 50% 80%, rgba(255, 140, 220, 0.25), transparent 60%);
+    radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.35), transparent 55%),
+    radial-gradient(circle at 60% 80%, rgba(120, 180, 255, 0.45), transparent 70%);
+
+  opacity: 0.5;
+  filter: blur(3px);
+
+  animation: orbMoveRight 22s ease-in-out infinite alternate,
+             orbBreath 14s ease-in-out infinite alternate;
 }
 
-/* ABOUT – más suave, azul/verdito */
-body.aurora-mode-about .aurora-bg {
-  background:
-    radial-gradient(circle at 15% 30%, rgba(120, 220, 255, 0.28), transparent 55%),
-    radial-gradient(circle at 80% 70%, rgba(120, 180, 255, 0.22), transparent 60%),
-    radial-gradient(circle at 50% 95%, rgba(200, 255, 220, 0.16), transparent 65%);
-}
+/* ORB CENTER — flotación suave + breathing */
+.bg-orb-center {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  left: 50%;
+  bottom: -160px;
+  transform: translateX(-50%);
 
-/* PROJECTS – más energía, magenta + naranja (case studies) */
-body.aurora-mode-projects .aurora-bg {
   background:
-    radial-gradient(circle at 20% 30%, rgba(255, 80, 180, 0.32), transparent 55%),
-    radial-gradient(circle at 80% 60%, rgba(255, 140, 60, 0.26), transparent 60%),
-    radial-gradient(circle at 50% 90%, rgba(120, 90, 255, 0.24), transparent 60%);
-}
+    radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.3), transparent 55%),
+    radial-gradient(circle at 50% 80%, rgba(190, 130, 255, 0.35), transparent 70%);
 
-/* SKILLS – azul violeta, más técnico */
-body.aurora-mode-skills .aurora-bg {
-  background:
-    radial-gradient(circle at 20% 25%, rgba(120, 120, 255, 0.3), transparent 55%),
-    radial-gradient(circle at 80% 40%, rgba(80, 200, 255, 0.25), transparent 60%),
-    radial-gradient(circle at 50% 85%, rgba(140, 80, 255, 0.2), transparent 65%);
-}
+  opacity: 0.4;
+  filter: blur(2px);
 
-/* CONTACT – más cálido y amable */
-body.aurora-mode-contact .aurora-bg {
-  background:
-    radial-gradient(circle at 20% 25%, rgba(255, 150, 120, 0.32), transparent 55%),
-    radial-gradient(circle at 80% 50%, rgba(255, 100, 180, 0.26), transparent 60%),
-    radial-gradient(circle at 50% 90%, rgba(255, 230, 210, 0.18), transparent 65%);
+  animation: orbFloatCenter 20s ease-in-out infinite alternate,
+             orbBreath 10s ease-in-out infinite alternate;
 }
 
 
@@ -185,12 +184,30 @@ p {
   );
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
+.hero {
+  padding: 4.5rem 0 3rem;
+  position: relative;
+}
+
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.9rem 1.5rem;
+   position: relative;
+  z-index: 1;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 65%;
+  max-height: 420px;
+  background: radial-gradient(circle at top, rgba(5, 6, 12, 0.65), transparent 70%);
+  backdrop-filter: blur(12px);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .logo {
@@ -252,6 +269,9 @@ p {
   grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
   align-items: center;
   gap: 3rem;
+  position: relative;
+  z-index: 1;
+
 }
 
 .hero-kicker {
@@ -1247,5 +1267,75 @@ p {
     inset-block-end: 1rem;
     width: 36px;
     height: 36px;
+  }
+}
+
+
+/* horizontal drifting for left orb */
+@keyframes orbMoveLeft {
+  0%   { transform: translateX(0px) translateY(0px); }
+  100% { transform: translateX(50px) translateY(20px); }
+}
+
+/* vertical drifting for right orb */
+@keyframes orbMoveRight {
+  0%   { transform: translateX(0px) translateY(0px); }
+  100% { transform: translateX(-40px) translateY(50px); }
+}
+
+/* center orb floating */
+@keyframes orbFloatCenter {
+  0%   { transform: translate(-50%, 0px); }
+  100% { transform: translate(-50%, -40px); }
+}
+
+/* breathing effect (scale up/down softly) */
+@keyframes orbBreath {
+  0%   { scale: 1; }
+  100% { scale: 1.08; }
+}
+.orb-left {
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle at center, #ff3cfc66, transparent 70%);
+  border-radius: 999px;
+  filter: blur(60px);
+  animation: orbMoveLeft 8s ease-in-out infinite alternate,
+             orbBreath 6s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+
+/* GLOW REACTIVO AL MOUSE */
+
+.cursor-glow {
+  position: fixed;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1; /* sigue detrás del contenido pero sobre el fondo base */
+
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.25), transparent 60%),
+    radial-gradient(circle at 30% 20%, rgba(255, 140, 220, 0.35), transparent 65%),
+    radial-gradient(circle at 70% 80%, rgba(130, 170, 255, 0.32), transparent 70%);
+
+  filter: blur(32px);
+  opacity: 0.55;
+  transform: translate(-50%, -50%); /* se centra en la posición left/top */
+  transition: opacity 0.2s ease-out;
+}
+
+/* Por si quieres bajarlo un poco en pantallas muy pequeñas */
+@media (max-width: 640px) {
+  .cursor-glow {
+    width: 200px;
+    height: 200px;
+    filter: blur(26px);
+    opacity: 0.45;
   }
 }

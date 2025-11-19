@@ -205,3 +205,40 @@ if (auroraEl) {
     sections.forEach((section) => observer.observe(section));
   }
 }
+
+
+
+// CURSOR GLOW – motion tracking suave
+const cursorGlow = document.querySelector(".cursor-glow");
+
+if (cursorGlow) {
+  let targetX = window.innerWidth / 2;
+  let targetY = window.innerHeight / 2;
+  let currentX = targetX;
+  let currentY = targetY;
+
+  const easing = 0.08; // cuanto más bajo, más suave/lento el seguimiento
+
+  const updateGlowPosition = () => {
+    currentX += (targetX - currentX) * easing;
+    currentY += (targetY - currentY) * easing;
+
+    cursorGlow.style.left = `${currentX}px`;
+    cursorGlow.style.top = `${currentY}px`;
+
+    requestAnimationFrame(updateGlowPosition);
+  };
+
+  // escuchar movimientos del mouse / touch
+  const handlePointerMove = (event) => {
+    const e = event.touches ? event.touches[0] : event;
+    targetX = e.clientX;
+    targetY = e.clientY;
+  };
+
+  document.addEventListener("pointermove", handlePointerMove);
+  document.addEventListener("touchmove", handlePointerMove, { passive: true });
+
+  // iniciar animación
+  requestAnimationFrame(updateGlowPosition);
+}
