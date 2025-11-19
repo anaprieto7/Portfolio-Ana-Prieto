@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Handheld PWA — Mobile Warehouse Operations · Ana Prieto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Case study: Handheld PWA — a mobile experience for warehouse operators in the WEMALO ecosystem. UX research, IA and UX/UI design by Ana Prieto."
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html#top" class="logo">AP</a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">
+          ☰
+        </button>
+        <ul class="nav-list">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section
+      class="case-hero-banner"
+      style="--case-hero-bg: url('handheld/hero.jpg')"
+    >
+      <div class="case-hero-overlay"></div>
+
+      <div class="container case-hero-layout">
+        <div class="case-hero-main">
+          <p class="case-hero-kicker">Case study · PWA · Warehouse</p>
+          <h1 class="case-hero-title">
+            Handheld PWA — Mobile Warehouse Operations for WEMALO
+          </h1>
+          <p class="case-hero-subtitle">
+            Handheld PWA is a progressive web app for warehouse operators within the WEMALO ecosystem.
+            The goal was to reduce time and errors in booking, picking and relocation — while preserving
+            existing backend business rules.
+          </p>
+
+          <div class="case-hero-tags">
+            <span>PWA</span>
+            <span>Operational UX</span>
+            <span>Warehouse</span>
+            <span>B2B SaaS</span>
+          </div>
+        </div>
+
+        <aside class="case-hero-meta">
+          <div class="case-hero-meta-block">
+            <h3>Role</h3>
+            <ul>
+              <li>UX Research</li>
+              <li>Information Architecture</li>
+              <li>UX/UI Design</li>
+            </ul>
+          </div>
+          <div class="case-hero-meta-block">
+            <h3>Timeline</h3>
+            <p>5 months · 2024</p>
+          </div>
+          <div class="case-hero-meta-block">
+            <h3>Tools</h3>
+            <ul>
+              <li>Figma</li>
+              <li>Miro</li>
+              <li>WEMALO API Docs</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- OVERVIEW / PROBLEM / SOLUTION -->
+    <section class="section">
+      <div class="container section-inner case-grid-2">
+        <div>
+          <h2>Overview</h2>
+          <p>
+            Handheld PWA brings WEMALO warehouse operations to mobile devices. Instead of forcing operators
+            to work from desktop UIs at fixed stations, the app lets them scan locations and products directly
+            on the floor, with immediate visual and sound feedback.
+          </p>
+          <p>
+            My work spanned UX research, information architecture and UX/UI design — always respecting existing
+            backend rules while reshaping the interaction into a touch-first, sequential experience.
+          </p>
+        </div>
+
+        <div class="case-highlight">
+          <div>
+            <h3>Problem</h3>
+            <p>
+              Operational inefficiency and errors caused by manual sequences and desktop-only flows that
+              weren’t suited for operators in motion.
+            </p>
+          </div>
+          <div>
+            <h3>Solution</h3>
+            <p>
+              A mobile experience centered on scanning with immediate feedback — guiding operators step by
+              step without changing WEMALO’s backend logic.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UNDERSTANDING THE PROBLEM -->
+    <section class="section section-alt">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Understanding the problem</h2>
+          <p>
+            From desktop-only flows to a touch-first experience aligned with WEMALO’s rules and warehouse reality.
+          </p>
+        </header>
+
+        <div class="case-grid-2">
+          <article>
+            <h3>Context</h3>
+            <p>
+              Before Handheld, operators depended on fixed stations or laptops with WEMALO’s desktop UI.
+              This made repetitive tasks slow and error-prone in a physical environment.
+            </p>
+            <ul class="case-bullets">
+              <li>Desktop UI was not usable on small screens or while moving between aisles.</li>
+              <li>Operators had to walk back and forth to complete simple processes.</li>
+              <li>Location and registration errors created traceability gaps.</li>
+              <li>Critical rules (like “scan location before product”) lived in the backend only.</li>
+            </ul>
+            <p class="case-note">
+              We needed to bring WEMALO’s logic into a lightweight, sequential mobile experience optimized
+              for scanning, motion and noise.
+            </p>
+          </article>
+
+          <article>
+            <h3>People & insights</h3>
+            <div class="case-quotes">
+              <blockquote>
+                <p>“If I scan and it turns green, I know I can proceed.”</p>
+                <footer>Jonas · Operator</footer>
+              </blockquote>
+              <blockquote>
+                <p>“The most important thing is not to lose control over locations.”</p>
+                <footer>Johanna · Supervisor</footer>
+              </blockquote>
+              <blockquote>
+                <p>“We want orders to reach buyers faster.”</p>
+                <footer>Leif · Admin</footer>
+              </blockquote>
+            </div>
+
+            <h4>Key insights</h4>
+            <ul class="case-bullets">
+              <li>Operators trust visual and sound cues more than long text.</li>
+              <li>Immediate confirmation reduces cognitive load and errors.</li>
+              <li>The flow should guide: scan, confirm, continue — not ask users to interpret rules.</li>
+            </ul>
+          </article>
+        </div>
+
+        <article>
+          <h3>Problem clusters & design challenge</h3>
+          <ul class="case-bullets">
+            <li>Fragmented tasks across multiple screens and redundant steps.</li>
+            <li>Frequent location errors from incorrect scanning sequences.</li>
+            <li>Physical constraints: desktop dependency and lack of mobility.</li>
+          </ul>
+
+          <p class="case-note">
+            Design challenge: <strong>design a smooth mobile experience that respects WEMALO’s critical rules
+            (like “scan location before product”) and optimizes daily operations without changing the backend.</strong>
+          </p>
+
+          <div class="case-pill-row">
+            <div class="case-pill">
+              <span class="case-pill-label">Critical</span>
+              <span class="case-pill-value">Desktop UI, not mobile</span>
+            </div>
+            <div class="case-pill">
+              <span class="case-pill-label">Main need</span>
+              <span class="case-pill-value">Tactile, in-motion experience</span>
+            </div>
+            <div class="case-pill">
+              <span class="case-pill-label">Key restriction</span>
+              <span class="case-pill-value">Existing backend logic</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SOLUTION: IDEATION + IA -->
+    <section class="section">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Solution</h2>
+          <p>From scanning flow design to a mobile-first architecture for warehouse operations.</p>
+        </header>
+
+        <div class="case-grid-2">
+          <article>
+            <h3>Scanning-centered experience</h3>
+            <ul class="case-bullets">
+              <li>
+                <strong>Sequential scanning flow</strong><br />
+                Each product requires scanning its location immediately before, mirroring WEMALO’s core business rule.
+              </li>
+              <li>
+                <strong>Immediate visual & sound feedback</strong><br />
+                Green/red states, vibration and concise messages guide operators without long instructions.
+              </li>
+            </ul>
+            <p class="case-note">
+              The app enforces the correct sequence implicitly: users simply follow the scanner and colors, 
+              not a written manual.
+            </p>
+          </article>
+
+          <article>
+            <h3>Mobile architecture</h3>
+            <p>
+              I grouped the app by operational task type, starting from a simple dashboard:
+            </p>
+            <ul class="case-bullets">
+              <li><strong>Dashboard</strong> — entry point to all tasks.</li>
+              <li><strong>Booking</strong> — register goods receipts.</li>
+              <li><strong>Picking</strong> — unsorted and sorted picking flows.</li>
+              <li><strong>Packing</strong> — prepare parcels for shipment.</li>
+              <li><strong>Relocation</strong> — move products between locations.</li>
+              <li><strong>Profile</strong> — user and device context.</li>
+            </ul>
+            <p class="case-note">
+              Grouping by task type reduces search time and keeps the mental model consistent with real work.
+            </p>
+          </article>
+        </div>
+
+        <article>
+          <h3>Architecture diagrams</h3>
+          <div class="media-grid">
+            <figure class="media-card">
+              <img src="handheld/ia/overview.png" alt="Handheld IA overview" />
+              <figcaption>High-level architecture for Handheld PWA.</figcaption>
+            </figure>
+            <figure class="media-card">
+              <img src="handheld/ia/modules.png" alt="Handheld IA modules" />
+              <figcaption>Modules grouped by operational task type.</figcaption>
+            </figure>
+          </div>
+
+          <div class="case-benefits">
+            <h4>Key benefits</h4>
+            <ul class="case-bullets">
+              <li>Intuitive navigation by task type.</li>
+              <li>Quick access to frequent functions.</li>
+              <li>Fewer steps to complete tasks.</li>
+              <li>Consistent experience across modules.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FLOWS -->
+    <section class="section section-alt">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Core flows</h2>
+          <p>Translating backend rules into clear, guided mobile flows.</p>
+        </header>
+
+        <div class="media-grid">
+          <figure class="media-card">
+            <img src="handheld/flows/booking-good-receipt.png" alt="Booking flow" />
+            <figcaption>
+              <strong>Booking goods receipt</strong><br />
+              Enforces “scan location → scan product” per item.
+            </figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="handheld/flows/picking-unsorted.png" alt="Picking unsorted flow" />
+            <figcaption>
+              <strong>Picking — Unsorted</strong><br />
+              Visual guidance for SKU and location validation.
+            </figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="handheld/flows/picking-sorted.png" alt="Picking sorted flow" />
+            <figcaption>
+              <strong>Picking — Sorted</strong><br />
+              Sequenced scanning and confirmation for sorted picking.
+            </figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="handheld/flows/Packing.png" alt="Packing flow" />
+            <figcaption>
+              <strong>Packing</strong><br />
+              Source and destination scanning for parcels.
+            </figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="handheld/flows/relocation.png" alt="Relocation flow" />
+            <figcaption>
+              <strong>Relocation</strong><br />
+              Move items between locations with clear source/destination states.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- WIREFRAMES & MOBILE PRINCIPLES -->
+    <section class="section">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Wireframes & mobile principles</h2>
+          <p>First iteration of the mobile experience, optimized for real warehouse constraints.</p>
+        </header>
+
+        <div class="case-grid-2">
+          <article>
+            <h3>Wireframes</h3>
+            <p>
+              I started with low-fidelity sketches and evolved them into digital wireframes and prototypes to
+              validate task flows and scanning sequences.
+            </p>
+            <div class="media-grid">
+              <figure class="media-card">
+                <img src="handheld/wireframes/picking1.jpg" alt="Picking wireframe 1" />
+                <figcaption>Early picking screen structure.</figcaption>
+              </figure>
+              <figure class="media-card">
+                <img src="handheld/wireframes/picking2.jpg" alt="Picking wireframe 2" />
+                <figcaption>Iterated picking layout with clearer hierarchy.</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article>
+            <h3>Mobile-specific principles</h3>
+            <div class="case-pill-column">
+              <div class="case-principle-block">
+                <h4>Mobile usability focus</h4>
+                <ul class="case-bullets">
+                  <li>Large touch targets (44px+) for gloved hands.</li>
+                  <li>Clear visual hierarchy for quick reading.</li>
+                  <li>Generous spacing to avoid touch errors.</li>
+                  <li>High contrast for variable lighting.</li>
+                </ul>
+              </div>
+              <div class="case-principle-block">
+                <h4>Tactile design</h4>
+                <ul class="case-bullets">
+                  <li>One-hand usage for most interactions.</li>
+                  <li>Immediate feedback for every action.</li>
+                  <li>Minimal steps per task.</li>
+                  <li>Responsive layout across device sizes.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISUAL DESIGN SYSTEM -->
+    <section class="section section-alt">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Mobile visual design system</h2>
+          <p>Tokens and components tuned for mobile use in warehouse environments.</p>
+        </header>
+
+        <article>
+          <h3>Design tokens</h3>
+          <div class="media-grid">
+            <figure class="media-card">
+              <img src="handheld/tokens/Colors.png" alt="Handheld color system" />
+              <figcaption>
+                <strong>Color system</strong><br />
+                High-contrast palette for visibility in real warehouses.
+              </figcaption>
+            </figure>
+            <figure class="media-card">
+              <img src="handheld/tokens/typography.png" alt="Handheld typography" />
+              <figcaption>
+                <strong>Typographic scale</strong><br />
+                Type sizes and weights for small screens and distance.
+              </figcaption>
+            </figure>
+            <figure class="media-card">
+              <img src="handheld/tokens/Grid.png" alt="Handheld grid" />
+              <figcaption>
+                <strong>Grid</strong><br />
+                Modular grid ensuring consistent alignment.
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article>
+          <h3>Components</h3>
+          <div class="media-grid">
+            <figure class="media-card">
+              <img src="handheld/components/somes-inputs.png" alt="Inputs" />
+              <figcaption>Inputs optimized for scanning and manual entry.</figcaption>
+            </figure>
+            <figure class="media-card">
+              <img src="handheld/components/Critical-Banner-issue.png" alt="Critical banners" />
+              <figcaption>Alert banners for location or product issues.</figcaption>
+            </figure>
+            <figure class="media-card">
+              <img src="handheld/components/buttons.png" alt="Buttons" />
+              <figcaption>Primary actions designed for quick recognition.</figcaption>
+            </figure>
+            <figure class="media-card">
+              <img src="handheld/components/radio-options-atomic-design.png" alt="Radio options" />
+              <figcaption>Radios and selectors with clear states.</figcaption>
+            </figure>
+            <figure class="media-card">
+              <img src="handheld/components/somes-cards.png" alt="Main cards" />
+              <figcaption>Main task cards for Booking, Picking and Packing.</figcaption>
+            </figure>
+            <figure class="media-card">
+              <img src="handheld/components/relocation-cards.png" alt="Relocation cards" />
+              <figcaption>Source/destination cards for Relocation.</figcaption>
+            </figure>
+          </div>
+
+          <div class="case-pill-row">
+            <div class="case-mini-principle">
+              <span>👆 Tactile</span>
+              <p>44px touch targets, even with gloves.</p>
+            </div>
+            <div class="case-mini-principle">
+              <span>🎯 Direct</span>
+              <p>Minimal steps to finish a task.</p>
+            </div>
+            <div class="case-mini-principle">
+              <span>⚡ Fast</span>
+              <p>Immediate feedback and clear states.</p>
+            </div>
+            <div class="case-mini-principle">
+              <span>🌙 Accessible</span>
+              <p>High contrast and dark-friendly UI.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PRODUCT IN ACTION -->
+    <section class="section">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Product in action</h2>
+          <p>How the mobile experience supports daily operations.</p>
+        </header>
+
+        <div class="media-grid">
+          <figure class="media-card">
+            <img src="handheld/product/menu-dashboard.png" alt="Main task screen" />
+            <figcaption>
+              <strong>Main task screen</strong><br />
+              Booking, Picking, Packing and Relocation one tap away.
+            </figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="handheld/product/menu-dashboard.png" alt="Booking demo" />
+            <figcaption>
+              <strong>Booking a return</strong><br />
+              Location and product scanning with instant feedback.
+            </figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="handheld/product/menu-dashboard.png" alt="Picking demo" />
+            <figcaption>
+              <strong>Picking from a sorted list</strong><br />
+              Sequential scanning with visual and sound confirmation.
+            </figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="handheld/product/menu-dashboard.png" alt="Packing demo" />
+            <figcaption>
+              <strong>Packing from sorted picking</strong><br />
+              Ensure correct items and locations before shipping.
+            </figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="handheld/product/menu-dashboard.png" alt="Relocation demo" />
+            <figcaption>
+              <strong>Relocation</strong><br />
+              Move products safely between warehouse locations.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTING -->
+    <section class="section section-alt">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Usability testing</h2>
+          <p>Validating the scanning sequence and feedback in real warehouse conditions.</p>
+        </header>
+
+        <div class="case-grid-2">
+          <article>
+            <h3>Test objective</h3>
+            <p>
+              Confirm that operators understood the “scan location → scan product” rule through the interface,
+              and that visual/sound feedback was enough to guide them without extra training.
+            </p>
+
+            <h3>Method</h3>
+            <ul class="case-bullets">
+              <li><strong>Participants:</strong> 5 operators (3 experienced, 2 new).</li>
+              <li><strong>Duration:</strong> ~30 minutes per session.</li>
+              <li><strong>Context:</strong> Real warehouse environment with mobile devices and scanners.</li>
+            </ul>
+            <p><strong>Tasks evaluated:</strong></p>
+            <ul class="case-bullets">
+              <li>Register products using the Booking flow.</li>
+              <li>Complete a Picking order with 3 items.</li>
+              <li>Pack a box using the Packing flow.</li>
+            </ul>
+          </article>
+
+          <article>
+            <h3>Results</h3>
+            <ul class="case-bullets">
+              <li>💡 100% understood the correct scan sequence without verbal instructions.</li>
+              <li>⚡ Time per scan dropped from 4.2s to 2.3s on average.</li>
+              <li>✅ All participants recognized green as confirmation and red as error.</li>
+              <li>📉 Sequence errors (“product before location”) dropped to 0.</li>
+            </ul>
+
+            <div class="case-quotes">
+              <blockquote>
+                <p>“I just need to see green. I don’t have to think — just scan and go.”</p>
+                <footer>Jonas · Operator</footer>
+              </blockquote>
+              <blockquote>
+                <p>“Now everyone follows the same flow. Nobody skips steps or confuses locations.”</p>
+                <footer>Johanna · Supervisor</footer>
+              </blockquote>
+            </div>
+          </article>
+        </div>
+
+        <article>
+          <h3>Insights & conclusion</h3>
+          <ul class="case-bullets">
+            <li>Visual and sound feedback replaced the need for written instructions.</li>
+            <li>Sequential flow reinforced the business rule without adding friction.</li>
+            <li>New operators adopted the system faster than with the desktop UI.</li>
+          </ul>
+          <p class="case-note">
+            Handheld PWA didn’t just reduce errors and time — it aligned human interaction with system rules,
+            without additional training.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- OUTCOMES & LEARNINGS -->
+    <section class="section">
+      <div class="container section-inner case-grid-2">
+        <article>
+          <h2>Outcomes</h2>
+          <ul class="case-bullets">
+            <li>~40% reduction in average time per task.</li>
+            <li>~55% decrease in location errors.</li>
+            <li>~47% increase in daily productivity per operator.</li>
+            <li>WEMALO’s core business rule preserved with no backend changes.</li>
+          </ul>
+
+          <h3>Key challenge</h3>
+          <p>
+            Each product had to be tied to a just-scanned location, without slowing operators down.
+            The flow resets context after each assignment and uses strong feedback to prevent mistakes.
+          </p>
+          <p class="case-note">
+            “The system didn’t just need to be usable — it had to be fail-safe.”
+          </p>
+        </article>
+
+        <article>
+          <h2>Learnings</h2>
+          <ul class="case-bullets">
+            <li>
+              <strong>Design for reality, not theory.</strong><br />
+              In operational contexts, every UI element must earn its place: prevent an error or save seconds.
+            </li>
+            <li>
+              <strong>Business rules as UX.</strong><br />
+              Not everything should be “simplified”; sometimes the best experience enforces correct behavior.
+            </li>
+            <li>
+              <strong>Collaboration through logic.</strong><br />
+              Understanding endpoints and validations helped propose solutions that fit the existing backend.
+            </li>
+            <li>
+              <strong>Tactile UX.</strong><br />
+              Designing for gloves, movement and variable light changed how I think about interaction.
+            </li>
+            <li>
+              <strong>Think in ecosystems.</strong><br />
+              Handheld is part of WEMALO, not a standalone app — continuity matters more than isolated screens.
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+      <!-- MORE CASE STUDIES -->
+    <section class="section section-alt">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>More case studies</h2>
+          <p>
+            Handheld PWA is the mobile extension of a broader logistics ecosystem — from
+            warehouse backbone to client-facing portals.
+          </p>
+        </header>
+
+        <div class="more-projects-grid">
+          <a href="wemalo-wms.html" class="more-project-card">
+            <span class="more-project-kicker">Warehouse backbone</span>
+            <h3 class="more-project-title">WEMALO WMS — Interface Redesign</h3>
+            <p class="more-project-meta">
+              Redesign of the internal WMS that powers inventory, inbound and outbound flows
+              behind the dashboard and warehouse operations.
+            </p>
+          </a>
+
+          <a href="wemalo-dashboard.html" class="more-project-card">
+            <span class="more-project-kicker">Client-facing</span>
+            <h3 class="more-project-title">WEMALO Dashboard — B2B Client Interface</h3>
+            <p class="more-project-meta">
+              External portal for merchants and warehouse admins, restructured around roles
+              and real-life tasks instead of internal tables.
+            </p>
+          </a>
+
+          <a href="retoure24.html" class="more-project-card">
+            <span class="more-project-kicker">Returns Platform</span>
+            <h3 class="more-project-title">Retoure24 — Multi-Store Returns Management</h3>
+            <p class="more-project-meta">
+              SaaS platform that lets merchants manage multi-store returns, with dashboard, landing pages abd email flows for end customers.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Ana Prieto. All rights reserved.</p>
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Back to top">
+    ↑
+  </button>
+  <script src="js/main.js"></script>
+</body>
+</html>

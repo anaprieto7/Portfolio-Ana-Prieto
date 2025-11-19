@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WEMALO Dashboard — B2B Client Interface Redesign · Ana Prieto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Case study: WEMALO Dashboard — redesign of the B2B client portal for merchants and warehouse managers within the WEMALO ecosystem."
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html#top" class="logo">AP</a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">
+          ☰
+        </button>
+        <ul class="nav-list">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section
+      class="case-hero-banner"
+      style="--case-hero-bg: url('wemalo-dashboard/hero.jpg')"
+    >
+      <div class="case-hero-overlay"></div>
+
+      <div class="container case-hero-layout">
+        <div class="case-hero-main">
+          <p class="case-hero-kicker">Case study · B2B · Dashboard</p>
+          <h1 class="case-hero-title">
+            WEMALO Dashboard — B2B Client Interface Redesign
+          </h1>
+          <p class="case-hero-subtitle">
+            WEMALO Dashboard is the B2B portal where warehouse clients manage their
+            inventory, orders and returns within the WEMALO ecosystem. Unlike the internal WMS,
+            this dashboard is built for merchants and warehouse managers who need full visibility
+            without using the internal warehouse system.
+          </p>
+
+          <div class="case-hero-tags">
+            <span>SaaS</span>
+            <span>Warehouse</span>
+            <span>B2B</span>
+            <span>Dashboard</span>
+            <span>Enterprise UX</span>
+          </div>
+        </div>
+
+        <aside class="case-hero-meta">
+          <div class="case-hero-meta-block">
+            <h3>Role</h3>
+            <ul>
+              <li>UX/UI Design</li>
+              <li>Information Architecture</li>
+              <li>Interaction Design</li>
+            </ul>
+          </div>
+          <div class="case-hero-meta-block">
+            <h3>Timeline</h3>
+            <p>10 months · 2025</p>
+          </div>
+          <div class="case-hero-meta-block">
+            <h3>Tools</h3>
+            <ul>
+              <li>Figma</li>
+              <li>Vuexy Template</li>
+              <li>Miro</li>
+              <li>Google Forms</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- OVERVIEW + PROBLEM / GOAL -->
+    <section class="section">
+      <div class="container section-inner">
+        <header class="section-header">
+          <p class="section-label">Challenge &amp; solution</p>
+          <h2>From problem to solution</h2>
+          <p>Restructuring the B2B client portal around roles, tasks and real decisions.</p>
+        </header>
+
+        <div class="case-grid-2">
+          <article>
+            <h3>Overview</h3>
+            <p>
+              WEMALO Dashboard is the external interface for clients of the WEMALO ecosystem.
+              It gives merchants and warehouse managers visibility over inventory, orders
+              and returns — without exposing the internal WMS complexity.
+            </p>
+            <p>
+              The challenge was not to add more features, but to <strong>make the existing
+              ones understandable and relevant for each actor</strong> interacting with the system.
+            </p>
+          </article>
+
+          <article class="case-highlight">
+            <div>
+              <h3>Design challenge</h3>
+              <p>
+                Technically, the system worked — but its information architecture was confusing
+                and poorly adapted to different user types.
+              </p>
+              <ul class="case-bullets">
+                <li>Identical flows for all roles (SuperAdmin, Admin, Merchant).</li>
+                <li>Redundant information repeated across screens.</li>
+                <li>Navigation that didn’t reflect each actor’s operational context.</li>
+                <li>Cognitive overload and unnecessary management time.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>Redesign objectives</h3>
+              <p>
+                Restructure IA and interaction logic to improve clarity, relevance and flow:
+              </p>
+              <ul class="case-bullets">
+                <li>Tailor screens and flows to each user type’s needs.</li>
+                <li>Reduce noise and unnecessary steps.</li>
+                <li>Deliver a coherent, scalable, task-centered experience.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROLES & USERS -->
+    <section class="section section-alt">
+      <div class="container section-inner">
+        <header class="section-header">
+          <p class="section-label">Roles &amp; user profiles</p>
+          <h2>Who we designed for</h2>
+          <p>Clarifying mental models before redefining flows.</p>
+        </header>
+
+        <div class="case-grid-2">
+          <article class="case-principle-block">
+            <h3>Admin</h3>
+            <p>
+              Warehouse manager responsible for logistics operations and relationships with
+              assigned merchants.
+            </p>
+            <ul class="case-bullets">
+              <li>Needs multi-client visibility.</li>
+              <li>Monitors SLAs, warehouse capacity and exceptions.</li>
+              <li>Prioritizes control and quick decisions.</li>
+            </ul>
+          </article>
+
+          <article class="case-principle-block">
+            <h3>Merchant</h3>
+            <p>
+              Client who manages their own inventory, creates inbound orders, and monitors
+              orders and returns.
+            </p>
+            <ul class="case-bullets">
+              <li>Needs clear views of stock, orders and returns.</li>
+              <li>Focuses on product health and end-customer impact.</li>
+              <li>Wants simple flows for inbound and returns.</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="case-note">
+          Each role has different goals and information needs — the redesign aligns navigation,
+          modules and actions with these mental models.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Process</h2>
+          <p>From IA audit to role-based flows and UI refinements.</p>
+        </header>
+
+        <div class="process-grid">
+          <article class="process-step">
+            <h3>1 · Analysis</h3>
+            <p>
+              Full audit of existing views and permissions. I mapped which data and actions each
+              role actually used day to day, and where they struggled to find information.
+            </p>
+            <p class="case-note">
+              Output: roles/permissions matrix, list of redundant screens and critical flows.
+            </p>
+          </article>
+
+          <article class="process-step">
+            <h3>2 · Information architecture</h3>
+            <p>
+              I reorganized the IA around tasks instead of database entities. New main navigation:
+            </p>
+            <ul class="case-bullets">
+              <li>Dashboard</li>
+              <li>Orders</li>
+              <li>Inbound Orders</li>
+              <li>Inventory</li>
+              <li>Returns</li>
+              <li>Settings</li>
+            </ul>
+            <p class="case-note">
+              Each module exposes contextual information and actions per role.
+            </p>
+          </article>
+
+          <article class="process-step">
+            <h3>3 · Interaction design</h3>
+            <p>
+              I redesigned core flows (order creation, stock review, returns) with reusable patterns:
+            </p>
+            <ul class="case-bullets">
+              <li>Clear primary vs secondary actions.</li>
+              <li>Consistent feedback and empty states.</li>
+              <li>Tables with action cells and status chips.</li>
+            </ul>
+          </article>
+
+          <article class="process-step">
+            <h3>4 · UI design</h3>
+            <p>
+              I applied a Cloudscape-inspired UI with modular layouts, clear typography and
+              dark-mode support, using the Vuexy template as a technical base for implementation.
+            </p>
+            <ul class="case-bullets">
+              <li>Simplified cards and tables.</li>
+              <li>Sharper hierarchy in dashboard metrics.</li>
+              <li>Visual coherence with WEMALO WMS and Retoure24.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- IA & ANALYSIS IMAGES -->
+    <section class="section section-alt">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Information architecture & current state</h2>
+          <p>Making sense of what existed before changing it.</p>
+        </header>
+
+        <div class="media-grid">
+          <figure class="media-card">
+            <img src="wemalo-d/mindmap-admin.png" alt="Current IA – Admin panel" />
+            <figcaption>
+              <strong>Current IA — Admin panel</strong><br />
+              Mindmap of existing navigation, modules and redundancies.
+            </figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="wemalo-dashboard/process-1.jpg" alt="Process sketch 1" />
+            <figcaption>
+              Early exploration of IA options and role-based grouping.
+            </figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="wemalo-dashboard/process-2.jpg" alt="Process sketch 2" />
+            <figcaption>
+              Clustering screens by tasks instead of technical modules.
+            </figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="wemalo-dashboard/process-3.jpg" alt="Process sketch 3" />
+            <figcaption>
+              New navigation proposal aligned with user roles.
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Opcional: embed de Figma (puedes dejarlo o quitarlo) -->
+        <div class="figma-embed-wrapper">
+          <iframe
+            title="WEMALO Dashboard – IA"
+            src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/EXAMPLE_WEMALO_DASHBOARD"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section class="section">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Solution</h2>
+          <p>Role-based dashboards, contextual modules and task-centered flows.</p>
+        </header>
+
+        <div class="case-grid-2">
+          <article>
+            <p>
+              The new WEMALO Dashboard groups information and flows by user role, delivering a
+              clear, task-oriented experience. SuperAdmins get global visibility, Admins manage
+              multi-client operations, and Merchants control their products and inventory with ease.
+            </p>
+            <ul class="case-bullets">
+              <li>Role-specific flows instead of one-size-fits-all.</li>
+              <li>Visual hierarchy optimized for daily operations.</li>
+              <li>Simplified, contextual navigation per user type.</li>
+              <li>Tables structured by decision priority (status, exceptions, next actions).</li>
+              <li>Clear visual feedback and direct actions on each row.</li>
+            </ul>
+          </article>
+
+          <article class="case-principle-block">
+            <h3>Key improvements</h3>
+            <ul class="case-bullets">
+              <li>Dashboard cards per role (Admin vs Merchant) with relevant KPIs.</li>
+              <li>Orders and Inbound split clearly by responsibility and state.</li>
+              <li>Inventory views tailored to “what do I need to act on now?”.</li>
+              <li>Returns integrated with warehouse flows while staying understandable for merchants.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEFORE / AFTER -->
+    <section class="section section-alt">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Before & after</h2>
+          <p>From generic, flat screens to role-based dashboards and clean tables.</p>
+        </header>
+
+        <div class="media-grid">
+          <figure class="media-card">
+            <img src="wemalo-dashboard/before.jpg" alt="Before dashboard redesign" />
+            <figcaption>
+              <strong>Before</strong><br />
+              Generic dashboard without clear priorities or role differentiation.
+            </figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="wemalo-dashboard/after.jpg" alt="After dashboard redesign" />
+            <figcaption>
+              <strong>After</strong><br />
+              Clean layout, KPIs and modules tailored to each user type.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="media-grid" style="margin-top: 1.6rem;">
+          <figure class="media-card">
+            <img src="wemalo-dashboard/screen-dashboard.jpg" alt="New dashboard screen" />
+            <figcaption>
+              <strong>New dashboard</strong><br />
+              KPIs, alerts and quick access to main flows.
+            </figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="wemalo-dashboard/screen-orders.jpg" alt="Orders screen" />
+            <figcaption>
+              <strong>Orders</strong><br />
+              Tables structured by decision priority and status.
+            </figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="wemalo-dashboard/screen-inventory.jpg" alt="Inventory screen" />
+            <figcaption>
+              <strong>Inventory</strong><br />
+              Stock views aligned with what merchants and admins care about most.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section class="section">
+      <div class="container section-inner case-grid-2">
+        <article>
+          <h2>Impact</h2>
+          <p>
+            The redesign significantly improved clarity, efficiency and scalability of the
+            WEMALO client portal.
+          </p>
+          <ul class="case-bullets">
+            <li>~45% reduction in average information search time.</li>
+            <li>Role-differentiated views, eliminating permission ambiguity.</li>
+            <li>Order creation flows reduced from 5 steps to 2.</li>
+            <li>Visual base consistent with other WEMALO ecosystem products.</li>
+          </ul>
+        </article>
+
+        <article>
+          <h2>Reflection</h2>
+          <p>
+            The most complex challenge was redesigning the <strong>invisible logic</strong> behind the screens.
+            It wasn’t about colors or icons — it was about making sure each user understood the system
+            through the information they truly need.
+          </p>
+          <p>
+            This project reinforced the importance of <strong>designing for roles and mental models,
+            not for internal technical architecture</strong>. The same data can be arranged very differently
+            depending on who is looking at it and why.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- NEXT STEPS -->
+    <section class="section section-alt">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Next steps</h2>
+          <p>How I would evolve WEMALO Dashboard from here.</p>
+        </header>
+
+        <div class="case-grid-2">
+          <article>
+            <ul class="case-bullets">
+              <li>
+                Validate the prototype with real warehouse managers and merchants, focusing on
+                navigation, dashboard comprehension and flows.
+              </li>
+              <li>
+                Integrate usage analytics (search terms, filters, path analysis) to iterate on
+                high-impact modules.
+              </li>
+              <li>
+                Design advanced reporting views for warehouse KPIs and performance per client.
+              </li>
+            </ul>
+          </article>
+
+          <article class="case-principle-block">
+            <h3>Design system perspective</h3>
+            <p>
+              The dashboard shares a visual language with WEMALO WMS and Retoure24, using Cloudscape
+              as base. The next step is formalizing:
+            </p>
+            <ul class="case-bullets">
+              <li>Shared tokens (color, spacing, typography).</li>
+              <li>Component variants for internal vs client-facing screens.</li>
+              <li>Guidelines for role-based dashboards across the ecosystem.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+      <!-- MORE CASE STUDIES -->
+    <section class="section section-alt">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>More work around WEMALO Dashboard</h2>
+          <p>
+            The client portal is one piece of a connected ecosystem — from warehouse backbone
+            to mobile operations and returns.
+          </p>
+        </header>
+
+        <div class="more-projects-grid">
+          <a href="wemalo-wms.html" class="more-project-card">
+            <span class="more-project-kicker">Warehouse backbone</span>
+            <h3 class="more-project-title">WEMALO WMS — Interface Redesign</h3>
+            <p class="more-project-meta">
+              Redesign of the internal WMS that powers inventory, inbound and outbound flows
+              behind the dashboard and warehouse operations.
+            </p>
+          </a>
+
+          <a href="retoure24.html" class="more-project-card">
+            <span class="more-project-kicker">Returns Platform</span>
+            <h3 class="more-project-title">Retoure24 — Multi-Store Returns Management</h3>
+            <p class="more-project-meta">
+              SaaS platform that lets merchants manage multi-store returns, with dashboard, landing pages abd email flows for end customers.
+            </p>
+          </a>
+
+          <a href="handheld.html" class="more-project-card">
+            <span class="more-project-kicker">On-the-floor UX</span>
+            <h3 class="more-project-title">Handheld PWA — Mobile Warehouse Operations</h3>
+            <p class="more-project-meta">
+              Mobile app for operators that closes the loop between what users see in the
+              dashboard and what happens in the warehouse.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Ana Prieto. All rights reserved.</p>
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Back to top">
+    ↑
+  </button>
+  <script src="js/main.js"></script>
+</body>
+</html>

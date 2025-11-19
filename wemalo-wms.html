@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WEMALO WMS — Interface Redesign · Ana Prieto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Case study: visual redesign of WEMALO WMS, the warehouse management system of 4elements Group. UX/UI, visual design and design system adaptation by Ana Prieto."
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html#top" class="logo">AP</a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">
+          ☰
+        </button>
+        <ul class="nav-list">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section
+      class="case-hero-banner"
+      style="--case-hero-bg: url('wemalo-wms/hero.jpg')"
+    >
+      <div class="case-hero-overlay"></div>
+
+      <div class="container case-hero-layout">
+        <div class="case-hero-main">
+          <p class="case-hero-kicker">Case study · WMS · Enterprise UX</p>
+          <h1 class="case-hero-title">
+            WEMALO WMS — Interface Redesign for the Warehouse Management System
+          </h1>
+          <p class="case-hero-subtitle">
+            Complete visual redesign of the WEMALO warehouse management system, modernizing a dense,
+            enterprise interface while keeping the underlying functionality and tech stack.
+          </p>
+
+          <div class="case-hero-tags">
+            <span>SaaS</span>
+            <span>Warehouse</span>
+            <span>B2B</span>
+            <span>Enterprise UX</span>
+          </div>
+        </div>
+
+        <aside class="case-hero-meta">
+          <div class="case-hero-meta-block">
+            <h3>Role</h3>
+            <ul>
+              <li>UX/UI Design</li>
+              <li>Visual Design</li>
+              <li>Design System</li>
+            </ul>
+          </div>
+          <div class="case-hero-meta-block">
+            <h3>Timeline</h3>
+            <p>10 months · 2023–2024</p>
+          </div>
+          <div class="case-hero-meta-block">
+            <h3>Tools</h3>
+            <ul>
+              <li>Figma</li>
+              <li>Cloudscape Design System</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- OVERVIEW / DESIGN CHALLENGE -->
+    <section class="section">
+      <div class="container section-inner case-grid-2">
+        <article>
+          <h2>System context</h2>
+          <p>
+            WEMALO WMS is the core warehouse management system of the 4elements Group ecosystem,
+            used by logistics operators and fulfillment providers managing inventory for multiple stores.
+          </p>
+          <ul class="case-bullets">
+            <li>Master data (users, clients, products, warehouses).</li>
+            <li>Operational flows (inbound, picking, packing, relocation, returns).</li>
+            <li>Administrative management and reporting (services, movements, KPIs).</li>
+          </ul>
+          <p class="case-note">
+            It is the backbone of logistics operations: connecting physical tasks
+            (scanning, packing, transport) with the digital visibility that administrators and clients need.
+          </p>
+        </article>
+
+        <article class="case-highlight">
+          <div>
+            <h3>Design challenge</h3>
+            <p>
+              The system was powerful and feature-rich, but its interface was outdated and visually inconsistent.
+            </p>
+            <ul class="case-bullets">
+              <li>Dense, rigid design that was hard to scan.</li>
+              <li>Weak information hierarchy in complex modules.</li>
+              <li>Different visual patterns across sections.</li>
+              <li>Navigation friction between operations and configuration.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Constraint</h3>
+            <p>
+              Modernize the system <strong>without changing the existing technical architecture</strong> (Bootstrap + DataTables),
+              and improve the experience for both operational and admin users.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- OBJECTIVES & ROLE -->
+    <section class="section section-alt">
+      <div class="container section-inner case-grid-2">
+        <article>
+          <h2>Redesign objectives</h2>
+          <ul class="case-bullets">
+            <li>Improve visual clarity for dense data management.</li>
+            <li>Establish consistency across modules with a coherent visual system.</li>
+            <li>Lay a scalable foundation for future UI improvements without a full rebuild.</li>
+            <li>
+              Adopt an enterprise approach inspired by Cloudscape (AWS),
+              adapted to WEMALO’s brand identity (dark blue + orange).
+            </li>
+          </ul>
+        </article>
+
+        <article>
+          <h2>My role & strategy</h2>
+          <p>
+            As the company’s sole UX/UI designer, I owned the entire visual redesign: from analysis
+            to high-fidelity prototypes and design system decisions.
+          </p>
+          <p>
+            Instead of building a design system from scratch, I used
+            <strong>Cloudscape Design System</strong> as structural base and adapted it to WEMALO.
+          </p>
+          <ul class="case-bullets">
+            <li>Accelerated implementation with a mature enterprise foundation.</li>
+            <li>Maintained clarity and readability in dense interfaces.</li>
+            <li>Integrated WEMALO’s dark blue and orange to preserve visual DNA.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- SYSTEM ANALYSIS -->
+    <section class="section">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>System analysis</h2>
+          <p>Understanding the functional structure before changing visuals.</p>
+        </header>
+
+        <div class="media-grid">
+          <div class="case-principle-block">
+            <h3>Functional groups</h3>
+            <ul class="case-bullets">
+              <li>
+                <strong>Stammdaten</strong> — master data for users, warehouses, clients and products.
+              </li>
+              <li>
+                <strong>Konfiguration</strong> — shipping profiles, packaging, data exchange and services.
+              </li>
+              <li>
+                <strong>WE (Goods In)</strong> — receiving, scanning, returns registration and quick entries.
+              </li>
+              <li>
+                <strong>Lagerverwaltung</strong> — relocations, inventory counts, refurbishment, stock state.
+              </li>
+              <li>
+                <strong>WA (Goods Out)</strong> — picking, packing, KO-box, transports, docks.</li>
+              <li>
+                <strong>Berichte</strong> — movements, history, services, automated reports, serials.</li>
+            </ul>
+          </div>
+
+          <div class="case-principle-block">
+            <h3>Main conclusion</h3>
+            <p>
+              The system already covered the full logistics chain. The problem wasn’t functionality,
+              it was visual design:
+            </p>
+            <ul class="case-bullets">
+              <li>Too much information on flat, undifferentiated screens.</li>
+              <li>Little hierarchy between navigation, filters and content.</li>
+              <li>Inconsistent patterns across modules.</li>
+            </ul>
+            <p class="case-note">
+              The redesign focused on <strong>hierarchy, consistency and visual scalability</strong>,
+              without touching core logic.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REDESIGN PROCESS -->
+    <section class="section section-alt">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Redesign process</h2>
+          <p>From enterprise benchmarks to a scalable visual system.</p>
+        </header>
+
+        <div class="process-grid">
+          <article class="process-step">
+            <h3>1 · Benchmarking & references</h3>
+            <p>
+              I analyzed leading enterprise products for dense systems:
+            </p>
+            <ul class="case-bullets">
+              <li>Cloudscape (AWS) — clarity and visual scalability.</li>
+              <li>SAP EWM — complex functional structures.</li>
+              <li>Odoo / Netsuite / Oracle WMS — modularity and hierarchies.</li>
+            </ul>
+            <p class="case-note">
+              I chose Cloudscape as base for its readability and robustness, then adapted
+              it to WEMALO’s brand.
+            </p>
+          </article>
+
+          <article class="process-step">
+            <h3>2 · Visual language definition</h3>
+            <p>
+              I translated Cloudscape principles into a WEMALO-specific visual language:
+            </p>
+            <ul class="case-bullets">
+              <li>Dark blue (trust) + orange (action) as core brand colors.</li>
+              <li>Neutral grays for background and table density.</li>
+              <li>Clear typographic hierarchy for titles and tables.</li>
+              <li>Separation between navigation, filters and content areas.</li>
+            </ul>
+          </article>
+
+          <article class="process-step">
+            <h3>3 · Base component design</h3>
+            <p>
+              I built a Figma library of core components adapted to WMS needs:
+            </p>
+            <ul class="case-bullets">
+              <li>Tables with sticky headers and hover states.</li>
+              <li>Tiered filters with active badges and saved views.</li>
+              <li>Contextual toolbars for repetitive actions.</li>
+              <li>Icons and indicators aligned with the color system.</li>
+            </ul>
+          </article>
+
+          <article class="process-step">
+            <h3>4 · Prototyping & validation</h3>
+            <p>
+              I created high-fidelity prototypes for key modules (Inbound, Outbound,
+              Inventory, Reports) and validated:
+            </p>
+            <ul class="case-bullets">
+              <li>Technical compatibility with Bootstrap + DataTables.</li>
+              <li>Visual consistency across modules.</li>
+              <li>Documentation in Figma for future development.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOUDSCAPE ADAPTATION -->
+    <section class="section">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Cloudscape design system adaptation</h2>
+          <p>Using an enterprise system as foundation, not as a visual shortcut.</p>
+        </header>
+
+        <article class="case-grid-2">
+          <div>
+            <p>
+              I implemented AWS’s Cloudscape Design System as a structural base,
+              adapting it to WEMALO’s WMS and its corporate identity.
+            </p>
+            <p>
+              Instead of using it out of the box, I made targeted adaptations that
+              kept enterprise robustness while injecting WEMALO’s visual DNA.
+            </p>
+
+            <div class="token-list">
+              <div class="token-item">
+                <span class="token-label">Primary</span>
+                <span class="token-value">WEMALO blue (#1E3A8A)</span>
+              </div>
+              <div class="token-item">
+                <span class="token-label">Accent</span>
+                <span class="token-value">Action orange (#EA580C)</span>
+              </div>
+              <div class="token-item">
+                <span class="token-label">Neutrals</span>
+                <span class="token-value">Accessible gray scale</span>
+              </div>
+              <div class="token-item">
+                <span class="token-label">Typography</span>
+                <span class="token-value">Inter var</span>
+              </div>
+              <div class="token-item">
+                <span class="token-label">Spacing</span>
+                <span class="token-value">8px baseline</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="media-grid">
+            <figure class="media-card">
+              <img src="wemalo-tables.jpg" alt="WEMALO tables" />
+              <figcaption>
+                <strong>Table system</strong><br />
+                Sticky headers, hover states and color system adapted to WEMALO.
+              </figcaption>
+            </figure>
+            <figure class="media-card">
+              <img src="wemalo-filters.jpg" alt="WEMALO filters" />
+              <figcaption>
+                <strong>Filter system</strong><br />
+                Tiered side panel, active badges and saved views.
+              </figcaption>
+            </figure>
+            <figure class="media-card">
+              <img src="wemalo-navigation.jpg" alt="WEMALO navigation" />
+              <figcaption>
+                <strong>Navigation components</strong><br />
+                Modular navigation aligned with WEMALO’s functional structure.
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- BEFORE / AFTER & IMPROVEMENTS -->
+    <section class="section section-alt">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Main improvements</h2>
+          <p>How the redesign transformed the visual layer without breaking the system.</p>
+        </header>
+
+        <div class="before-after-grid">
+          <div class="before-after-pair">
+            <h3>Information density</h3>
+            <ul class="case-bullets">
+              <li><strong>Before:</strong> dense screens with little hierarchy.</li>
+              <li><strong>After:</strong> modular layouts separating navigation, filters and tables.</li>
+            </ul>
+          </div>
+          <div class="before-after-pair">
+            <h3>Visual identity</h3>
+            <ul class="case-bullets">
+              <li><strong>Before:</strong> neutral colors without a clear brand presence.</li>
+              <li><strong>After:</strong> dark blue + orange palette aligned with WEMALO.</li>
+            </ul>
+          </div>
+          <div class="before-after-pair">
+            <h3>Filters & search</h3>
+            <ul class="case-bullets">
+              <li><strong>Before:</strong> scattered filters across screens.</li>
+              <li><strong>After:</strong> tiered filters with visible active badges and saved views.</li>
+            </ul>
+          </div>
+          <div class="before-after-pair">
+            <h3>Tables & actions</h3>
+            <ul class="case-bullets">
+              <li><strong>Before:</strong> hard-to-read tables with redundant actions.</li>
+              <li><strong>After:</strong> optimized typography, spacing and contextual toolbars.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="media-grid">
+          <figure class="media-card">
+            <img src="wemalo-wms/before.jpg" alt="Before redesign" />
+            <figcaption>Legacy interface: flat, dense, low hierarchy.</figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="wemalo-wms/after.jpg" alt="After redesign" />
+            <figcaption>New interface: modular, branded and more readable.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Project gallery</h2>
+          <p>Key modules redesigned with the new visual system.</p>
+        </header>
+
+        <div class="media-grid">
+          <figure class="media-card">
+            <img src="wemalo-dashboard.jpg" alt="Main dashboard" />
+            <figcaption>
+              <strong>Main dashboard</strong><br />
+              KPIs, system status and quick access to modules.
+            </figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="wemalo-inbound.jpg" alt="Inbound module" />
+            <figcaption>
+              <strong>Inbound module</strong><br />
+              Receipts list, advanced filters and contextual actions.
+            </figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="wemalo-outbound.jpg" alt="Outbound module" />
+            <figcaption>
+              <strong>Outbound module</strong><br />
+              Picking and packing management with visual states.
+            </figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="wemalo-inventory.jpg" alt="Inventory module" />
+            <figcaption>
+              <strong>Inventory management</strong><br />
+              Stock, historical movements and inventory alerts.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="media-grid" style="margin-top:1.5rem;">
+          <figure class="media-card">
+            <img src="wemalo-navigation-poster.jpg" alt="Navigation demo" />
+            <figcaption>
+              <strong>Navigation across modules</strong><br />
+              Demo of modular navigation with the new visual language.
+            </figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="wemalo-filters-poster.jpg" alt="Filters demo" />
+            <figcaption>
+              <strong>Advanced filtering system</strong><br />
+              Demo of the side panel, active badges and saved searches.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS & IMPACT -->
+    <section class="section section-alt">
+      <div class="container section-inner case-grid-2">
+        <article>
+          <h2>Project results</h2>
+          <ul class="case-bullets">
+            <li>Comprehensive visual redesign of the main WMS modules.</li>
+            <li>Visual consistency across the whole WEMALO WMS ecosystem.</li>
+            <li>Solid base for future migration to React-based interfaces.</li>
+            <li>Clearer, more professional, brand-aligned visual experience.</li>
+            <li>High-fidelity prototypes ready for development handoff.</li>
+          </ul>
+        </article>
+
+        <article>
+          <h2>Impact & reach</h2>
+          <p>
+            The new WEMALO WMS design modernized a complex enterprise system without disrupting operations.
+          </p>
+          <ul class="case-bullets">
+            <li>
+              Users gained clearer views of warehouse operations, with improved hierarchy and visual cues.
+            </li>
+            <li>
+              The redesign served as the foundation for a shared visual language across related products:
+              WEMALO Dashboard, Retoure24 and Handheld PWA.
+            </li>
+          </ul>
+          <p class="case-note">
+            Next steps: extend this language to the full ecosystem and migrate modules to a modular React architecture.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- LEARNINGS & METRICS -->
+    <section class="section">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Learnings & metrics</h2>
+          <p>What worked, trade-offs and how I’d evaluate this type of redesign.</p>
+        </header>
+
+        <div class="case-grid-2">
+          <article>
+            <h3>Learnings & retrospective</h3>
+            <ul class="case-bullets">
+              <li>
+                Adopting Cloudscape as base gave speed and consistency without building a DS from zero.
+              </li>
+              <li>
+                The biggest UX gains came from hierarchy: filters + badges + saved views in dense tables.
+              </li>
+              <li>
+                Brand alignment over an enterprise base elevated perception without sacrificing readability.
+              </li>
+            </ul>
+
+            <h4>Trade-offs & collaboration</h4>
+            <ul class="case-bullets">
+              <li>Less visual freedom in exchange for mature components.</li>
+              <li>Time invested in tuning density and spacing for WMS contexts.</li>
+              <li>
+                Walkthroughs with operations + quick technical validation worked better than long testing cycles.
+              </li>
+              <li>
+                Figma documentation of components, tokens and usage simplified dev handoff.
+              </li>
+            </ul>
+          </article>
+
+          <article>
+            <h3>Metrics I’d measure</h3>
+            <p>
+              Quantitative metrics weren’t tracked at baseline, but for similar projects I’d measure:
+            </p>
+            <ul class="case-bullets">
+              <li>Time to locate an order (p95).</li>
+              <li>Clicks/scrolls to apply critical filters.</li>
+              <li>Errors from incorrect state selection.</li>
+              <li>Onboarding time for new operators.</li>
+            </ul>
+            <p class="case-note">
+              Expected impact: −20–35% search time, −15–25% errors, and ~−25% onboarding time with
+              better Saved Views and guidance.
+            </p>
+          </article>
+        </div>
+
+        <article>
+          <h3>Open questions & design ops</h3>
+          <div class="case-grid-2">
+            <div>
+              <ul class="case-bullets">
+                <li>
+                  Which saved views should be preconfigured per role (Admin, Operator, Client)?
+                </li>
+                <li>
+                  Which KPIs are critical for day-to-day vs. month-end reporting?
+                </li>
+                <li>
+                  When is the right moment to migrate to React without affecting peak operations?
+                </li>
+              </ul>
+            </div>
+            <div>
+              <ul class="case-bullets">
+                <li>Design tokens: color, spacing and typography defined for reuse.</li>
+                <li>Contribution rules for the Figma library (naming, variants, states).</li>
+                <li>Accessibility checklist (contrast, focus, keyboard states) per component.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+      <!-- MORE CASE STUDIES -->
+    <section class="section section-alt">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Related products I designed</h2>
+          <p>
+            The WMS redesign became the visual and structural foundation for other products in
+            the WEMALO ecosystem.
+          </p>
+        </header>
+
+        <div class="more-projects-grid">
+          <a href="wemalo-dashboard.html" class="more-project-card">
+            <span class="more-project-kicker">Client-facing</span>
+            <h3 class="more-project-title">WEMALO Dashboard — B2B Client Interface</h3>
+            <p class="more-project-meta">
+              External portal for merchants and warehouse admins, restructured around roles
+              and real-life tasks instead of internal tables.
+            </p>
+          </a>
+
+          <a href="retoure24.html" class="more-project-card">
+            <span class="more-project-kicker">Returns Platform</span>
+            <h3 class="more-project-title">Retoure24 — Multi-Store Returns Management</h3>
+            <p class="more-project-meta">
+              SaaS platform that lets merchants manage multi-store returns, with dashboard, landing pages abd email flows for end customers.
+            </p>
+          </a>
+
+         <a href="handheld.html" class="more-project-card">
+            <span class="more-project-kicker">On-the-floor UX</span>
+            <h3 class="more-project-title">Handheld PWA — Mobile Warehouse Operations</h3>
+            <p class="more-project-meta">
+              Mobile app for operators that closes the loop between what users see in the
+              dashboard and what happens in the warehouse.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Ana Prieto. All rights reserved.</p>
+    </div>
+  </footer>
+    <button class="back-to-top" aria-label="Back to top">
+    ↑
+  </button>
+  <script src="js/main.js"></script>
+</body>
+</html>

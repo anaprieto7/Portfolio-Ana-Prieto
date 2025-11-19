@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Retoure24 — Multi-Store Returns Management · Ana Prieto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Case study: Retoure24, a multi-store returns management platform. UX research, IA, UI design and frontend implementation by Ana Prieto."
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- HEADER (igual que en index) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html#top" class="logo">AP</a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">
+          ☰
+        </button>
+        <ul class="nav-list">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO DEL CASE STUDY -->
+    <section
+  class="case-hero-banner"
+  style="--case-hero-bg: url('retoure24/hero/returns-hero.jpg')"
+>
+  <div class="case-hero-overlay"></div>
+
+  <div class="container case-hero-layout">
+    <div class="case-hero-main">
+      <p class="case-hero-kicker">Case study · SaaS · Returns</p>
+      <h1 class="case-hero-title">
+        Retoure24 — Multi-Store Returns Management
+      </h1>
+      <p class="case-hero-subtitle">
+        Retoure24 is a SaaS platform that lets e-commerce merchants manage returns from
+        multiple stores in a single panel. My role combined UX research, information
+        architecture, UI design and frontend development with React and Chakra UI.
+      </p>
+
+      <div class="case-hero-tags">
+        <span>SaaS</span>
+        <span>Multi-tenant</span>
+        <span>Operational UX</span>
+      </div>
+    </div>
+
+    <aside class="case-hero-meta">
+      <div class="case-hero-meta-block">
+        <h3>Role</h3>
+        <ul>
+          <li>UX Research</li>
+          <li>Information Architecture</li>
+          <li>UI Design</li>
+          <li>Frontend (React + Chakra UI)</li>
+        </ul>
+      </div>
+      <div class="case-hero-meta-block">
+        <h3>Timeline</h3>
+        <p>10 months · 2023–2024</p>
+      </div>
+      <div class="case-hero-meta-block">
+        <h3>Stack</h3>
+        <ul>
+          <li>React · Next.js</li>
+          <li>Chakra UI</li>
+          <li>Recharts</li>
+          <li>react-i18next</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+
+    <!-- OVERVIEW / PROBLEM / SOLUTION -->
+    <section class="section">
+      <div class="container section-inner case-grid-2">
+        <div>
+          <h2>Overview</h2>
+          <p>
+            Retoure24 centralizes returns management for merchants operating multiple online stores. 
+            Instead of juggling separate tools, landing pages and spreadsheets, they get one place to 
+            configure stores, track statuses, export reports and manage communication with end customers.
+          </p>
+        </div>
+        <div class="case-highlight">
+          <div>
+            <h3>Problem</h3>
+            <p>Chaos in multi-store returns: decentralized tools, low visibility and manual processes.</p>
+          </div>
+          <div>
+            <h3>Solution</h3>
+            <p>
+              A unified platform that connects returns, configuration and reporting, 
+              adaptable to both WEMALO-integrated merchants and independent clients.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UNDERSTANDING THE PROBLEM -->
+    <section class="section section-alt">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Understanding the problem</h2>
+          <p>From market benchmark to defining target users and their pain points.</p>
+        </header>
+
+        <div class="case-grid-2">
+          <article>
+            <h3>Market benchmark</h3>
+            <p>
+              Before defining the solution, I ran a comparative analysis of market tools 
+              such as ReverseLogix, Returnless, ReturnGo and Loop Returns.
+            </p>
+            <ul class="case-bullets">
+              <li>Most offer end-to-end flows: customer registration, tracking and refunds.</li>
+              <li>Several work without a WMS, giving merchants direct control.</li>
+              <li>Best-in-class UIs focus on clarity, automation and brand customization.</li>
+              <li>Few connect deeply to warehouse systems — an opportunity with WEMALO.</li>
+            </ul>
+            <p class="case-note">
+              Insight: the market validates a standalone returns platform that can run inside 
+              or outside the WEMALO ecosystem.
+            </p>
+          </article>
+
+          <article>
+            <h3>Target users & setup modes</h3>
+            <p>
+              Initially, Retoure24 was conceived for merchants already using WEMALO as their WMS. 
+              Research showed that returns pain points are just as strong for independent merchants.
+            </p>
+            <div class="case-cards-inline">
+              <div class="case-chip-block">
+                <h4>WEMALO client</h4>
+                <p class="case-chip-desc">
+                  Merchant managing inventory via WEMALO/MyDashboard and needing returns deeply integrated into operations.
+                </p>
+                <ul class="case-bullets">
+                  <li>Inventory in a 3PL warehouse with WEMALO</li>
+                  <li>Multiple stores</li>
+                  <li>Uses MyDashboard without full returns visibility</li>
+                </ul>
+              </div>
+              <div class="case-chip-block">
+                <h4>Independent client</h4>
+                <p class="case-chip-desc">
+                  Merchant with multiple stores but no logistics backend, managing returns manually.
+                </p>
+                <ul class="case-bullets">
+                  <li>Multiple stores</li>
+                  <li>No WMS / 3PL integration</li>
+                  <li>Manual management with spreadsheets and emails</li>
+                </ul>
+              </div>
+            </div>
+
+            <p><strong>Setup modes</strong></p>
+            <ul class="case-bullets">
+              <li>WEMALO Client Setup — connect stores and warehouses directly to the WMS backend.</li>
+              <li>Independent Client Setup — manually configure shops, shippers and email flows.</li>
+            </ul>
+          </article>
+        </div>
+
+        <article>
+          <h3>Interviews & problem clusters</h3>
+          <div class="case-quotes">
+            <blockquote>
+              <p>“Once the customer sends the return, I lose visibility of which step it’s in.”</p>
+              <footer>David · WEMALO client</footer>
+            </blockquote>
+            <blockquote>
+              <p>“I want to manage all return landing pages from one place.”</p>
+              <footer>Oliver · WEMALO client</footer>
+            </blockquote>
+            <blockquote>
+              <p>“I track all stores in a spreadsheet and end up losing information and time.”</p>
+              <footer>Laura · Independent merchant</footer>
+            </blockquote>
+          </div>
+
+          <h4>Problem clusters</h4>
+          <ul class="case-bullets">
+            <li>Decentralized management: multiple tools, channels and landing pages.</li>
+            <li>Lack of visibility and control over status, progress and performance.</li>
+            <li>Manual, error-prone management of returns across several stores.</li>
+          </ul>
+
+          <p class="case-note">
+            Design challenge: create an end-to-end platform that unifies processes, 
+            shows full traceability and scales for both integrated and independent merchants 
+            — while preserving clarity and per-store customization.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section class="section">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Solution</h2>
+          <p>
+            From architecture and flows to interface design, focusing on traceability, clarity and scalability.
+          </p>
+        </header>
+
+        <div class="case-grid-2">
+          <article>
+            <h3>Key solution pillars</h3>
+            <ul class="case-bullets">
+              <li>
+                <p><strong>Multi-store dashboard with filters & reports</strong><br />
+                Returns grouped by store, reason and status, with KPIs and exports.</p>
+              </li>
+              <li>
+                <p><strong>Per-return traceability</strong><br />
+                Each return has a clear status timeline, notes and events.</p>
+              </li>
+              <li>
+                <p><strong>Store-specific landing pages</strong><br />
+                One controlled entry point per store to start a return, mapped to brand and logistics rules.</p>
+              </li>
+            </ul>
+          </article>
+
+          <article>
+            <h3>Information architecture</h3>
+            <p>
+              I structured the platform around user intent and usage frequency:
+            </p>
+            <ul class="case-bullets">
+              <li><strong>Setup</strong> — stores, addresses, shippers, email & landing pages.</li>
+              <li><strong>Returns</strong> — list, detail and per-return actions.</li>
+              <li><strong>Dashboard</strong> — metrics, filters and exports.</li>
+            </ul>
+            <p class="case-note">
+              This separation helps new users understand where to configure vs. where to operate.
+            </p>
+          </article>
+        </div>
+
+        <article>
+          <h3>Core flows</h3>
+          <div class="media-grid">
+            <figure class="media-card">
+              <img src="retoure24/flows/general-flow.png" alt="General multi-store returns flow" />
+              <figcaption>
+                <strong>Flow 1 — Multi-store management</strong><br />
+                Global view of returns across stores, with filters and exports.
+              </figcaption>
+            </figure>
+            <figure class="media-card">
+              <img src="retoure24/flows/flow-return-tracking.png" alt="Per-return tracking flow" />
+              <figcaption>
+                <strong>Flow 2 — Per-return traceability</strong><br />
+                Status timeline, notes and events for each return.
+              </figcaption>
+            </figure>
+            <figure class="media-card">
+              <img src="retoure24/flows/flow-multistore-dashboard.png" alt="Multi-store dashboard flow" />
+              <figcaption>
+                <strong>Flow 3 — Multi-store dashboard</strong><br />
+                KPIs and analytics filtered by store, status and reason.
+              </figcaption>
+            </figure>
+            <figure class="media-card">
+              <img src="retoure24/flows/flow-landing-page.png" alt="Landing page configuration flow" />
+              <figcaption>
+                <strong>Flow 4 — Landing page configuration</strong><br />
+                Activation, templates and fields per store.
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article>
+          <h3>Wireframes & IA</h3>
+          <p>
+            I started with low-to-mid fidelity wireframes to validate navigation, 
+            grouping and edge cases across dashboard, returns and setup.
+          </p>
+          <div class="media-grid">
+            <figure class="media-card">
+              <img src="retoure24/wireframes/Dashboard.jpg" alt="Dashboard wireframe" />
+              <figcaption>Dashboard — KPIs and list for a single store.</figcaption>
+            </figure>
+            <figure class="media-card">
+              <img src="retoure24/wireframes/Returns-List.jpg" alt="Returns list wireframe" />
+              <figcaption>Returns list — filters, columns and bulk actions.</figcaption>
+            </figure>
+            <figure class="media-card">
+              <img src="retoure24/wireframes/Return-detail.jpg" alt="Return detail wireframe" />
+              <figcaption>Return detail — status, events, customer and items.</figcaption>
+            </figure>
+            <figure class="media-card">
+              <img src="retoure24/wireframes/Setup-Landing.jpg" alt="Landing page setup wireframe" />
+              <figcaption>Landing page setup — configuration per store.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article>
+          <h3>Visual design & design system</h3>
+          <p>
+            I defined a small design system for Retoure24, including color tokens, 
+            typography, elevation, states and key components reused across the app.
+          </p>
+
+          <div class="media-grid">
+            <figure class="media-card">
+              <img src="retoure24/tokens/color-light.png" alt="Light color palette" />
+              <figcaption>Color palette — light mode.</figcaption>
+            </figure>
+            <figure class="media-card">
+              <img src="retoure24/tokens/color-dark.png" alt="Dark color palette" />
+              <figcaption>Color palette — dark mode.</figcaption>
+            </figure>
+            <figure class="media-card">
+              <img src="retoure24/tokens/text-styles.png" alt="Typography scale" />
+              <figcaption>Typography and scale.</figcaption>
+            </figure>
+            <figure class="media-card">
+              <img src="retoure24/components/buttons.png" alt="Buttons" />
+              <figcaption>Buttons and interaction states.</figcaption>
+            </figure>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PRODUCT SHOWCASE -->
+    <section class="section section-alt">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Product showcase</h2>
+          <p>How the final product looks and behaves in key scenarios.</p>
+        </header>
+
+        <div class="media-grid">
+          <figure class="media-card">
+            <img src="retoure24/product/dashboard-one-store.png" alt="Dashboard one store" />
+            <figcaption>
+              <strong>Dashboard — One store</strong><br />
+              KPI and returns view focused on a single store.
+            </figcaption>
+          </figure>
+
+          <figure class="media-card">
+            <img src="retoure24/product/dashboard-multistore.png" alt="Dashboard multi-store" />
+            <figcaption>
+              <strong>Dashboard — Multi-store</strong><br />
+              Consolidated summary with filters by store, status and reason.
+            </figcaption>
+          </figure>
+
+          <figure class="media-card">
+            <img src="retoure24/product/demo-filters-poster.png" alt="Filters demo" />
+            <figcaption>
+              <strong>Applying filters</strong><br />
+              Status and date filters that update list and metrics in real time.
+            </figcaption>
+          </figure>
+
+          <figure class="media-card">
+            <img src="retoure24/product/demo-export-reason-poster.png" alt="Export by reason" />
+            <figcaption>
+              <strong>Export by reason</strong><br />
+              Export CSV reports aggregated by return reason.
+            </figcaption>
+          </figure>
+
+          <figure class="media-card">
+            <img src="retoure24/product/demo-change-status-poster.png" alt="Change status" />
+            <figcaption>
+              <strong>Changing status</strong><br />
+              Update return status from “Approved” to “Rejected”.
+            </figcaption>
+          </figure>
+
+          <figure class="media-card">
+            <img src="retoure24/product/demo-setup-landing-page-poster.png" alt="Landing configuration" />
+            <figcaption>
+              <strong>Configuring a landing page</strong><br />
+              Setup of a branded returns landing page per store.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUILD -->
+    <section class="section">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Building the product</h2>
+          <p>Frontend architecture and components supporting the UX.</p>
+        </header>
+
+        <div class="case-grid-2">
+          <article>
+            <h3>Stack</h3>
+            <ul class="case-bullets">
+              <li>React + Next.js (App Router)</li>
+              <li>Chakra UI as component library and design system base</li>
+              <li>react-i18next for multilingual support</li>
+              <li>Recharts for dashboards and data visualizations</li>
+            </ul>
+          </article>
+
+          <article>
+            <h3>Example components</h3>
+            <p class="case-note">I structured components to be reusable across dashboards and lists.</p>
+          </article>
+        </div>
+
+        <article class="code-block">
+          <h3>KPI card (Chakra UI)</h3>
+          <p class="code-description">
+            Simple metric card used across dashboard views.
+          </p>
+          <pre><code class="language-tsx">import &#123; Box, Stat, StatLabel, StatNumber &#125; from '@chakra-ui/react';
+
+export default function KpiCard()&#123;
+  return (
+    &lt;Box p=&#123;4&#125; borderWidth='1px' rounded='md'&gt;
+      &lt;Stat&gt;
+        &lt;StatLabel&gt;Orders&lt;/StatLabel&gt;
+        &lt;StatNumber&gt;1,245&lt;/StatNumber&gt;
+      &lt;/Stat&gt;
+    &lt;/Box&gt;
+  );
+&#125;</code></pre>
+        </article>
+
+        <article class="code-block">
+          <h3>Returns by reasons — Donut chart</h3>
+          <p class="code-description">
+            Chakra UI + Recharts component with a time-range menu for quick analysis.
+          </p>
+          <pre><code class="language-tsx">return (
+  &lt;Box
+    bg=&#123;useColorModeValue("white", "gray.800")&#125;
+    p=&#123;5&#125;
+    borderRadius="md"
+    boxShadow="sm"
+    borderColor=&#123;borderColor&#125;
+    shadow="sm"
+  &gt;
+    &lt;Flex justify="space-between" align="start" mb=&#123;4&#125;&gt;
+      &lt;Heading size="md"&gt;Returns by Reasons&lt;/Heading&gt;
+      &lt;Menu&gt;
+        &lt;MenuButton
+          as=&#123;IconButton&#125;
+          icon=&#123;&lt;FiMoreVertical /&gt;&#125;
+          variant="ghost"
+          size="sm"
+          aria-label="Filter"
+        /&gt;
+        &lt;MenuList&gt;
+          &lt;MenuItem&gt;Last 7 days&lt;/MenuItem&gt;
+          &lt;MenuItem&gt;Last month&lt;/MenuItem&gt;
+          &lt;MenuItem&gt;Last year&lt;/MenuItem&gt;
+        &lt;/MenuList&gt;
+      &lt;/Menu&gt;
+    &lt;/Flex&gt;
+
+    &lt;ResponsiveContainer width="100%" height=&#123;200&#125;&gt;
+      &lt;PieChart&gt;
+        &lt;Pie
+          data=&#123;data&#125;
+          dataKey="value"
+          nameKey="name"
+          cx="50%"
+          cy="50%"
+          innerRadius=&#123;60&#125;
+          outerRadius=&#123;80&#125;
+          paddingAngle=&#123;2&#125;
+        &gt;
+          &#123;data.map((entry, index) =&gt; (
+            &lt;Cell key=&#123;`cell-$&#123;index&#125;`&#125; fill=&#123;entry.color&#125; /&gt;
+          ))&#125;
+        &lt;/Pie&gt;
+      &lt;/PieChart&gt;
+    &lt;/ResponsiveContainer&gt;
+  &lt;/Box&gt;
+);</code></pre>
+        </article>
+      </div>
+    </section>
+
+    <!-- OUTCOMES -->
+    <section class="section section-alt">
+      <div class="container section-inner case-grid-2">
+        <div>
+          <h2>Outcomes</h2>
+          <ul class="case-bullets">
+            <li>~50% reduction in time to process returns.</li>
+            <li>Merchants manage 5+ stores from a single interface.</li>
+            <li>Email automations save ~10 hours/week per merchant.</li>
+            <li>High satisfaction reported in qualitative feedback (high NPS).</li>
+          </ul>
+        </div>
+        <div>
+          <h3>What this project shows about my work</h3>
+          <ul class="case-bullets">
+            <li>Ability to define product strategy and IA for multi-tenant SaaS.</li>
+            <li>End-to-end ownership: research, UX, UI and React/Chakra UI implementation.</li>
+            <li>Comfort working with complex, operational and data-heavy products.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <!-- MORE CASE STUDIES -->
+    <section class="section section-alt">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>More case studies</h2>
+          <p>Other products I designed in the WEMALO ecosystem.</p>
+        </header>
+
+        <div class="more-projects-grid">
+          <a href="wemalo-wms.html" class="more-project-card">
+            <span class="more-project-kicker">Warehouse backbone</span>
+            <h3 class="more-project-title">WEMALO WMS — Interface Redesign</h3>
+            <p class="more-project-meta">
+              Redesign of the internal WMS that powers inventory, inbound and outbound flows
+              behind the dashboard and warehouse operations.
+            </p>
+          </a>
+
+           <a href="handheld.html" class="more-project-card">
+            <span class="more-project-kicker">On-the-floor UX</span>
+            <h3 class="more-project-title">Handheld PWA — Mobile Warehouse Operations</h3>
+            <p class="more-project-meta">
+              Mobile app for operators that closes the loop between what users see in the
+              dashboard and what happens in the warehouse.
+            </p>
+          </a>
+
+          <a href="wemalo-dashboard.html" class="more-project-card">
+            <span class="more-project-kicker">Client-facing</span>
+            <h3 class="more-project-title">WEMALO Dashboard — B2B Client Interface</h3>
+            <p class="more-project-meta">
+              External portal for merchants and warehouse admins, restructured around roles
+              and real-life tasks instead of internal tables.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Ana Prieto. All rights reserved.</p>
+    </div>
+  </footer>
+  <button class="back-to-top" aria-label="Back to top">
+    ↑
+  </button>
+  <script src="js/main.js"></script>
+</body>
+</html>
