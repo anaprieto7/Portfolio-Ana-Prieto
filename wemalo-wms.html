@@ -38,7 +38,7 @@
 
       <div class="container case-hero-layout">
         <div class="case-hero-main">
-          <p class="case-hero-kicker">Project</p>
+          <a href="index.html#case-studies" class="btn-ghost">Go to Projects</a>
           <h1 class="case-hero-title">
             WEMALO WMS <br /> Interface Redesign for the Warehouse Management System
           </h1>
@@ -79,8 +79,23 @@
       </div>
     </section>
 
+<!-- CASE STUDY NAVIGATION -->
+<nav class="case-sections-nav">
+  <ul>
+    <li><a href="#overview">Context</a></li>
+    <li><a href="#objetive">Objetive</a></li>
+    <li><a href="#analysis">Analysis</a></li>
+    <li><a href="#redesign">Redesign Process</a></li>
+    <li><a href="#adaptation">Adaptation</a></li>
+    <li><a href="#improvement">Improvements</a></li>
+    <li><a href="#showcase">Product Showcase</a></li>
+    <li><a href="#result">Result & Impact</a></li>
+    <li><a href="#learning">Learnings</a></li>
+  </ul>
+</nav>
+
     <!-- OVERVIEW / DESIGN CHALLENGE -->
-    <section class="section">
+    <section class="section" id="overview">
       <div class="container section-inner case-grid-2">
         <article>
           <h2>System context</h2>
@@ -124,7 +139,7 @@
     </section>
 
     <!-- OBJECTIVES & ROLE -->
-    <section class="section section-alt">
+    <section class="section section-alt" id="objetive">
       <div class="container section-inner case-grid-2">
         <article>
           <h2>Redesign objectives</h2>
@@ -159,7 +174,7 @@
     </section>
 
     <!-- SYSTEM ANALYSIS -->
-    <section class="section">
+    <section class="section" id="analysis">
       <div class="container section-inner">
         <header class="section-header">
           <h2>System analysis</h2>
@@ -210,7 +225,7 @@
     </section>
 
     <!-- REDESIGN PROCESS -->
-    <section class="section section-alt">
+    <section class="section section-alt" id="redesign">
       <div class="container section-inner">
         <header class="section-header">
           <h2>Redesign process</h2>
@@ -277,7 +292,7 @@
     </section>
 
     <!-- CLOUDSCAPE ADAPTATION -->
-    <section class="section">
+    <section class="section" id="adaptation">
       <div class="container section-inner">
         <header class="section-header">
           <h2>Cloudscape design system adaptation</h2>
@@ -321,21 +336,21 @@
 
           <div class="media-grid">
             <figure class="media-card">
-              <img src="wemalo-tables.jpg" alt="WEMALO tables" />
+              <img src="assets/wemalo-wms/wemalo-tables.png" alt="WEMALO tables" />
               <figcaption>
                 <strong>Table system</strong><br />
                 Sticky headers, hover states and color system adapted to WEMALO.
               </figcaption>
             </figure>
             <figure class="media-card">
-              <img src="wemalo-filters.jpg" alt="WEMALO filters" />
+              <img src="assets/wemalo-wms/Goods Receipts orders-filters.png" alt="WEMALO filters" />
               <figcaption>
                 <strong>Filter system</strong><br />
-                Tiered side panel, active badges and saved views.
+                Logical and Dynamic filters.
               </figcaption>
             </figure>
             <figure class="media-card">
-              <img src="wemalo-navigation.jpg" alt="WEMALO navigation" />
+              <img src="assets/wemalo-wms/navigation.png" alt="WEMALO navigation" />
               <figcaption>
                 <strong>Navigation components</strong><br />
                 Modular navigation aligned with WEMALO’s functional structure.
@@ -347,7 +362,7 @@
     </section>
 
     <!-- BEFORE / AFTER & IMPROVEMENTS -->
-<section class="section section-alt improvements-section">
+<section class="section section-alt improvements-section" id="improvement">
   <div class="container section-inner">
     
     <header class="section-header">
@@ -419,7 +434,7 @@
     <!-- Before/After Images -->
     <div class="media-grid improvements-media">
       <figure class="media-card">
-        <img src="wemalo-wms/before.jpg" alt="Before redesign" />
+        <img src="assets/wemalo-wms/before.png" alt="Before redesign" />
         <figcaption>
           <strong>Before</strong><br />
           Legacy interface: flat, dense, low hierarchy.
@@ -427,7 +442,7 @@
       </figure>
 
       <figure class="media-card">
-        <img src="wemalo-wms/after.jpg" alt="After redesign" />
+        <img src="assets/wemalo-wms/wemalo-tables.png" alt="After redesign" />
         <figcaption>
           <strong>After</strong><br />
           New interface: modular, branded and easier to digest.
@@ -440,65 +455,44 @@
 
 
     <!-- GALLERY -->
-    <section class="section">
+    <section class="section" id="showcase">
       <div class="container section-inner">
         <header class="section-header">
           <h2>Project gallery</h2>
-          <p>Key modules redesigned with the new visual system.</p>
+          <p>Key modules redesigned with the new visual system.
+            <br /> for privacy reasons, the entire project and flows are not shown.
+          </p>
         </header>
 
         <div class="media-grid">
           <figure class="media-card">
-            <img src="wemalo-dashboard.jpg" alt="Main dashboard" />
+            <img src="assets/wemalo-wms/storage management - details.png" alt="Storage Management" />
             <figcaption>
-              <strong>Main dashboard</strong><br />
-              KPIs, system status and quick access to modules.
+              <strong>Master Data</strong><br />
+              User, client, Products, Forms and warehouse management.
             </figcaption>
           </figure>
           <figure class="media-card">
-            <img src="wemalo-inbound.jpg" alt="Inbound module" />
+            <img src="assets/wemalo-wms/Customer List-_ Parameter -_ product units-_ Info.png" alt="Customer Management" />
             <figcaption>
-              <strong>Inbound module</strong><br />
-              Receipts list, advanced filters and contextual actions.
+              <strong>Customer List Parameter</strong><br />
+              Customer management parameter for products
             </figcaption>
           </figure>
           <figure class="media-card">
-            <img src="wemalo-outbound.jpg" alt="Outbound module" />
+            <img src="assets/wemalo-wms/Order-detail Shipped.png" alt="Orders details Shipped" />
             <figcaption>
-              <strong>Outbound module</strong><br />
-              Picking and packing management with visual states.
+              <strong>Order Details status Shipped</strong><br />
+              Order details view for shipped orders.
             </figcaption>
           </figure>
-          <figure class="media-card">
-            <img src="wemalo-inventory.jpg" alt="Inventory module" />
-            <figcaption>
-              <strong>Inventory management</strong><br />
-              Stock, historical movements and inventory alerts.
-            </figcaption>
-          </figure>
-        </div>
-
-        <div class="media-grid" style="margin-top:1.5rem;">
-          <figure class="media-card">
-            <img src="wemalo-navigation-poster.jpg" alt="Navigation demo" />
-            <figcaption>
-              <strong>Navigation across modules</strong><br />
-              Demo of modular navigation with the new visual language.
-            </figcaption>
-          </figure>
-          <figure class="media-card">
-            <img src="wemalo-filters-poster.jpg" alt="Filters demo" />
-            <figcaption>
-              <strong>Advanced filtering system</strong><br />
-              Demo of the side panel, active badges and saved searches.
-            </figcaption>
-          </figure>
+         
         </div>
       </div>
     </section>
 
     <!-- RESULTS & IMPACT -->
-    <section class="section section-alt">
+    <section class="section section-alt" id="result">
       <div class="container section-inner case-grid-2">
         <article>
           <h2>Project results</h2>
@@ -533,7 +527,7 @@
     </section>
 
     <!-- LEARNINGS & METRICS -->
-    <section class="section">
+    <section class="section" id="learning">
       <div class="container section-inner">
         <header class="section-header">
           <h2>Learnings & metrics</h2>
@@ -628,7 +622,7 @@
         <div class="more-projects-grid">
           <a href="wemalo-dashboard.html" class="more-project-card">
             <span class="more-project-kicker">Client-facing</span>
-            <h3 class="more-project-title">WEMALO Dashboard — B2B Client Interface</h3>
+            <h3 class="more-project-title">WEMALO Dashboard <br /> B2B Client Interface</h3>
             <p class="more-project-meta">
               External portal for merchants and warehouse admins, restructured around roles
               and real-life tasks instead of internal tables.
@@ -637,7 +631,7 @@
 
           <a href="retoure24.html" class="more-project-card">
             <span class="more-project-kicker">Returns Platform</span>
-            <h3 class="more-project-title">Retoure24 — Multi-Store Returns Management</h3>
+            <h3 class="more-project-title">Retoure24 <br /> Multi-Store Returns Management</h3>
             <p class="more-project-meta">
               SaaS platform that lets merchants manage multi-store returns, with dashboard, landing pages abd email flows for end customers.
             </p>
@@ -645,7 +639,7 @@
 
          <a href="handheld.html" class="more-project-card">
             <span class="more-project-kicker">On-the-floor UX</span>
-            <h3 class="more-project-title">Handheld PWA — Mobile Warehouse Operations</h3>
+            <h3 class="more-project-title">Handheld PWA <br /> Mobile Warehouse Operations</h3>
             <p class="more-project-meta">
               Mobile app for operators that closes the loop between what users see in the
               dashboard and what happens in the warehouse.
@@ -656,11 +650,12 @@
     </section>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Ana Prieto. All rights reserved.</p>
-    </div>
-  </footer>
+    <footer class="site-footer-minimal">
+      <div class="container">
+        <p>© <span id="year"></span> Ana Prieto.</p>
+      </div>
+    </footer>
+    
     <button class="back-to-top" aria-label="Back to top">
     ↑
   </button>
@@ -703,5 +698,21 @@
   </div>
 </div>
   <script src="js/main.js"></script>
+  <script>
+  // Scroll suave
+  document.querySelectorAll('.case-sections-nav a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      const offset = target.offsetTop - 90; // espacio del header
+      window.scrollTo({ top: offset, behavior: 'smooth' });
+
+      document.querySelectorAll('.case-sections-nav a')
+        .forEach(a => a.classList.remove('active'));
+
+      link.classList.add('active');
+    });
+  });
+</script>
 </body>
 </html>

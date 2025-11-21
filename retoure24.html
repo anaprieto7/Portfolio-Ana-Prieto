@@ -34,7 +34,7 @@
 
       <div class="container case-hero-layout">
         <div class="case-hero-main">
-          <p class="case-hero-kicker">Project</p>
+          <a href="index.html#case-studies" class="btn-ghost">Go to Projects</a>
           <h1 class="case-hero-title">
             Retoure24 <br />Multi-Store Returns Management
           </h1>
@@ -78,8 +78,23 @@
       </div>
     </section>
 
+        <!-- CASE STUDY NAVIGATION -->
+<nav class="case-sections-nav">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#understanding">Understanding the problem</a></li>
+    <li><a href="#solution">Solution</a></li>
+    <li><a href="#flows">Core Flows</a></li>
+    <li><a href="#wireframes">Wireframes & IA</a></li>
+    <li><a href="#design-system">Design System</a></li>
+    <li><a href="#showcase">Product Showcase</a></li>
+    <li><a href="#build">Building the product</a></li>
+    <li><a href="#outcomes">Outcomes</a></li>
+  </ul>
+</nav>
+
     <!-- OVERVIEW / PROBLEM / SOLUTION -->
-    <section class="section">
+    <section class="section" id="overview">
       <div class="container section-inner case-grid-2">
         <div>
           <h2>Overview</h2>
@@ -105,8 +120,9 @@
       </div>
     </section>
 
+
     <!-- UNDERSTANDING THE PROBLEM -->
-    <section class="section section-alt">
+    <section class="section section-alt" id="understanding">
       <div class="container section-inner">
         <header class="section-header">
           <h2>Understanding the problem</h2>
@@ -205,7 +221,7 @@
     </section>
 
     <!-- SOLUTION -->
-    <section class="section">
+    <section class="section" id="solution">
       <div class="container section-inner">
         <header class="section-header">
           <h2>Solution</h2>
@@ -249,7 +265,7 @@
           </article>
         </div>
 
-        <article>
+        <article id="flows">
           <h3>Core flows</h3>
           <div class="media-grid">
             <figure class="media-card">
@@ -283,7 +299,7 @@
           </div>
         </article>
 
-        <article>
+        <article id="wireframes">
           <h3>Wireframes &amp; IA</h3>
           <p>
             I started with low-to-mid fidelity wireframes to validate navigation, 
@@ -309,7 +325,7 @@
           </div>
         </article>
 
-        <article>
+        <article id="design-system">
           <h3>Visual design &amp; design system</h3>
           <p>
             I defined a small design system for Retoure24, including color tokens, 
@@ -339,7 +355,7 @@
     </section>
 
     <!-- PRODUCT SHOWCASE -->
-    <section class="section section-alt">
+    <section class="section section-alt" id="showcase">
       <div class="container section-inner">
         <header class="section-header">
           <h2>Product showcase</h2>
@@ -403,7 +419,7 @@
     </section>
 
     <!-- BUILD -->
-    <section class="section">
+    <section class="section" id="build">
       <div class="container section-inner">
         <header class="section-header">
           <h2>Building the product</h2>
@@ -503,7 +519,7 @@ export default function KpiCard()&#123;
     </section>
 
     <!-- OUTCOMES -->
-    <section class="section section-alt">
+    <section class="section section-alt" id="outcomes">
       <div class="container section-inner case-grid-2">
         <div>
           <h2>Outcomes</h2>
@@ -537,7 +553,7 @@ export default function KpiCard()&#123;
       <div class="more-projects-grid">
         <a href="wemalo-wms.html" class="more-project-card">
           <span class="more-project-kicker">Warehouse backbone</span>
-          <h3 class="more-project-title">WEMALO WMS — Interface Redesign</h3>
+          <h3 class="more-project-title">WEMALO WMS <br /> Interface Redesign</h3>
           <p class="more-project-meta">
             Redesign of the internal WMS that powers inventory, inbound and outbound flows
             behind the dashboard and warehouse operations.
@@ -546,7 +562,7 @@ export default function KpiCard()&#123;
 
         <a href="handheld.html" class="more-project-card">
           <span class="more-project-kicker">On-the-floor UX</span>
-          <h3 class="more-project-title">Handheld PWA — Mobile Warehouse Operations</h3>
+          <h3 class="more-project-title">Handheld PWA <br /> Mobile Warehouse Operations</h3>
           <p class="more-project-meta">
             Mobile app for operators that closes the loop between what users see in the
             dashboard and what happens in the warehouse.
@@ -555,7 +571,7 @@ export default function KpiCard()&#123;
 
         <a href="wemalo-dashboard.html" class="more-project-card">
           <span class="more-project-kicker">Client-facing</span>
-          <h3 class="more-project-title">WEMALO Dashboard — B2B Client Interface</h3>
+          <h3 class="more-project-title">WEMALO Dashboard <br /> B2B Client Interface</h3>
           <p class="more-project-meta">
             External portal for merchants and warehouse admins, restructured around roles
             and real-life tasks instead of internal tables.
@@ -566,11 +582,11 @@ export default function KpiCard()&#123;
   </section>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Ana Prieto. All rights reserved.</p>
-    </div>
-  </footer>
+    <footer class="site-footer-minimal">
+      <div class="container">
+        <p>© <span id="year"></span> Ana Prieto.</p>
+      </div>
+    </footer>
 
   <!-- BACK TO TOP (mismo estilo glass que en index) -->
   <button class="back-to-top" aria-label="Back to top">
@@ -615,6 +631,23 @@ export default function KpiCard()&#123;
     <p class="lightbox__caption"></p>
   </div>
 </div>
+<script>
+  // Scroll suave
+  document.querySelectorAll('.case-sections-nav a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      const offset = target.offsetTop - 90; // espacio del header
+      window.scrollTo({ top: offset, behavior: 'smooth' });
+
+      document.querySelectorAll('.case-sections-nav a')
+        .forEach(a => a.classList.remove('active'));
+
+      link.classList.add('active');
+    });
+  });
+</script>
+
 
   <script src="js/main.js"></script>
 </body>

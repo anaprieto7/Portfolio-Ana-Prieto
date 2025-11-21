@@ -35,7 +35,7 @@
 
       <div class="container case-hero-layout">
         <div class="case-hero-main">
-          <p class="case-hero-kicker">Project</p>
+          <a href="index.html#case-studies" class="btn-ghost">Go to Projects</a>
           <h1 class="case-hero-title">
             WEMALO Dashboard <br /> B2B Client Interface Redesign
           </h1>
@@ -81,11 +81,24 @@
       </div>
     </section>
 
+<!-- CASE STUDY NAVIGATION -->
+<nav class="case-sections-nav">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#roles">Roles & Users</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#analysis">Analisys</a></li>
+    <li><a href="#solution">Solution</a></li>
+    <li><a href="#before">Before & After</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#next">Next Steps</a></li>
+  </ul>
+</nav>
+
     <!-- OVERVIEW + PROBLEM / GOAL -->
-    <section class="section">
+    <section class="section" id="overview">
       <div class="container section-inner">
         <header class="section-header">
-          <p class="section-label">Challenge &amp; solution</p>
           <h2>From problem to solution</h2>
           <p>Restructuring the B2B client portal around roles, tasks and real decisions.</p>
         </header>
@@ -136,10 +149,9 @@
     </section>
 
     <!-- ROLES & USERS -->
-    <section class="section section-alt">
+    <section class="section section-alt" id="roles">
       <div class="container section-inner">
         <header class="section-header">
-          <p class="section-label">Roles &amp; user profiles</p>
           <h2>Who we designed for</h2>
           <p>Clarifying mental models before redefining flows.</p>
         </header>
@@ -180,8 +192,7 @@
     </section>
 
     <!-- PROCESS -->
-    <!-- PROCESS -->
-    <section class="section section-process">
+    <section class="section section-process" id="process">
       <div class="container section-inner">
         <header class="section-header">
           <h2>Process</h2>
@@ -259,7 +270,6 @@
             <ul class="case-bullets">
               <li>Simplified cards and tables.</li>
               <li>Sharper hierarchy in dashboard metrics.</li>
-              <li>Visual coherence with WEMALO WMS and Retoure24.</li>
             </ul>
           </article>
         </div>
@@ -268,7 +278,7 @@
 
 
     <!-- IA & ANALYSIS IMAGES -->
-    <section class="section section-alt">
+    <section class="section section-alt" id="analysis">
       <div class="container section-inner">
         <header class="section-header">
           <h2>Information architecture & current state</h2>
@@ -308,7 +318,7 @@
     </section>
 
     <!-- SOLUTION -->
-    <section class="section">
+    <section class="section" id="solution">
       <div class="container section-inner">
         <header class="section-header">
           <h2>Solution</h2>
@@ -345,7 +355,7 @@
     </section>
 
     <!-- BEFORE / AFTER -->
-    <section class="section section-alt">
+    <section class="section section-alt" id="before">
       <div class="container section-inner">
         <header class="section-header">
           <h2>Before & after</h2>
@@ -425,7 +435,7 @@
     </section>
 
     <!-- IMPACT -->
-    <section class="section">
+    <section class="section" id="impact">
       <div class="container section-inner case-grid-2">
         <article>
           <h2>Impact</h2>
@@ -435,9 +445,7 @@
           </p>
           <ul class="case-bullets">
             <li>~45% reduction in average information search time.</li>
-            <li>Role-differentiated views, eliminating permission ambiguity.</li>
             <li>Order creation flows reduced from 5 steps to 2.</li>
-            <li>Visual base consistent with other WEMALO ecosystem products.</li>
           </ul>
         </article>
 
@@ -458,7 +466,7 @@
     </section>
 
     <!-- NEXT STEPS -->
-    <section class="section section-alt">
+    <section class="section section-alt" id="next">
       <div class="container section-inner">
         <header class="section-header">
           <h2>Next steps</h2>
@@ -512,7 +520,7 @@
         <div class="more-projects-grid">
           <a href="wemalo-wms.html" class="more-project-card">
             <span class="more-project-kicker">Warehouse backbone</span>
-            <h3 class="more-project-title">WEMALO WMS — Interface Redesign</h3>
+            <h3 class="more-project-title">WEMALO WMS <br />Interface Redesign</h3>
             <p class="more-project-meta">
               Redesign of the internal WMS that powers inventory, inbound and outbound flows
               behind the dashboard and warehouse operations.
@@ -521,7 +529,7 @@
 
           <a href="retoure24.html" class="more-project-card">
             <span class="more-project-kicker">Returns Platform</span>
-            <h3 class="more-project-title">Retoure24 — Multi-Store Returns Management</h3>
+            <h3 class="more-project-title">Retoure24 <br /> Multi-Store Returns Management</h3>
             <p class="more-project-meta">
               SaaS platform that lets merchants manage multi-store returns, with dashboard, landing pages and email flows for end customers.
             </p>
@@ -529,7 +537,7 @@
 
           <a href="handheld.html" class="more-project-card">
             <span class="more-project-kicker">On-the-floor UX</span>
-            <h3 class="more-project-title">Handheld PWA — Mobile Warehouse Operations</h3>
+            <h3 class="more-project-title">Handheld PWA <br /> Mobile Warehouse Operations</h3>
             <p class="more-project-meta">
               Mobile app for operators that closes the loop between what users see in the
               dashboard and what happens in the warehouse.
@@ -541,11 +549,11 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer-minimal">
-    <div class="container">
-      <p>© <span id="year"></span> Ana Prieto. All rights reserved.</p>
-    </div>
-  </footer>
+    <footer class="site-footer-minimal">
+      <div class="container">
+        <p>© <span id="year"></span> Ana Prieto.</p>
+      </div>
+    </footer>
 
   <!-- BACK TO TOP -->
   <button class="back-to-top" aria-label="Back to top">
@@ -590,5 +598,21 @@
   </div>
 </div>
   <script src="js/main.js"></script>
+    <script>
+  // Scroll suave
+  document.querySelectorAll('.case-sections-nav a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      const offset = target.offsetTop - 90; // espacio del header
+      window.scrollTo({ top: offset, behavior: 'smooth' });
+
+      document.querySelectorAll('.case-sections-nav a')
+        .forEach(a => a.classList.remove('active'));
+
+      link.classList.add('active');
+    });
+  });
+</script>
 </body>
 </html>

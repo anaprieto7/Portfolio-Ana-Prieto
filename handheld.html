@@ -39,7 +39,7 @@
 
   <div class="container case-hero-layout">
     <div class="case-hero-main">
-      <p class="case-hero-kicker">Project</p>
+      <a href="index.html#case-studies" class="btn-ghost">Go to Projects</a>
       <h1 class="case-hero-title">
         Handheld PWA <br /> Mobile Warehouse Operations for WEMALO
       </h1>
@@ -86,10 +86,23 @@
   </div>
 </section>
 
-
+    <!-- CASE STUDY NAVIGATION -->
+<nav class="case-sections-nav">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#understanding">Understanding the problem</a></li>
+    <li><a href="#ideation">Ideation + IA</a></li>
+    <li><a href="#flows">Core Flows</a></li>
+    <li><a href="#wireframes">Wireframes & IA</a></li>
+    <li><a href="#design-system">Design System</a></li>
+    <li><a href="#showcase">Product Showcase</a></li>
+    <li><a href="#test">Testing</a></li>
+    <li><a href="#outcomes">Outcomes</a></li>
+  </ul>
+</nav>
 
     <!-- OVERVIEW / PROBLEM / SOLUTION -->
-    <section class="section">
+    <section class="section" id="overview">
       <div class="container section-inner case-grid-2">
         <div>
           <h2>Overview</h2>
@@ -124,7 +137,7 @@
     </section>
 
     <!-- UNDERSTANDING THE PROBLEM -->
-    <section class="section section-alt">
+    <section class="section section-alt" id="understanding">
       <div class="container section-inner">
         <header class="section-header">
           <h2>Understanding the problem</h2>
@@ -210,7 +223,7 @@
     </section>
 
     <!-- SOLUTION: IDEATION + IA -->
-    <section class="section">
+    <section class="section" id="ideation">
       <div class="container section-inner">
         <header class="section-header">
           <h2>Solution</h2>
@@ -282,7 +295,7 @@
     </section>
 
     <!-- FLOWS -->
-    <section class="section section-alt">
+    <section class="section section-alt" id="flows">
       <div class="container section-inner">
         <header class="section-header">
           <h2>Core flows</h2>
@@ -330,7 +343,7 @@
     </section>
 
     <!-- WIREFRAMES & MOBILE PRINCIPLES -->
-    <section class="section">
+    <section class="section" id="wireframes">
       <div class="container section-inner">
         <header class="section-header">
           <h2>Wireframes & mobile principles</h2>
@@ -384,7 +397,7 @@
     </section>
 
 <!-- VISUAL DESIGN SYSTEM -->
-<section class="section section-alt visual-system">
+<section class="section section-alt visual-system" id="design-system">
   <div class="container section-inner">
     <header class="section-header">
       <h2>Mobile visual design system</h2>
@@ -471,7 +484,7 @@
 
 
 <!-- PRODUCT IN ACTION -->
-<section class="section">
+<section class="section" id="showcase">
   <div class="container section-inner">
     <header class="section-header">
       <h2>Product in action</h2>
@@ -565,7 +578,7 @@
 
 
     <!-- TESTING -->
-    <section class="section section-alt">
+    <section class="section section-alt" id="test">
       <div class="container section-inner">
         <header class="section-header">
           <h2>Usability testing</h2>
@@ -632,7 +645,7 @@
     </section>
 
     <!-- OUTCOMES & LEARNINGS -->
-    <section class="section">
+    <section class="section" id="outcomes"> 
       <div class="container section-inner case-grid-2">
         <article>
           <h2>Outcomes</h2>
@@ -694,7 +707,7 @@
         <div class="more-projects-grid">
           <a href="wemalo-wms.html" class="more-project-card">
             <span class="more-project-kicker">Warehouse backbone</span>
-            <h3 class="more-project-title">WEMALO WMS — Interface Redesign</h3>
+            <h3 class="more-project-title">WEMALO WMS <br /> Interface Redesign</h3>
             <p class="more-project-meta">
               Redesign of the internal WMS that powers inventory, inbound and outbound flows
               behind the dashboard and warehouse operations.
@@ -703,7 +716,7 @@
 
           <a href="wemalo-dashboard.html" class="more-project-card">
             <span class="more-project-kicker">Client-facing</span>
-            <h3 class="more-project-title">WEMALO Dashboard — B2B Client Interface</h3>
+            <h3 class="more-project-title">WEMALO Dashboard <br /> B2B Client Interface</h3>
             <p class="more-project-meta">
               External portal for merchants and warehouse admins, restructured around roles
               and real-life tasks instead of internal tables.
@@ -712,7 +725,7 @@
 
           <a href="retoure24.html" class="more-project-card">
             <span class="more-project-kicker">Returns Platform</span>
-            <h3 class="more-project-title">Retoure24 — Multi-Store Returns Management</h3>
+            <h3 class="more-project-title">Retoure24 <br /> Multi-Store Returns Management</h3>
             <p class="more-project-meta">
               SaaS platform that lets merchants manage multi-store returns, with dashboard, landing pages abd email flows for end customers.
             </p>
@@ -723,11 +736,12 @@
 
 
   <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Ana Prieto. All rights reserved.</p>
-    </div>
-  </footer>
+    <footer class="site-footer-minimal">
+      <div class="container">
+        <p>© <span id="year"></span> Ana Prieto.</p>
+      </div>
+    </footer>
+    
   <button class="back-to-top" aria-label="Back to top">
     ↑
   </button>
@@ -771,5 +785,22 @@
   </div>
 </div>
   <script src="js/main.js"></script>
+
+  <script>
+  // Scroll suave
+  document.querySelectorAll('.case-sections-nav a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      const offset = target.offsetTop - 90; // espacio del header
+      window.scrollTo({ top: offset, behavior: 'smooth' });
+
+      document.querySelectorAll('.case-sections-nav a')
+        .forEach(a => a.classList.remove('active'));
+
+      link.classList.add('active');
+    });
+  });
+</script>
 </body>
 </html>
