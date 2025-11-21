@@ -26,7 +26,7 @@
 
   --shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.16);
 
-  --case-hero-fabric: none; /* example: url('../assets/case-hero-fabric.png') */
+   overflow-x: hidden; 
 }
 
 
