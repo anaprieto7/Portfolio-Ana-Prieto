@@ -1487,3 +1487,188 @@ section-label {
     border-radius: 2px;
   }
 }
+
+/* ============================= */
+/*     HERO PRODUCT SHOT         */
+/* ============================= */
+.case-hero-product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.case-hero-product img {
+  width: 260px;               /* tamaño equilibrado */
+  border-radius: 1.25rem;     /* matches your cards */
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(8px);
+}
+
+@media (max-width: 900px) {
+  .case-hero-layout {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .case-hero-product img {
+    width: 80%;
+    margin: 0 auto 1.5rem;
+  }
+}
+
+
+
+/* Layout específico para heroes con mockup lateral */
+.case-hero-layout--with-visual {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Columna derecha: apila mockup + meta */
+.case-hero-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.4rem;
+}
+
+/* Tarjeta mockup pequeña, limpia */
+.case-hero-visual {
+  margin: 0;
+  padding: 0.9rem 1.1rem;
+  max-width: 360px;
+  width: 100%;
+  border-radius: 18px;
+}
+
+.case-hero-visual img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Meta card compacta debajo del mockup */
+.case-hero-meta-card {
+  max-width: 360px;
+  width: 100%;
+  padding: 1.5rem 1.6rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(0, 0, 0, 0.09);
+}
+
+.case-hero-meta-card .case-hero-meta-block + .case-hero-meta-block {
+  margin-top: 1.1rem;
+}
+
+/* Ajustes de títulos/listas dentro de la meta */
+.case-hero-meta-card h3 {
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0 0 0.35rem;
+}
+
+.case-hero-meta-card p,
+.case-hero-meta-card li {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Responsive: en móvil todo va en columna */
+@media (max-width: 900px) {
+  .case-hero-layout--with-visual {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .case-hero-side {
+    align-items: flex-start;
+  }
+
+  .case-hero-visual,
+  .case-hero-meta-card {
+    max-width: 100%;
+  }
+}
+
+
+
+/* -------------------------------------- */
+/* HERO LIMPIO SIN MOCKUP                */
+/* -------------------------------------- */
+.clean-hero {
+  padding-bottom: 3rem;
+}
+
+/* -------------------------------------- */
+/* MOCKUP HERO - OPCIÓN 1 EDITORIAL      */
+/* -------------------------------------- */
+.case-hero-mockup {
+  padding: 1.5rem 0 3rem; /* poco arriba, más aire abajo */
+}
+
+.mockup-browser {
+  margin: 0 auto;
+  max-width: 680px;
+  border-radius: 22px;
+  overflow: hidden;
+  padding: 1.2rem;
+}
+
+.mockup-browser img {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+  max-width: 100%;
+}
+
+/* -------------------------------------- */
+/* PROJECT FACTS                          */
+/* -------------------------------------- */
+.case-facts {
+  padding: 2rem 0 3rem;
+}
+
+.case-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.6rem;
+}
+
+.case-fact-block {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  padding: 1.8rem 1.8rem 1.6rem;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.case-fact-block h3 {
+  margin-top: 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.case-fact-block ul,
+.case-fact-block p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .case-facts-grid {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .mockup-browser {
+    max-width: 100%;
+  }
+}
