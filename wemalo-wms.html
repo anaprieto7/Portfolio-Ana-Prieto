@@ -8,7 +8,7 @@
     name="description"
     content="Case study: visual redesign of WEMALO WMS, the warehouse management system of 4elements Group. UX/UI, visual design and design system adaptation by Ana Prieto."
   />
-  <link rel="stylesheet" href="css/styles.css" />
+ <link rel="stylesheet" href="css/case-study.css" />
 </head>
 <body>
       <div class="bg-orbs">
@@ -16,20 +16,14 @@
          <div class="cursor-glow"></div>
     </div>
   <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html#top" class="logo">AP</a>
-
-      <nav class="main-nav" aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">
-          ☰
-        </button>
-        <ul class="nav-list">
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#projects">Projects</a></li>
-          <li><a href="index.html#skills">Skills</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
+  <!-- NAV GLASS EDITORIAL -->
+  <header class="glass-nav">
+    <div class="nav-container">
+      <a href="index.html#top" class="brand">ANA PRIETO</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html#about">About</a>
+        <a href="index.html#case-syudies">Projects</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -44,9 +38,9 @@
 
       <div class="container case-hero-layout">
         <div class="case-hero-main">
-          <p class="case-hero-kicker">Case study · WMS · Enterprise UX</p>
+          <p class="case-hero-kicker">Project</p>
           <h1 class="case-hero-title">
-            WEMALO WMS — Interface Redesign for the Warehouse Management System
+            WEMALO WMS <br /> Interface Redesign for the Warehouse Management System
           </h1>
           <p class="case-hero-subtitle">
             Complete visual redesign of the WEMALO warehouse management system, modernizing a dense,
@@ -353,56 +347,97 @@
     </section>
 
     <!-- BEFORE / AFTER & IMPROVEMENTS -->
-    <section class="section section-alt">
-      <div class="container section-inner">
-        <header class="section-header">
-          <h2>Main improvements</h2>
-          <p>How the redesign transformed the visual layer without breaking the system.</p>
-        </header>
+<section class="section section-alt improvements-section">
+  <div class="container section-inner">
+    
+    <header class="section-header">
+      <h2>Main improvements</h2>
+      <p>How the redesign transformed the visual layer without breaking the system.</p>
+    </header>
 
-        <div class="before-after-grid">
-          <div class="before-after-pair">
-            <h3>Information density</h3>
-            <ul class="case-bullets">
-              <li><strong>Before:</strong> dense screens with little hierarchy.</li>
-              <li><strong>After:</strong> modular layouts separating navigation, filters and tables.</li>
-            </ul>
+    <!-- Improvement Cards -->
+    <div class="improvements-grid">
+      
+      <article class="improvement-card">
+        <h3 class="improvement-title">Information density</h3>
+        <div class="improvement-content">
+          <div class="improvement-block">
+            <span class="badge before">Before</span>
+            <p>Dense screens with very little hierarchy or separation.</p>
           </div>
-          <div class="before-after-pair">
-            <h3>Visual identity</h3>
-            <ul class="case-bullets">
-              <li><strong>Before:</strong> neutral colors without a clear brand presence.</li>
-              <li><strong>After:</strong> dark blue + orange palette aligned with WEMALO.</li>
-            </ul>
-          </div>
-          <div class="before-after-pair">
-            <h3>Filters & search</h3>
-            <ul class="case-bullets">
-              <li><strong>Before:</strong> scattered filters across screens.</li>
-              <li><strong>After:</strong> tiered filters with visible active badges and saved views.</li>
-            </ul>
-          </div>
-          <div class="before-after-pair">
-            <h3>Tables & actions</h3>
-            <ul class="case-bullets">
-              <li><strong>Before:</strong> hard-to-read tables with redundant actions.</li>
-              <li><strong>After:</strong> optimized typography, spacing and contextual toolbars.</li>
-            </ul>
+          <div class="improvement-block">
+            <span class="badge after">After</span>
+            <p>Modular layouts dividing navigation, filters and tables clearly.</p>
           </div>
         </div>
+      </article>
 
-        <div class="media-grid">
-          <figure class="media-card">
-            <img src="wemalo-wms/before.jpg" alt="Before redesign" />
-            <figcaption>Legacy interface: flat, dense, low hierarchy.</figcaption>
-          </figure>
-          <figure class="media-card">
-            <img src="wemalo-wms/after.jpg" alt="After redesign" />
-            <figcaption>New interface: modular, branded and more readable.</figcaption>
-          </figure>
+      <article class="improvement-card">
+        <h3 class="improvement-title">Visual identity</h3>
+        <div class="improvement-content">
+          <div class="improvement-block">
+            <span class="badge before">Before</span>
+            <p>Neutral color palette without strong brand presence.</p>
+          </div>
+          <div class="improvement-block">
+            <span class="badge after">After</span>
+            <p>Dark blue + orange palette aligned with WEMALO branding.</p>
+          </div>
         </div>
-      </div>
-    </section>
+      </article>
+
+      <article class="improvement-card">
+        <h3 class="improvement-title">Filters & search</h3>
+        <div class="improvement-content">
+          <div class="improvement-block">
+            <span class="badge before">Before</span>
+            <p>Filters scattered across screens, inconsistent placement.</p>
+          </div>
+          <div class="improvement-block">
+            <span class="badge after">After</span>
+            <p>Tiered filters with clear active badges and saved views.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="improvement-card">
+        <h3 class="improvement-title">Tables & actions</h3>
+        <div class="improvement-content">
+          <div class="improvement-block">
+            <span class="badge before">Before</span>
+            <p>Dense tables with redundant actions and poor readability.</p>
+          </div>
+          <div class="improvement-block">
+            <span class="badge after">After</span>
+            <p>Optimized spacing, typography and contextual toolbars.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Before/After Images -->
+    <div class="media-grid improvements-media">
+      <figure class="media-card">
+        <img src="wemalo-wms/before.jpg" alt="Before redesign" />
+        <figcaption>
+          <strong>Before</strong><br />
+          Legacy interface: flat, dense, low hierarchy.
+        </figcaption>
+      </figure>
+
+      <figure class="media-card">
+        <img src="wemalo-wms/after.jpg" alt="After redesign" />
+        <figcaption>
+          <strong>After</strong><br />
+          New interface: modular, branded and easier to digest.
+        </figcaption>
+      </figure>
+    </div>
+
+  </div>
+</section>
+
 
     <!-- GALLERY -->
     <section class="section">
@@ -629,6 +664,44 @@
     <button class="back-to-top" aria-label="Back to top">
     ↑
   </button>
+    <script>
+    // Back to top behaviour (compartido con index)
+    const backToTop = document.querySelector(".back-to-top");
+    if (backToTop) {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+          backToTop.classList.add("visible");
+        } else {
+          backToTop.classList.remove("visible");
+        }
+      });
+
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+  </script>
+  <div class="lightbox" id="lightbox">
+  <div class="lightbox__backdrop" data-lightbox-close></div>
+
+  <div class="lightbox__content">
+    <button
+      class="lightbox__close"
+      type="button"
+      aria-label="Close image viewer"
+      data-lightbox-close
+    >
+      ×
+    </button>
+
+    <div class="lightbox__media-wrap">
+      <img class="lightbox__img" alt="" />
+      <video class="lightbox__video" controls playsinline></video>
+    </div>
+
+    <p class="lightbox__caption"></p>
+  </div>
+</div>
   <script src="js/main.js"></script>
 </body>
 </html>

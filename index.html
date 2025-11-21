@@ -2,211 +2,237 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Ana Prieto – UX/UI Designer & Frontend</title>
+  <title>Ana Prieto – Product & UX Design</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Portfolio of Ana Prieto – UX/UI Designer and Frontend Developer focused on complex digital products, SaaS and data-heavy interfaces."
+    content="The product design work of Ana Prieto – UX/UI Designer & frontend–minded product builder focused on SaaS, dashboards and operational tools."
   />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/style-1.css" />
 </head>
 <body>
-    <div class="bg-orbs">
-         <div class="bg-orb-center"></div>
-         <div class="cursor-glow"></div>
-    </div>
-  <!-- HEADER / NAV -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="#top" class="logo">AP</a>
+  <div class="page">
 
-      <nav class="main-nav" aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">
-          ☰
-        </button>
-        <ul class="nav-list">
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <!-- HEADER MINIMAL -->
+<header class="glass-nav">
+  <div class="nav-container">
+    <a href="index.html#top" class="brand">ANA PRIETO</a>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#case-studies">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <main id="top">
-    <section class="hero" data-aurora="hero" aria-labelledby="hero-title">
-      <div class="container hero-inner">
-        <div class="hero-text">
-          <p class="hero-kicker">UX/UI Design</p>
-          <h1 id="hero-title">I design digital products that make complexity feel clear.</h1>
-          <p class="hero-subtitle">
-            I'm Ana Prieto, a UX/UI designer and frontend-minded product builder. 
-            I work on SaaS platforms, dashboards and operational tools where design, structure 
-            and technology have to work tightly together.
-          </p>
-          <div class="hero-actions">
-            <a href="#projects" class="btn primary">View projects</a>
-            <a href="#contact" class="btn secondary">Get in touch</a>
+    <main>
+
+      <!-- HERO EDITORIAL -->
+      <section class="hero-editorial" aria-labelledby="hero-title">
+        <div class="container hero-inner">
+          <p class="eyebrow">Product & UX Design</p>
+          <h1 id="hero-title">
+            The product design work<br />
+            of Ana Prieto.
+          </h1>
+        </div>
+      </section>
+
+      <!-- CASE STUDIES -->
+      <section id="case-studies" class="case-list" aria-label="Case studies">
+
+        <!-- CASE 01 -->
+        <article class="case-row">
+          <div class="container case-layout">
+            <div class="case-text">
+              <p class="case-eyebrow">Case study 01</p>
+              <h2 class="case-title">
+                Retoure24 <br /> Multi-store Returns Management
+              </h2>
+              <p class="case-meta">
+                2024–2025 · UX Research · IA · UI · Frontend
+              </p>
+              <p class="case-description">
+                SaaS platform that lets merchants manage returns from multiple
+                shops in one place, with dashboards, configuration and customer
+                flows.
+              </p>
+              <a href="retoure24.html" class="btn-ghost">View case study</a>
+            </div>
+
+            <figure class="case-media">
+              <img src="assets/retoure24/retoure24.png" alt="Retoure24 dashboard preview" />
+            </figure>
+          </div>
+        </article>
+
+        <!-- CASE 02 -->
+        <article class="case-row">
+          <div class="container case-layout">
+            <div class="case-text">
+              <p class="case-eyebrow">Case study 02</p>
+              <h2 class="case-title">
+                Handheld PWA <br />  Mobile Warehouse Operations
+              </h2>
+              <p class="case-meta">
+                2024 · UX Research · IA · UX/UI
+              </p>
+              <p class="case-description">
+                Progressive web app for warehouse operators to scan, book,
+                pick and relocate inventory directly from handheld devices,
+                respecting critical backend rules.
+              </p>
+              <a href="handheld.html" class="btn-ghost">View case study</a>
+            </div>
+
+            <figure class="case-media">
+              <img src="assets/handheld/hero-mockup.png" alt="Handheld PWA screens" />
+            </figure>
+          </div>
+        </article>
+
+        <!-- CASE 03 -->
+        <article class="case-row">
+          <div class="container case-layout">
+            <div class="case-text">
+              <p class="case-eyebrow">Case study 03</p>
+              <h2 class="case-title">
+                WEMALO Dashboard  <br /> B2B Client Portal
+              </h2>
+              <p class="case-meta">
+                2025 · UX/UI Design · Information Architecture
+              </p>
+              <p class="case-description">
+                Redesign of the client dashboard for merchants and warehouse
+                managers, with role-specific views for orders, inventory and
+                returns.
+              </p>
+              <a href="wemalo-dashboard.html" class="btn-ghost">View case study</a>
+            </div>
+
+            <figure class="case-media">
+              <img src="assets/wemalo-d/dashboard-.png" alt="WEMALO Dashboard overview" />
+            </figure>
+          </div>
+        </article>
+
+        <!-- CASE 04 -->
+        <article class="case-row">
+          <div class="container case-layout">
+            <div class="case-text">
+              <p class="case-eyebrow">Case study 04</p>
+              <h2 class="case-title">
+                WEMALO WMS  <br />  Warehouse Management System
+              </h2>
+              <p class="case-meta">
+                2023–2024 · UI Redesign · Design System
+              </p>
+              <p class="case-description">
+                Visual redesign of the core warehouse management system using
+                Cloudscape as a base, adapting it to WEMALO's brand and dense
+                operational screens.
+              </p>
+              <a href="wemalo-wms.html" class="btn-ghost">View case study</a>
+            </div>
+
+            <figure class="case-media">
+              <img src="assets/wemalo-wms/wemalo-wms.png" alt="WEMALO WMS interface preview" />
+            </figure>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="about-row">
+        <div class="container two-col">
+          <div class="about-label">
+            <p class="section-label">About</p>
+          </div>
+          <div class="about-text">
+            <p>
+              I’m a UX/UI designer and digital product generalist focused on complex,
+              data-heavy tools. I enjoy working where research, information architecture,
+              interface design and implementation connect.
+            </p>
+            <p>
+              Most of my recent work lives in the logistics and e-commerce space:
+              returns platforms, warehouse dashboards and handheld tools for operators.
+              I’m comfortable partnering with engineering and translating business
+              rules into clear flows and interfaces.
+            </p>
           </div>
         </div>
+      </section>
 
-        <div class="hero-image-wrapper">
-          <img
-            src="assets/profile.jpg"
-            alt="Portrait of Ana Prieto"
-            class="hero-image"
-          />
+
+      <!-- CONTACT -->
+      <section id="contact" class="contact-row">
+        <div class="container two-col">
+          <div class="contact-label">
+            <p class="section-label">Contact</p>
+          </div>
+          <div class="contact-content">
+            <h2 class="contact-title">Get in touch</h2>
+            <p>
+              Open to roles, collaborations or freelance projects related to
+              SaaS products, dashboards or operational tools.
+            </p>
+            <p class="contact-email">
+              <a href="mailto:hello@anaprieto.com">hello@anaprieto.com</a>
+            </p>
+            <div class="contact-links">
+              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+              <span>·</span>
+              <a href="#" target="_blank" rel="noreferrer">Behance</a>
+              <span>·</span>
+              <a href="#" target="_blank" rel="noreferrer">Dribbble</a>
+            </div>
+          </div>
         </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer-minimal">
+      <div class="container">
+        <p>© <span id="year"></span> Ana Prieto.</p>
       </div>
-    </section>
+    </footer>
+  </div>
 
-    <!-- ABOUT -->
-    <section id="about" class="section" data-aurora="about" aria-labelledby="about-title">
-      <div class="container section-inner two-columns">
-        <div>
-          <h2 id="about-title">About me</h2>
-          <p>
-            I'm Ana Prieto, a UX/UI designer and digital product generalist. 
-            I'm fascinated by how design, information architecture and technology 
-            come together to make complex systems usable and trustworthy.
-          </p>
-          <p>
-            Over the last years, I've been working mainly in the logistics and 
-            e-commerce tech space: returns management platforms, warehouse dashboards 
-            and handheld tools for operators. I like working where user flows, data and 
-            implementation meet.
-          </p>
-          <p>
-            I'm currently focusing on building experiences that can scale and evolve, 
-            including products that integrate AI while still feeling clear, efficient 
-            and human.
-          </p>
-        </div>
+  <script>
+    // simple year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script>
+  const header = document.querySelector(".glass-nav");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 10) header.classList.add("scrolled");
+    else header.classList.remove("scrolled");
+  });
+</script>
 
-        <div class="about-meta">
-          <h3>What I bring</h3>
-          <ul class="about-list">
-            <li>Strong mix of UX, UI and frontend awareness</li>
-            <li>Experience with complex, data-heavy interfaces</li>
-            <li>Structured thinking and developer-friendly handoff</li>
-          </ul>
 
-          <h3>Tools & stack</h3>
-          <ul class="tag-list">
-            <li>Figma</li>
-            <li>React</li>
-            <li>Next.js</li>
-            <li>HTML/CSS/JS</li>
-            <li>Chakra UI</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+<button class="back-to-top" aria-label="Back to top">
+  ↑
+</button>
 
-    <!-- PROJECTS -->
-    <section id="projects" data-aurora="projects" class="section" aria-labelledby="projects-title">
-      <div class="container section-inner">
-        <header class="section-header">
-          <h2 id="projects-title">Selected projects</h2>
-          <p>
-            A selection of product work where I combined UX, UI and in some cases 
-            frontend implementation.
-          </p>
-        </header>
+<script>
+  const backToTop = document.querySelector(".back-to-top");
 
-        <!-- JS injects cards here -->
-        <div id="projects-grid" class="projects-grid" aria-live="polite"></div>
-      </div>
-    </section>
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      backToTop.classList.add("visible");
+    } else {
+      backToTop.classList.remove("visible");
+    }
+  });
 
-    <!-- SKILLS -->
-    <section id="skills" class="section section-alt" data-aurora="skills" aria-labelledby="skills-title">
-      <div class="container section-inner">
-        <h2 id="skills-title">Skills</h2>
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
 
-        <div class="skills-grid">
-          <article class="skill-card">
-            <h3>UX & research</h3>
-            <ul>
-              <li>User flows & information architecture</li>
-              <li>Workshops & stakeholder alignment</li>
-              <li>Usability testing & iteration</li>
-            </ul>
-          </article>
-
-          <article class="skill-card">
-            <h3>UI & design systems</h3>
-            <ul>
-              <li>Component libraries & design systems</li>
-              <li>Responsive layouts, states & edge cases</li>
-              <li>Prototyping in Figma</li>
-            </ul>
-          </article>
-
-          <article class="skill-card">
-            <h3>Frontend & handoff</h3>
-            <ul>
-              <li>HTML, CSS, JavaScript</li>
-              <li>React, Next.js, UI libraries</li>
-              <li>Clean specs & dev-ready assets</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section" data-aurora="contact" aria-labelledby="contact-title">
-      <div class="container section-inner two-columns">
-        <div>
-          <h2 id="contact-title">Contact</h2>
-          <p>
-            Interested in talking about a role, a project or a collaboration? 
-            Feel free to reach out.
-          </p>
-          <p>
-            <strong>Email:</strong> 
-            <a href="mailto:your.email@domain.com">your.email@domain.com</a>
-          </p>
-          <p>
-            <strong>LinkedIn:</strong> 
-            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
-              linkedin.com/in/your-profile
-            </a>
-          </p>
-        </div>
-
-        <form class="contact-form" onsubmit="return false;">
-          <label>
-            Name
-            <input type="text" name="name" placeholder="Your name" required />
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" placeholder="Your email" required />
-          </label>
-          <label>
-            Message
-            <textarea name="message" rows="4" placeholder="How can I help?"></textarea>
-          </label>
-          <button type="submit" class="btn primary">Send message</button>
-          <p class="form-hint">
-            * This form is a frontend example. For real inquiries, please contact me via email.
-          </p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Ana Prieto. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
 </body>
 </html>

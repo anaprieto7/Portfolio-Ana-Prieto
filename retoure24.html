@@ -8,86 +8,75 @@
     name="description"
     content="Case study: Retoure24, a multi-store returns management platform. UX research, IA, UI design and frontend implementation by Ana Prieto."
   />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/case-study.css" />
 </head>
-<body>
-      <div class="bg-orbs">
-         <div class="bg-orb-center"></div>
-         <div class="cursor-glow"></div>
-    </div>
-  <!-- HEADER (igual que en index) -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html#top" class="logo">AP</a>
+<body class="case-page">
 
-      <nav class="main-nav" aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">
-          ☰
-        </button>
-        <ul class="nav-list">
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#projects">Projects</a></li>
-          <li><a href="index.html#skills">Skills</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <!-- HEADER (mismo estilo editorial que index) -->
+<header class="glass-nav">
+  <div class="nav-container">
+    <a href="index.html#top" class="brand">ANA PRIETO</a>
+    <nav class="nav">
+      <a href="index.html#about">About</a>
+      <a href="index.html#case-studies">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
   <main id="top">
     <!-- HERO DEL CASE STUDY -->
     <section
-  class="case-hero-banner"
-  style="--case-hero-bg: url('retoure24/hero/returns-hero.jpg')"
->
-  <div class="case-hero-overlay"></div>
+      class="case-hero-banner"
+      style="--case-hero-bg: url('retoure24/hero/returns-hero.jpg')"
+    >
+      <div class="case-hero-overlay"></div>
 
-  <div class="container case-hero-layout">
-    <div class="case-hero-main">
-      <p class="case-hero-kicker">Case study · SaaS · Returns</p>
-      <h1 class="case-hero-title">
-        Retoure24 — Multi-Store Returns Management
-      </h1>
-      <p class="case-hero-subtitle">
-        Retoure24 is a SaaS platform that lets e-commerce merchants manage returns from
-        multiple stores in a single panel. My role combined UX research, information
-        architecture, UI design and frontend development with React and Chakra UI.
-      </p>
+      <div class="container case-hero-layout">
+        <div class="case-hero-main">
+          <p class="case-hero-kicker">Project</p>
+          <h1 class="case-hero-title">
+            Retoure24 <br />Multi-Store Returns Management
+          </h1>
+          <p class="case-hero-subtitle">
+            Retoure24 is a SaaS platform that lets e-commerce merchants manage returns from
+            multiple stores in a single panel. My role combined UX research, information
+            architecture, UI design and frontend development with React and Chakra UI.
+          </p>
 
-      <div class="case-hero-tags">
-        <span>SaaS</span>
-        <span>Multi-tenant</span>
-        <span>Operational UX</span>
-      </div>
-    </div>
+          <div class="case-hero-tags">
+            <span>SaaS</span>
+            <span>Multi-tenant</span>
+            <span>Operational UX</span>
+          </div>
+        </div>
 
-    <aside class="case-hero-meta">
-      <div class="case-hero-meta-block">
-        <h3>Role</h3>
-        <ul>
-          <li>UX Research</li>
-          <li>Information Architecture</li>
-          <li>UI Design</li>
-          <li>Frontend (React + Chakra UI)</li>
-        </ul>
+        <aside class="case-hero-meta">
+          <div class="case-hero-meta-block">
+            <h3>Role</h3>
+            <ul>
+              <li>UX Research</li>
+              <li>Information Architecture</li>
+              <li>UI Design</li>
+              <li>Frontend (React + Chakra UI)</li>
+            </ul>
+          </div>
+          <div class="case-hero-meta-block">
+            <h3>Timeline</h3>
+            <p>10 months · 2023–2024</p>
+          </div>
+          <div class="case-hero-meta-block">
+            <h3>Stack</h3>
+            <ul>
+              <li>React · Next.js</li>
+              <li>Chakra UI</li>
+              <li>Recharts</li>
+              <li>react-i18next</li>
+            </ul>
+          </div>
+        </aside>
       </div>
-      <div class="case-hero-meta-block">
-        <h3>Timeline</h3>
-        <p>10 months · 2023–2024</p>
-      </div>
-      <div class="case-hero-meta-block">
-        <h3>Stack</h3>
-        <ul>
-          <li>React · Next.js</li>
-          <li>Chakra UI</li>
-          <li>Recharts</li>
-          <li>react-i18next</li>
-        </ul>
-      </div>
-    </aside>
-  </div>
-</section>
-
+    </section>
 
     <!-- OVERVIEW / PROBLEM / SOLUTION -->
     <section class="section">
@@ -230,7 +219,7 @@
             <h3>Key solution pillars</h3>
             <ul class="case-bullets">
               <li>
-                <p><strong>Multi-store dashboard with filters & reports</strong><br />
+                <p><strong>Multi-store dashboard with filters &amp; reports</strong><br />
                 Returns grouped by store, reason and status, with KPIs and exports.</p>
               </li>
               <li>
@@ -250,7 +239,7 @@
               I structured the platform around user intent and usage frequency:
             </p>
             <ul class="case-bullets">
-              <li><strong>Setup</strong> — stores, addresses, shippers, email & landing pages.</li>
+              <li><strong>Setup</strong> — stores, addresses, shippers, email &amp; landing pages.</li>
               <li><strong>Returns</strong> — list, detail and per-return actions.</li>
               <li><strong>Dashboard</strong> — metrics, filters and exports.</li>
             </ul>
@@ -264,28 +253,28 @@
           <h3>Core flows</h3>
           <div class="media-grid">
             <figure class="media-card">
-              <img src="retoure24/flows/general-flow.png" alt="General multi-store returns flow" />
+              <img src="assets/retoure24/flows/general-flow.png" alt="General multi-store returns flow" />
               <figcaption>
                 <strong>Flow 1 — Multi-store management</strong><br />
                 Global view of returns across stores, with filters and exports.
               </figcaption>
             </figure>
             <figure class="media-card">
-              <img src="retoure24/flows/flow-return-tracking.png" alt="Per-return tracking flow" />
+              <img src="assets/retoure24/flows/flow-return-tracking.png" alt="Per-return tracking flow" />
               <figcaption>
                 <strong>Flow 2 — Per-return traceability</strong><br />
                 Status timeline, notes and events for each return.
               </figcaption>
             </figure>
             <figure class="media-card">
-              <img src="retoure24/flows/flow-multistore-dashboard.png" alt="Multi-store dashboard flow" />
+              <img src="assets/retoure24/flows/flow-multistore-dashboard.png" alt="Multi-store dashboard flow" />
               <figcaption>
                 <strong>Flow 3 — Multi-store dashboard</strong><br />
                 KPIs and analytics filtered by store, status and reason.
               </figcaption>
             </figure>
             <figure class="media-card">
-              <img src="retoure24/flows/flow-landing-page.png" alt="Landing page configuration flow" />
+              <img src="assets/retoure24/flows/flow-landing-page.png" alt="Landing page configuration flow" />
               <figcaption>
                 <strong>Flow 4 — Landing page configuration</strong><br />
                 Activation, templates and fields per store.
@@ -295,33 +284,33 @@
         </article>
 
         <article>
-          <h3>Wireframes & IA</h3>
+          <h3>Wireframes &amp; IA</h3>
           <p>
             I started with low-to-mid fidelity wireframes to validate navigation, 
             grouping and edge cases across dashboard, returns and setup.
           </p>
           <div class="media-grid">
             <figure class="media-card">
-              <img src="retoure24/wireframes/Dashboard.jpg" alt="Dashboard wireframe" />
+              <img src="assets/retoure24/wireframes/Dashboard.jpg" alt="Dashboard wireframe" />
               <figcaption>Dashboard — KPIs and list for a single store.</figcaption>
             </figure>
             <figure class="media-card">
-              <img src="retoure24/wireframes/Returns-List.jpg" alt="Returns list wireframe" />
+              <img src="assets/retoure24/wireframes/Returns-List.jpg" alt="Returns list wireframe" />
               <figcaption>Returns list — filters, columns and bulk actions.</figcaption>
             </figure>
             <figure class="media-card">
-              <img src="retoure24/wireframes/Return-detail.jpg" alt="Return detail wireframe" />
+              <img src="assets/retoure24/wireframes/Return-detail.jpg" alt="Return detail wireframe" />
               <figcaption>Return detail — status, events, customer and items.</figcaption>
             </figure>
             <figure class="media-card">
-              <img src="retoure24/wireframes/Setup-Landing.jpg" alt="Landing page setup wireframe" />
+              <img src="assets/retoure24/wireframes/Setup-Landing.jpg" alt="Landing page setup wireframe" />
               <figcaption>Landing page setup — configuration per store.</figcaption>
             </figure>
           </div>
         </article>
 
         <article>
-          <h3>Visual design & design system</h3>
+          <h3>Visual design &amp; design system</h3>
           <p>
             I defined a small design system for Retoure24, including color tokens, 
             typography, elevation, states and key components reused across the app.
@@ -329,19 +318,19 @@
 
           <div class="media-grid">
             <figure class="media-card">
-              <img src="retoure24/tokens/color-light.png" alt="Light color palette" />
+              <img src="assets/retoure24/tokens/color-light.png" alt="Light color palette" />
               <figcaption>Color palette — light mode.</figcaption>
             </figure>
             <figure class="media-card">
-              <img src="retoure24/tokens/color-dark.png" alt="Dark color palette" />
+              <img src="assets/retoure24/tokens/color-dark.png" alt="Dark color palette" />
               <figcaption>Color palette — dark mode.</figcaption>
             </figure>
             <figure class="media-card">
-              <img src="retoure24/tokens/text-styles.png" alt="Typography scale" />
+              <img src="assets/retoure24/tokens/text-styles.png" alt="Typography scale" />
               <figcaption>Typography and scale.</figcaption>
             </figure>
             <figure class="media-card">
-              <img src="retoure24/components/buttons.png" alt="Buttons" />
+              <img src="assets/retoure24/components/buttons.png" alt="Buttons" />
               <figcaption>Buttons and interaction states.</figcaption>
             </figure>
           </div>
@@ -356,56 +345,60 @@
           <h2>Product showcase</h2>
           <p>How the final product looks and behaves in key scenarios.</p>
         </header>
+        <div class="showcase-list">
 
-        <div class="media-grid">
-          <figure class="media-card">
-            <img src="retoure24/product/dashboard-one-store.png" alt="Dashboard one store" />
-            <figcaption>
-              <strong>Dashboard — One store</strong><br />
-              KPI and returns view focused on a single store.
-            </figcaption>
-          </figure>
+  <figure class="showcase-item">
+    <img src="assets/retoure24/product/dashboard-one-store.png" alt="Dashboard one store" />
+    <figcaption>
+      <h3>Dashboard — One store</h3>
+      <p>KPI and returns view focused on a single store.</p>
+    </figcaption>
+  </figure>
 
-          <figure class="media-card">
-            <img src="retoure24/product/dashboard-multistore.png" alt="Dashboard multi-store" />
-            <figcaption>
-              <strong>Dashboard — Multi-store</strong><br />
-              Consolidated summary with filters by store, status and reason.
-            </figcaption>
-          </figure>
+  <figure class="showcase-item">
+    <img src="assets/retoure24/product/dashboard-multistore.png" alt="Dashboard multi-store" />
+    <figcaption>
+      <h3>Dashboard — Multi-store</h3>
+      <p>Consolidated summary with filters by store, status and reason.</p>
+    </figcaption>
+  </figure>
 
-          <figure class="media-card">
-            <img src="retoure24/product/demo-filters-poster.png" alt="Filters demo" />
-            <figcaption>
-              <strong>Applying filters</strong><br />
-              Status and date filters that update list and metrics in real time.
-            </figcaption>
-          </figure>
+  <figure class="showcase-item">
+    <video src="assets/retoure24/product/demo-filters.mp4" autoplay muted loop playsinline></video>
+    <figcaption>
+      <h3>Applying filters</h3>
+      <p>Status and date filters that update list and metrics in real time.</p>
+    </figcaption>
+  </figure>
 
-          <figure class="media-card">
-            <img src="retoure24/product/demo-export-reason-poster.png" alt="Export by reason" />
-            <figcaption>
-              <strong>Export by reason</strong><br />
-              Export CSV reports aggregated by return reason.
-            </figcaption>
-          </figure>
+  <figure class="showcase-item">
+    <video src="assets/retoure24/product/demo-export-reason.mp4" autoplay muted loop playsinline></video>
+    <figcaption>
+      <h3>Export by reason</h3>
+      <p>Export CSV reports aggregated by return reason.</p>
+    </figcaption>
+  </figure>
 
-          <figure class="media-card">
-            <img src="retoure24/product/demo-change-status-poster.png" alt="Change status" />
-            <figcaption>
-              <strong>Changing status</strong><br />
-              Update return status from “Approved” to “Rejected”.
-            </figcaption>
-          </figure>
+  <figure class="showcase-item">
+    <video src="assets/retoure24/product/demo-change-status.mp4" autoplay muted loop playsinline></video>
+    <figcaption>
+      <h3>Changing status</h3>
+      <p>Update return status from “Approved” to “Rejected”.</p>
+    </figcaption>
+  </figure>
 
-          <figure class="media-card">
-            <img src="retoure24/product/demo-setup-landing-page-poster.png" alt="Landing configuration" />
-            <figcaption>
-              <strong>Configuring a landing page</strong><br />
-              Setup of a branded returns landing page per store.
-            </figcaption>
-          </figure>
-        </div>
+  <figure class="showcase-item">
+    <video src="assets/retoure24/product/demo-setup-landing-page.mp4" autoplay muted loop playsinline></video>
+    <figcaption>
+      <h3>Configuring a landing page</h3>
+      <p>Setup of a branded returns landing page per store.</p>
+    </figcaption>
+  </figure>
+
+</div>
+
+      
+
       </div>
     </section>
 
@@ -533,45 +526,44 @@ export default function KpiCard()&#123;
     </section>
   </main>
 
-    <!-- MORE CASE STUDIES -->
-    <section class="section section-alt">
-      <div class="container section-inner">
-        <header class="section-header">
-          <h2>More case studies</h2>
-          <p>Other products I designed in the WEMALO ecosystem.</p>
-        </header>
+  <!-- MORE CASE STUDIES -->
+  <section class="section section-alt">
+    <div class="container section-inner">
+      <header class="section-header">
+        <h2>More case studies</h2>
+        <p>Other products I designed in the WEMALO ecosystem.</p>
+      </header>
 
-        <div class="more-projects-grid">
-          <a href="wemalo-wms.html" class="more-project-card">
-            <span class="more-project-kicker">Warehouse backbone</span>
-            <h3 class="more-project-title">WEMALO WMS — Interface Redesign</h3>
-            <p class="more-project-meta">
-              Redesign of the internal WMS that powers inventory, inbound and outbound flows
-              behind the dashboard and warehouse operations.
-            </p>
-          </a>
+      <div class="more-projects-grid">
+        <a href="wemalo-wms.html" class="more-project-card">
+          <span class="more-project-kicker">Warehouse backbone</span>
+          <h3 class="more-project-title">WEMALO WMS — Interface Redesign</h3>
+          <p class="more-project-meta">
+            Redesign of the internal WMS that powers inventory, inbound and outbound flows
+            behind the dashboard and warehouse operations.
+          </p>
+        </a>
 
-           <a href="handheld.html" class="more-project-card">
-            <span class="more-project-kicker">On-the-floor UX</span>
-            <h3 class="more-project-title">Handheld PWA — Mobile Warehouse Operations</h3>
-            <p class="more-project-meta">
-              Mobile app for operators that closes the loop between what users see in the
-              dashboard and what happens in the warehouse.
-            </p>
-          </a>
+        <a href="handheld.html" class="more-project-card">
+          <span class="more-project-kicker">On-the-floor UX</span>
+          <h3 class="more-project-title">Handheld PWA — Mobile Warehouse Operations</h3>
+          <p class="more-project-meta">
+            Mobile app for operators that closes the loop between what users see in the
+            dashboard and what happens in the warehouse.
+          </p>
+        </a>
 
-          <a href="wemalo-dashboard.html" class="more-project-card">
-            <span class="more-project-kicker">Client-facing</span>
-            <h3 class="more-project-title">WEMALO Dashboard — B2B Client Interface</h3>
-            <p class="more-project-meta">
-              External portal for merchants and warehouse admins, restructured around roles
-              and real-life tasks instead of internal tables.
-            </p>
-          </a>
-        </div>
+        <a href="wemalo-dashboard.html" class="more-project-card">
+          <span class="more-project-kicker">Client-facing</span>
+          <h3 class="more-project-title">WEMALO Dashboard — B2B Client Interface</h3>
+          <p class="more-project-meta">
+            External portal for merchants and warehouse admins, restructured around roles
+            and real-life tasks instead of internal tables.
+          </p>
+        </a>
       </div>
-    </section>
-
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -579,9 +571,51 @@ export default function KpiCard()&#123;
       <p>© <span id="year"></span> Ana Prieto. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- BACK TO TOP (mismo estilo glass que en index) -->
   <button class="back-to-top" aria-label="Back to top">
     ↑
   </button>
+
+  <script>
+    // Back to top behaviour (compartido con index)
+    const backToTop = document.querySelector(".back-to-top");
+    if (backToTop) {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+          backToTop.classList.add("visible");
+        } else {
+          backToTop.classList.remove("visible");
+        }
+      });
+
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+  </script>
+  <div class="lightbox" id="lightbox">
+  <div class="lightbox__backdrop" data-lightbox-close></div>
+
+  <div class="lightbox__content">
+    <button
+      class="lightbox__close"
+      type="button"
+      aria-label="Close image viewer"
+      data-lightbox-close
+    >
+      ×
+    </button>
+
+    <div class="lightbox__media-wrap">
+      <img class="lightbox__img" alt="" />
+      <video class="lightbox__video" controls playsinline></video>
+    </div>
+
+    <p class="lightbox__caption"></p>
+  </div>
+</div>
+
   <script src="js/main.js"></script>
 </body>
 </html>

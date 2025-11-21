@@ -8,45 +8,36 @@
     name="description"
     content="Case study: WEMALO Dashboard — redesign of the B2B client portal for merchants and warehouse managers within the WEMALO ecosystem."
   />
-  <link rel="stylesheet" href="css/styles.css" />
+  <!-- CSS editorial para case studies -->
+  <link rel="stylesheet" href="css/case-study.css" />
 </head>
-<body>
-      <div class="bg-orbs">
-         <div class="bg-orb-center"></div>
-         <div class="cursor-glow"></div>
-    </div>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html#top" class="logo">AP</a>
+<body id="top" class="page">
 
-      <nav class="main-nav" aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">
-          ☰
-        </button>
-        <ul class="nav-list">
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#projects">Projects</a></li>
-          <li><a href="index.html#skills">Skills</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
+  <!-- NAV GLASS EDITORIAL -->
+  <header class="glass-nav">
+    <div class="nav-container">
+      <a href="index.html#top" class="brand">ANA PRIETO</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html#about">About</a>
+        <a href="index.html#case-studies">Projects</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="top">
+  <main>
     <!-- HERO -->
     <section
       class="case-hero-banner"
-      style="--case-hero-bg: url('wemalo-dashboard/hero.jpg')"
+      style="--case-hero-bg: url('assets/wemalo-d/dashboard-.png')"
     >
       <div class="case-hero-overlay"></div>
 
       <div class="container case-hero-layout">
         <div class="case-hero-main">
-          <p class="case-hero-kicker">Case study · B2B · Dashboard</p>
+          <p class="case-hero-kicker">Project</p>
           <h1 class="case-hero-title">
-            WEMALO Dashboard — B2B Client Interface Redesign
+            WEMALO Dashboard <br /> B2B Client Interface Redesign
           </h1>
           <p class="case-hero-subtitle">
             WEMALO Dashboard is the B2B portal where warehouse clients manage their
@@ -189,7 +180,8 @@
     </section>
 
     <!-- PROCESS -->
-    <section class="section">
+    <!-- PROCESS -->
+    <section class="section section-process">
       <div class="container section-inner">
         <header class="section-header">
           <h2>Process</h2>
@@ -197,21 +189,31 @@
         </header>
 
         <div class="process-grid">
+          <!-- STEP 1 -->
           <article class="process-step">
-            <h3>1 · Analysis</h3>
+            <div class="process-step-header">
+              <span class="process-step-number">1</span>
+              <h3>Analysis</h3>
+            </div>
             <p>
-              Full audit of existing views and permissions. I mapped which data and actions each
-              role actually used day to day, and where they struggled to find information.
+              Full audit of existing views and permissions. I mapped which data and
+              actions each role actually used day to day, and where they struggled to
+              find information.
             </p>
             <p class="case-note">
               Output: roles/permissions matrix, list of redundant screens and critical flows.
             </p>
           </article>
 
+          <!-- STEP 2 -->
           <article class="process-step">
-            <h3>2 · Information architecture</h3>
+            <div class="process-step-header">
+              <span class="process-step-number">2</span>
+              <h3>Information architecture</h3>
+            </div>
             <p>
-              I reorganized the IA around tasks instead of database entities. New main navigation:
+              I reorganized the IA around tasks instead of database entities.
+              The new main navigation is structured around how people actually work:
             </p>
             <ul class="case-bullets">
               <li>Dashboard</li>
@@ -226,10 +228,15 @@
             </p>
           </article>
 
+          <!-- STEP 3 -->
           <article class="process-step">
-            <h3>3 · Interaction design</h3>
+            <div class="process-step-header">
+              <span class="process-step-number">3</span>
+              <h3>Interaction design</h3>
+            </div>
             <p>
-              I redesigned core flows (order creation, stock review, returns) with reusable patterns:
+              I redesigned core flows (order creation, stock review, returns) with
+              reusable patterns that reduce cognitive load:
             </p>
             <ul class="case-bullets">
               <li>Clear primary vs secondary actions.</li>
@@ -238,11 +245,16 @@
             </ul>
           </article>
 
+          <!-- STEP 4 -->
           <article class="process-step">
-            <h3>4 · UI design</h3>
+            <div class="process-step-header">
+              <span class="process-step-number">4</span>
+              <h3>UI design</h3>
+            </div>
             <p>
-              I applied a Cloudscape-inspired UI with modular layouts, clear typography and
-              dark-mode support, using the Vuexy template as a technical base for implementation.
+              I applied a Cloudscape-inspired UI with modular layouts, clear typography
+              and dark-mode support, using the Vuexy template as a technical base for
+              implementation.
             </p>
             <ul class="case-bullets">
               <li>Simplified cards and tables.</li>
@@ -254,6 +266,7 @@
       </div>
     </section>
 
+
     <!-- IA & ANALYSIS IMAGES -->
     <section class="section section-alt">
       <div class="container section-inner">
@@ -264,40 +277,33 @@
 
         <div class="media-grid">
           <figure class="media-card">
-            <img src="wemalo-d/mindmap-admin.png" alt="Current IA – Admin panel" />
+            <img src="assets/wemalo-d/ai-propouse.png" alt="Current IA – Admin panel" />
             <figcaption>
               <strong>Current IA — Admin panel</strong><br />
               Mindmap of existing navigation, modules and redundancies.
             </figcaption>
           </figure>
           <figure class="media-card">
-            <img src="wemalo-dashboard/process-1.jpg" alt="Process sketch 1" />
+            <img src="assets/wemalo-d/mindmap-admin.png" alt="mindmap-admin" />
             <figcaption>
-              Early exploration of IA options and role-based grouping.
+              Mind map Admin.
             </figcaption>
           </figure>
           <figure class="media-card">
-            <img src="wemalo-dashboard/process-2.jpg" alt="Process sketch 2" />
+            <img src="assets/wemalo-d/mindmap-client.png" alt="mindmap-client" />
             <figcaption>
-              Clustering screens by tasks instead of technical modules.
+              Mind map Client
             </figcaption>
           </figure>
           <figure class="media-card">
-            <img src="wemalo-dashboard/process-3.jpg" alt="Process sketch 3" />
+            <img src="assets/wemalo-d/role-based -navigation.png" alt="Role based navigation" />
             <figcaption>
-              New navigation proposal aligned with user roles.
+              relationships between roles. 
             </figcaption>
           </figure>
         </div>
 
-        <!-- Opcional: embed de Figma (puedes dejarlo o quitarlo) -->
-        <div class="figma-embed-wrapper">
-          <iframe
-            title="WEMALO Dashboard – IA"
-            src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/EXAMPLE_WEMALO_DASHBOARD"
-            allowfullscreen
-          ></iframe>
-        </div>
+
       </div>
     </section>
 
@@ -348,14 +354,14 @@
 
         <div class="media-grid">
           <figure class="media-card">
-            <img src="wemalo-dashboard/before.jpg" alt="Before dashboard redesign" />
+            <img src="assets/wemalo-d/dashboard-before.png" alt="Before dashboard redesign" />
             <figcaption>
               <strong>Before</strong><br />
               Generic dashboard without clear priorities or role differentiation.
             </figcaption>
           </figure>
           <figure class="media-card">
-            <img src="wemalo-dashboard/after.jpg" alt="After dashboard redesign" />
+            <img src="assets/wemalo-d/Dashboard-after.png" alt="After dashboard redesign" />
             <figcaption>
               <strong>After</strong><br />
               Clean layout, KPIs and modules tailored to each user type.
@@ -365,27 +371,56 @@
 
         <div class="media-grid" style="margin-top: 1.6rem;">
           <figure class="media-card">
-            <img src="wemalo-dashboard/screen-dashboard.jpg" alt="New dashboard screen" />
-            <figcaption>
-              <strong>New dashboard</strong><br />
-              KPIs, alerts and quick access to main flows.
-            </figcaption>
-          </figure>
-          <figure class="media-card">
-            <img src="wemalo-dashboard/screen-orders.jpg" alt="Orders screen" />
+            <img src="assets/wemalo-d/orders-screen.png" alt="Orders screen" />
             <figcaption>
               <strong>Orders</strong><br />
               Tables structured by decision priority and status.
             </figcaption>
           </figure>
           <figure class="media-card">
-            <img src="wemalo-dashboard/screen-inventory.jpg" alt="Inventory screen" />
+            <img src="assets/wemalo-d/inventory-list.png" alt="Inventory List" />
             <figcaption>
-              <strong>Inventory</strong><br />
+              <strong>Inventory List</strong><br />
               Stock views aligned with what merchants and admins care about most.
             </figcaption>
           </figure>
+          <figure class="media-card">
+            <img src="assets/wemalo-d/inventory-insight.png" alt="Inventory Insight" />
+            <figcaption>
+              <strong>Inventory Insight</strong><br />
+              Insights of stock health and actions needed.
+            </figcaption>
+          </figure>
         </div>
+      </div>
+      <div class="container section-inner"  style="margin-top: 5.4rem;">
+        <header class="section-header">
+          <h2>Interactive prototype</h2>
+          <p>Explore the redesigned WEMALO Dashboard prototype below.</p>
+        </header>
+        <div class="figma-embed-wrapper">
+          <div class="browser-mockup">
+            <div class="browser-mockup-chrome">
+              <div class="browser-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="browser-address">
+                dashboard-wemalo.netlify.app/starter-kit/…
+              </div>
+            </div>
+
+            <div class="browser-mockup-body">
+              <iframe
+                title="WEMALO Dashboard – IA"
+                src="https://dashboard-wemalo.netlify.app/starter-kit/ltr/vertical-menu-template-semi-dark/ordersadmin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -462,8 +497,8 @@
         </div>
       </div>
     </section>
-  </main>
-      <!-- MORE CASE STUDIES -->
+
+    <!-- MORE CASE STUDIES -->
     <section class="section section-alt">
       <div class="container section-inner">
         <header class="section-header">
@@ -488,7 +523,7 @@
             <span class="more-project-kicker">Returns Platform</span>
             <h3 class="more-project-title">Retoure24 — Multi-Store Returns Management</h3>
             <p class="more-project-meta">
-              SaaS platform that lets merchants manage multi-store returns, with dashboard, landing pages abd email flows for end customers.
+              SaaS platform that lets merchants manage multi-store returns, with dashboard, landing pages and email flows for end customers.
             </p>
           </a>
 
@@ -503,16 +538,57 @@
         </div>
       </div>
     </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
+  <footer class="site-footer-minimal">
+    <div class="container">
       <p>© <span id="year"></span> Ana Prieto. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- BACK TO TOP -->
   <button class="back-to-top" aria-label="Back to top">
     ↑
   </button>
+<script>
+  const backToTop = document.querySelector(".back-to-top");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      backToTop.classList.add("visible");
+    } else {
+      backToTop.classList.remove("visible");
+    }
+  });
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+
+  <div class="lightbox" id="lightbox">
+  <div class="lightbox__backdrop" data-lightbox-close></div>
+
+  <div class="lightbox__content">
+    <button
+      class="lightbox__close"
+      type="button"
+      aria-label="Close image viewer"
+      data-lightbox-close
+    >
+      ×
+    </button>
+
+    <div class="lightbox__media-wrap">
+      <img class="lightbox__img" alt="" />
+      <video class="lightbox__video" controls playsinline></video>
+    </div>
+
+    <p class="lightbox__caption"></p>
+  </div>
+</div>
   <script src="js/main.js"></script>
 </body>
 </html>

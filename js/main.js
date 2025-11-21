@@ -86,9 +86,7 @@ if (projectsGrid) {
 
     card.innerHTML = `
       <div class="project-hero-content">
-        <div class="project-hero-kicker">
-          ${project.client || "Client work"}
-        </div>
+        
         <h3 class="project-hero-title">${project.title}</h3>
         <div class="project-hero-meta">
           ${project.year} · ${project.role}
@@ -242,3 +240,67 @@ if (cursorGlow) {
   // iniciar animación
   requestAnimationFrame(updateGlowPosition);
 }
+
+
+
+// =======================
+//  LIGHTBOX PARA MEDIA
+// =======================
+
+(function () {
+  const lightbox = document.getElementById("lightbox");
+  if (!lightbox) return;
+
+  const imgEl = lightbox.querySelector(".lightbox__img");
+  const videoEl = lightbox.querySelector(".lightbox__video");
+  const captionEl = lightbox.querySelector(".lightbox__caption");
+
+  function openLightboxFromElement(el) {
+    const isVideo = el.tagName.toLowerCase() === "video" || el.src.endsWith(".mp4");
+    const src = el.getAttribute("src");
+    const alt = el.getAttribute("alt") || "";
+
+    if (isVideo) {
+      imgEl.style.display = "none";
+      videoEl.style.display = "block";
+      videoEl.src = src;
+      videoEl.currentTime = 0;
+      videoEl.play().catch(() => {});
+    } else {
+      videoEl.pause();
+      videoEl.style.display = "none";
+      videoEl.removeAttribute("src");
+      imgEl.style.display = "block";
+      imgEl.src = src;
+      imgEl.alt = alt;
+    }
+
+    captionEl.textContent = alt;
+    lightbox.classList.add("open");
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    // Pausar vídeo si estaba abierto
+    videoEl.pause();
+  }
+
+  // Click en imágenes y vídeos dentro de media-card
+  document.querySelectorAll(".media-card img, .media-card video").forEach((el) => {
+    el.addEventListener("click", () => openLightboxFromElement(el));
+  });
+
+  // Cerrar por backdrop o botón
+  lightbox.addEventListener("click", (evt) => {
+    if (evt.target.hasAttribute("data-lightbox-close") || evt.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  // Cerrar con ESC
+  document.addEventListener("keydown", (evt) => {
+    if (evt.key === "Escape" && lightbox.classList.contains("open")) {
+      closeLightbox();
+    }
+  });
+})();
