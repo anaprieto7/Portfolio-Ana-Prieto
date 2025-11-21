@@ -8,6 +8,7 @@
   --max-width: 1040px;
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
     "Segoe UI", sans-serif;
+  overflow-x: hidden; /* evita scroll horizontal indeseado */
 }
 
 /* RESET SUAVE */
@@ -656,7 +657,6 @@ img {
 /* === ABOUT: 3 COLUMN GRID === */
 
 .about-layout-3 {
-  width: 100vh;
   display: grid;
   grid-template-columns: minmax(0, 0.35fr) minmax(0, 1.1fr) minmax(0, 0.9fr);
   column-gap: 3rem;
