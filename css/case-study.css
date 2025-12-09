@@ -97,11 +97,7 @@ h4 {
   letter-spacing: -0.02em;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
+
 
 section {
   scroll-margin-top: 90px;
@@ -118,6 +114,16 @@ section {
   margin: 0 auto;
   padding: 0 1.5rem;
 }
+
+/* Solo listas sin bullets en navegación u otros bloques específicos */
+.nav,
+.case-sections-nav ul,
+.more-projects-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 
 /* =========================
    GLASS NAV – CASE STUDIES
@@ -928,7 +934,7 @@ section-label {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 /* Card de mockup tipo glass / product shot */
@@ -1531,7 +1537,7 @@ section-label {
 .case-hero-side {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 1.4rem;
 }
 
@@ -1546,7 +1552,6 @@ section-label {
 
 .case-hero-visual img {
   width: 100%;
-  display: block;
   border-radius: 12px;
 }
 
@@ -1576,6 +1581,7 @@ section-label {
 .case-hero-meta-card li {
   font-size: 0.9rem;
   line-height: 1.5;
+  align-content: right;
 }
 
 /* Responsive: en móvil todo va en columna */
@@ -1585,8 +1591,8 @@ section-label {
     gap: 1.8rem;
   }
 
-  .case-hero-side {
-    align-items: flex-start;
+   .case-hero-main {
+    text-align: left;  /* solo el copy grande */
   }
 
   .case-hero-visual,
@@ -1709,3 +1715,57 @@ section-label {
 /* =========================
    CASE STUDY CONTENT BLOCKS
    ========================= */
+
+
+  .case-hero-meta-block h3 {
+    margin-top: 0;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  .case-hero-meta-block p {
+    font-size: 0. ninerem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+   /* Bullets correctos y alineados */
+.case-hero-meta-block ul,
+.case-bullets {
+  list-style: disc outside;     /* punto + texto en la misma línea */
+  padding-left: 1.1rem;         /* sangría para el marcador */
+  margin: 0;
+}
+
+/* Asegura el comportamiento de item de lista */
+.case-hero-meta-block li,
+.case-bullets li {
+  display: list-item;
+  text-indent: 0;               /* evita que el texto se meta debajo del punto */
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* En mobile, evita centrados accidentales en la tarjeta meta */
+@media (max-width: 960px) {
+  .case-hero-meta { text-align: left; }
+}
+
+
+/* === Fix bullets meta card hero === */
+.case-hero-meta-block ul {
+  list-style-type: disc;
+  list-style-position: inside; /* punto pegado al texto */
+  padding-left: 0;             /* ya no hace falta sangría extra */
+  margin: 0;
+  text-align: left;
+}
+
+.case-hero-meta-block li {
+  display: list-item;
+  line-height: 1.6;
+  text-indent: 0;   
+  text-align: left;           /* por si algún reset lo tocó */
+}
