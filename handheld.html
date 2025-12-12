@@ -31,9 +31,6 @@
 <!-- HERO -->
 <section
   class="case-hero-banner warehouse-hero"
-  style="
-    --case-hero-fabric: url('assets/handheld/warehouse-clean.jpg');
-  "
 >
   <div class="case-hero-overlay"></div>
 
@@ -85,13 +82,11 @@
     </div>
   </div>
 </section>
-<section class="case-hero-mockup">
-  <div class="container">
-    <figure class="mockup-browser">
-      <img src="assets/handheld/hero-mockup.png" alt="Handheld" />
-    </figure>
-  </div>
+<section class="hero-full-image">
+  <img src="assets/handheld/Handheld-img.png" alt="Handheld PWA in real warehouse" />
 </section>
+
+  <!-- CASE STUDY CONTENT -->
 
     <!-- CASE STUDY NAVIGATION -->
 <nav class="case-sections-nav">
@@ -102,6 +97,7 @@
     <li><a href="#flows">Core Flows</a></li>
     <li><a href="#wireframes">Wireframes & IA</a></li>
     <li><a href="#design-system">Design System</a></li>
+    <li><a href="#hifi-flows">Hi-fi flows & UI states</a></li>
     <li><a href="#showcase">Product Showcase</a></li>
     <li><a href="#test">Testing</a></li>
     <li><a href="#outcomes">Outcomes</a></li>
@@ -188,44 +184,331 @@
                 <footer>Leif · Admin</footer>
               </blockquote>
             </div>
-
-            <h4>Key insights</h4>
-            <ul class="case-bullets">
-              <li>Operators trust visual and sound cues more than long text.</li>
-              <li>Immediate confirmation reduces cognitive load and errors.</li>
-              <li>The flow should guide: scan, confirm, continue — not ask users to interpret rules.</li>
-            </ul>
           </article>
         </div>
 
         <article>
-          <h3>Problem clusters & design challenge</h3>
-          <ul class="case-bullets">
-            <li>Fragmented tasks across multiple screens and redundant steps.</li>
-            <li>Frequent location errors from incorrect scanning sequences.</li>
-            <li>Physical constraints: desktop dependency and lack of mobility.</li>
-          </ul>
+             <figure class="media-card">
+              <img src="assets/handheld/context/Synerlogicsjpg.jpg" alt="Desktop-only warehouse workflow before Handheld" />
+              <figcaption>
+                Desktop-only workflows forced operators to move back with goods and forth between fixed stations.
+              </figcaption>
+            </figure>
+          </article>
 
-          <p class="case-note">
-            Design challenge: <strong>design a smooth mobile experience that respects WEMALO’s critical rules
-            (like “scan location before product”) and optimizes daily operations without changing the backend.</strong>
+        <!-- RESEARCH FINDINGS & DESIGN CHALLENGE -->
+        <div class="section-divider"></div>
+        <div class="section-subheader">
+          <h2>Research findings & design challenge</h2>
+          <p>
+            Early research revealed key inefficiencies and error sources in daily warehouse operations,
+            shaping Handheld PWA’s design direction.
           </p>
+        </div>
 
-          <div class="case-pill-row">
-            <div class="case-pill">
-              <span class="case-pill-label">Critical</span>
-              <span class="case-pill-value">Desktop UI, not mobile</span>
+        <div class="case-grid-2">
+          <article class="section-insights">
+              <h3>Key Insights</h3>
+              <p class="insights-intro">
+                Early field research and shadowing sessions revealed structural inefficiencies
+                in daily warehouse operations — directly shaping Handheld PWA’s design direction.
+              </p>
+
+              <ul class="insights-list">
+                <li><strong>+4 km/day walked</strong> due to constant back-and-forth between aisles and desktop stations.</li>
+                <li><strong>70% of booking errors</strong> were caused by manual transcription and memory-dependent workflows.</li>
+                <li><strong>Temporary workers required 2× more supervision</strong> during their first week due to unclear feedback loops.</li>
+                <li><strong>Critical backend rules</strong> (e.g., “scan location before product”) were invisible in the UI, leading to repeated mistakes.</li>
+                <li><strong>Operators trust visual + audio cues</strong> more than written instructions, especially under time pressure.</li>
+              </ul>
+          </article>
+
+          <article>
+            <h3>Problem clusters & design challenge</h3>
+            <ul class="case-bullets">
+              <li>Fragmented tasks across multiple screens and redundant steps.</li>
+              <li>Frequent location errors from incorrect scanning sequences.</li>
+              <li>Physical constraints: desktop dependency and lack of mobility.</li>
+            </ul>
+
+            <p class="case-note">
+              Design challenge: <strong>design a smooth mobile experience that respects WEMALO’s critical rules
+              (like “scan location before product”) and optimizes daily operations without changing the backend.</strong>
+            </p>
+
+            <div class="case-pill-row">
+              <div class="case-pill">
+                <span class="case-pill-label">Critical</span>
+                <span class="case-pill-value">Desktop UI, not mobile</span>
+              </div>
+              <div class="case-pill">
+                <span class="case-pill-label">Main need</span>
+                <span class="case-pill-value">Tactile, in-motion experience</span>
+              </div>
+              <div class="case-pill">
+                <span class="case-pill-label">Key restriction</span>
+                <span class="case-pill-value">Existing backend logic</span>
+              </div>
             </div>
-            <div class="case-pill">
-              <span class="case-pill-label">Main need</span>
-              <span class="case-pill-value">Tactile, in-motion experience</span>
+          </article>
+        </div>
+        <section class="section transformation-diagram">
+              <div class="container section-inner">
+
+                <h3>Workflow Transformation</h3>
+                <p class="diagram-intro">
+                  The redesign shifted warehouse operations from a stationary, memory-driven model
+                  to a guided, scan-first mobile workflow.
+                </p>
+
+                <div class="diagram-flow">
+                  <span class="diagram-step">Desktop-only</span>
+                  <span class="diagram-arrow">→</span>
+                  <span class="diagram-step">Hybrid (Desktop + Handheld)</span>
+                  <span class="diagram-arrow">→</span>
+                  <span class="diagram-step highlight">Scan-first workflow</span>
+                </div>
+
+              </div>
+            </section>
+      </div>
+    </section>
+
+</section>
+    <!-- USER PERSONAS -->
+
+<section class="section" id="personas">
+  <div class="container section-inner">
+    <header class="section-header">
+      <h2>User personas</h2>
+      <p class="persona-section-intro">
+        Three core personas shaped the Handheld PWA: a day-to-day operator on the floor,
+        the supervisor responsible for stability, and a temporary worker who stress-tests
+        usability and onboarding.
+      </p>
+    </header>
+
+    <div class="persona-carousel">
+      <button class="persona-arrow persona-arrow--left" type="button" aria-label="Previous persona">
+        ←
+      </button>
+
+      <div class="persona-track">
+         <!-- PERSONA 1 · JONAS -->
+            <article class="persona-card">
+              <div class="persona-header">
+                <div class="persona-main">
+                  <h3 class="persona-name">Jonas Müller</h3>
+                  <p class="persona-role">Warehouse Operator · Picking / Packing / Relocation</p>
+                  <p class="persona-meta">Age 29 · 3+ years in warehouse operations · Tech comfort: medium</p>
+                </div>
+                <span class="persona-tag">Core user</span>
+              </div>
+
+              <div class="persona-body">
+                <div>
+                  <p class="persona-row-label">Context</p>
+                  <p class="persona-summary">
+                    Jonas spends most of his day walking between aisles and fixed desktop stations.
+                    He repeats similar tasks at high speed and relies heavily on memory and manual
+                    data entry in the WMS.
+                  </p>
+                </div>
+
+                <div class="persona-columns">
+                  <div class="persona-list">
+                    <p class="persona-list-title">Goals</p>
+                    <ul>
+                      <li>Complete tasks quickly without walking back to the desktop.</li>
+                      <li>Confirm actions at the shelf with a simple scan.</li>
+                      <li>Reduce picking and booking mistakes caused by memory.</li>
+                    </ul>
+                  </div>
+
+                  <div class="persona-list">
+                    <p class="persona-list-title">Pain points</p>
+                    <ul>
+                      <li>Too much back-and-forth between aisles and fixed stations.</li>
+                      <li>Rework when inconsistencies appear in the system.</li>
+                      <li>Dense desktop UI not designed for quick, in-motion work.</li>
+                    </ul>
+                  </div>
+
+                  <div class="persona-list">
+                    <p class="persona-list-title">Needs from Handheld</p>
+                    <ul>
+                      <li>Guided “scan → confirm → continue” flows.</li>
+                      <li>Immediate green/red feedback per scan.</li>
+                      <li>Minimal manual typing and fewer screens.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="persona-flags">
+                  <span class="persona-flag">💪 Physical, fast pace</span>
+                  <span class="persona-flag">🎯 Error-sensitive tasks</span>
+                  <span class="persona-flag">📱 Scanner-first mindset</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PERSONA 2 · SABINE -->
+            <article class="persona-card">
+              <div class="persona-header">
+                <div class="persona-main">
+                  <h3 class="persona-name">Sabine Richter</h3>
+                  <p class="persona-role">Warehouse Supervisor</p>
+                  <p class="persona-meta">Age 41 · 12 years in logistics · Tech comfort: medium–high</p>
+                </div>
+                <span class="persona-tag">Supervisor</span>
+              </div>
+
+              <div class="persona-body">
+                <div>
+                  <p class="persona-row-label">Context</p>
+                  <p class="persona-summary">
+                    Sabine coordinates shifts, resolves exceptions and keeps throughput stable.
+                    A large part of her day is spent investigating issues that originate in
+                    incorrect or incomplete data entered by operators.
+                  </p>
+                </div>
+
+                <div class="persona-columns">
+                  <div class="persona-list">
+                    <p class="persona-list-title">Goals</p>
+                    <ul>
+                      <li>Reduce operational errors before they reach her desk.</li>
+                      <li>Ensure everyone follows the same process.</li>
+                      <li>Maintain a reliable audit trail of every movement.</li>
+                    </ul>
+                  </div>
+
+                  <div class="persona-list">
+                    <p class="persona-list-title">Pain points</p>
+                    <ul>
+                      <li>Frequent interruptions from operators unsure about next steps.</li>
+                      <li>Slow manual investigation of error cases in the WMS.</li>
+                      <li>Limited real-time visibility of task progress.</li>
+                    </ul>
+                  </div>
+
+                  <div class="persona-list">
+                    <p class="persona-list-title">Needs from Handheld</p>
+                    <ul>
+                      <li>Flows that prevent incorrect sequences by design.</li>
+                      <li>Automatic logging of each scan and status change.</li>
+                      <li>Standardised behaviour across all operators.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="persona-flags">
+                  <span class="persona-flag">🧩 Coordinates the team</span>
+                  <span class="persona-flag">📊 Cares about traceability</span>
+                  <span class="persona-flag">⏱ Time-pressure environment</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PERSONA 3 · AHMED -->
+            <article class="persona-card">
+              <div class="persona-header">
+                <div class="persona-main">
+                  <h3 class="persona-name">Ahmed El-Khalil</h3>
+                  <p class="persona-role">Temporary Worker · Seasonal Operator</p>
+                  <p class="persona-meta">Age 23 · 0–3 months in role · Tech comfort: low–medium</p>
+                </div>
+                <span class="persona-tag">Onboarding</span>
+              </div>
+
+              <div class="persona-body">
+                <div>
+                  <p class="persona-row-label">Context</p>
+                  <p class="persona-summary">
+                    Ahmed joins during peak seasons. He doesn’t know warehouse codes or WMS rules
+                    and finds traditional desktop screens intimidating. Training time is limited,
+                    but he needs to be productive within a few days.
+                  </p>
+                </div>
+
+                <div class="persona-columns">
+                  <div class="persona-list">
+                    <p class="persona-list-title">Goals</p>
+                    <ul>
+                      <li>Perform tasks correctly without constant supervision.</li>
+                      <li>Learn the basics within his first week.</li>
+                      <li>Feel confident using the tools.</li>
+                    </ul>
+                  </div>
+
+                  <div class="persona-list">
+                    <p class="persona-list-title">Pain points</p>
+                    <ul>
+                      <li>Difficulty remembering long instructions or codes.</li>
+                      <li>Confusing error messages on desktop UIs.</li>
+                      <li>Frustration when having to redo tasks multiple times.</li>
+                    </ul>
+                  </div>
+
+                  <div class="persona-list">
+                    <p class="persona-list-title">Needs from Handheld</p>
+                    <ul>
+                      <li>Fully guided flows driven by scanning.</li>
+                      <li>Clear success/error messages with immediate next steps.</li>
+                      <li>Simple, icon-supported interface requiring minimal training.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="persona-flags">
+                  <span class="persona-flag">🧠 Low cognitive load</span>
+                  <span class="persona-flag">🗺 Needs guidance in context</span>
+                  <span class="persona-flag">👣 Short onboarding window</span>
+                </div>
+              </div>
+            </article>
+      </div>
+
+      <button class="persona-arrow persona-arrow--right" type="button" aria-label="Next persona">
+        →
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+
+    <!-- USER JOURNEYS: BEFORE & AFTER HANDHELD -->
+    <section class="section section-alt" id="journey">
+      <div class="container section-inner">
+          <header class="section-header">
+            <h2>User journey · Before & after Handheld</h2>
+            <p>
+              How daily work looked for warehouse operators with desktop-only flows — 
+              and how it changed with a mobile, scanning-centered experience.
+            </p>
+          </header>
+
+        <div class="journey-images-container">
+
+          <!-- BEFORE -->
+          <article class="journey-image-block">
+
+            <div class="journey-image-card">
+              <img src="/assets/handheld/journey-before.png" alt="User Journey Before Handheld PWA">
             </div>
-            <div class="case-pill">
-              <span class="case-pill-label">Key restriction</span>
-              <span class="case-pill-value">Existing backend logic</span>
+          </article>
+
+          <!-- AFTER -->
+          <article class="journey-image-block">
+
+            <div class="journey-image-card">
+              <img src="/assets/handheld/journey-after.png" alt="User Journey After Handheld PWA">
             </div>
-          </div>
-        </article>
+          </article>
+
+        </div>
       </div>
     </section>
 
@@ -490,6 +773,234 @@
 </section>
 
 
+<!-- HI-FI FLOWS & UI STATES -->
+<section class="section" id="hifi-flows">
+  <div class="container section-inner">
+
+    <header class="section-header">
+      <h2>Hi-fi flows & UI states</h2>
+      <p>
+        Complete end-to-end flows for each warehouse operation, documenting every screen, state and decision
+        point. These hi-fi maps ensured alignment between UX, backend logic and development.
+      </p>
+    </header>
+
+    <div class="hifi-tabs">
+      <!-- Tabs nav -->
+      <div class="hifi-tabs-nav">
+        <button class="hifi-tab-link is-active" data-tab-target="#booking-flows">Booking</button>
+        <button class="hifi-tab-link" data-tab-target="#picking-flows">Picking</button>
+        <button class="hifi-tab-link" data-tab-target="#packing-flows">Packing</button>
+        <button class="hifi-tab-link" data-tab-target="#relocation-flows">Relocation</button>
+      </div>
+
+      <!-- Tabs panels -->
+      <div class="hifi-tabs-panels">
+
+        <!-- BOOKING TAB -->
+        <div class="hifi-tab-panel is-active" id="booking-flows">
+          <article class="hifi-block">
+            <h3>Booking – Goods Receipt</h3>
+            <p>
+              Hi-fi flow showing the required “scan storage place → scan product” logic, error states
+              and confirmations for inbound goods.
+            </p>
+            <figure class="media-card media-card--wide">
+              <img src="assets/handheld/hifi/Booking-Goods.png"
+                   alt="Booking Goods Receipt hi-fi flow">
+              <figcaption>Booking – Goods Receipt · Complete UI flow</figcaption>
+            </figure>
+          </article>
+
+          <article class="hifi-block">
+            <h3>Booking – Returns</h3>
+            <p>
+              Flow for booking returned items, including mismatch handling, manual corrections
+              and final confirmation screens.
+            </p>
+            <figure class="media-card media-card--wide">
+              <img src="assets/handheld/hifi/Booking-Returns.png"
+                   alt="Booking Returns hi-fi flow">
+              <figcaption>Booking – Returns · Complete UI flow</figcaption>
+            </figure>
+          </article>
+
+          <article class="hifi-block">
+            <h3>Edge case: Booking without incoming order</h3>
+              <p>
+                During testing, operators revealed a frequent real-world scenario: goods often arrive without an 
+                existing incoming order in WEMALO. Previously, this required manual off-system workarounds that 
+                risked breaking traceability.
+              </p>
+
+              <p>
+                To support this operational edge case, we expanded the Booking flow to allow 
+                <strong>“booking without incoming order”</strong> while still enforcing the core business rules:
+                scanning the storage place first, validating the product, and capturing minimum required data.
+              </p>
+
+              <figure class="media-card media-card--wide">
+                <img src="assets/handheld/hifi/booking-without-incoming-order.png"
+                    alt="Booking without incoming order flow" />
+                <figcaption>
+                  Booking — Goods Receipt (edge case) · Flow for booking items without an existing incoming order.
+                </figcaption>
+              </figure>
+          </article>
+
+
+        </div>
+
+        <!-- PICKING TAB -->
+        <div class="hifi-tab-panel" id="picking-flows">
+          <article class="hifi-block">
+            <h3>Picking – Sorted</h3>
+            <p>
+              End-to-end sorted picking flow, where operators follow a predefined SKU sequence
+              with clear validation and error feedback for each scan.
+            </p>
+            <figure class="media-card media-card--wide">
+              <img src="assets/handheld/hifi/picking-sorted.png"
+                   alt="Picking Sorted hi-fi flow">
+              <figcaption>Picking – Sorted · Complete UI flow</figcaption>
+            </figure>
+          </article>
+
+          <article class="hifi-block">
+            <h3>Picking – Unsorted</h3>
+            <p>
+              Flow covering unsorted picking with dynamic list updates, partial completion and
+              handling of incorrect or missing scans.
+            </p>
+            <figure class="media-card media-card--wide">
+              <img src="assets/handheld/hifi/picking-unsorted.png"
+                   alt="Picking Unsorted hi-fi flow">
+              <figcaption>Picking – Unsorted · Complete UI flow</figcaption>
+            </figure>
+          </article>
+        </div>
+
+        <!-- PACKING TAB -->
+        <div class="hifi-tab-panel" id="packing-flows">
+          <article class="hifi-block">
+            <h3>Packing – Sorted</h3>
+            <p>
+              Hi-fi flow showing how items from sorted picking are validated, packed and confirmed
+              before generating parcel information.
+            </p>
+            <figure class="media-card media-card--wide">
+              <img src="assets/handheld/hifi/packing-sorted.png"
+                   alt="Packing Sorted hi-fi flow">
+              <figcaption>Packing – Sorted · Complete UI flow</figcaption>
+            </figure>
+          </article>
+
+          <article class="hifi-block">
+            <h3>Packing – Unsorted</h3>
+            <p>
+              Packing flow for unsorted scenarios, balancing manual checks and scanning to keep
+              speed while avoiding shipping mistakes.
+            </p>
+            <figure class="media-card media-card--wide">
+              <img src="assets/handheld/hifi/packing-unsorted.png"
+                   alt="Packing Unsorted hi-fi flow">
+              <figcaption>Packing – Unsorted · Complete UI flow</figcaption>
+            </figure>
+          </article>
+        </div>
+
+        <!-- RELOCATION TAB -->
+        <div class="hifi-tab-panel" id="relocation-flows">
+
+            <!-- INTRO -->
+            <article class="hifi-block">
+              <h3>Relocation – Complete process</h3>
+              <p>
+                Relocation is the most complex operation in WEMALO. The hi-fi flows below document:
+                the <strong>current system behaviour</strong>, a more efficient <strong>by-order workflow</strong>,
+                and a streamlined <strong>scan-only variant</strong> that accelerates operators without breaking
+                business rules.
+              </p>
+            </article>
+
+            <!-- CURRENT WEMALO RELOCATION -->
+            <article class="hifi-block">
+              <h3>Current WEMALO Relocation</h3>
+              <p>
+                The existing system follows a rigid sequence with several intermediate validations.
+                While correct from a backend perspective, it requires repeated scanning and slows down
+                operators moving across aisles.
+              </p>
+
+              <figure class="media-card media-card--wide">
+                <img src="assets/handheld/hifi/Relocation-wemalo.png"
+                    alt="Current WEMALO relocation flow">
+                <figcaption>
+                  Current WEMALO Relocation · Full UI flow
+                </figcaption>
+              </figure>
+            </article>
+
+            <!-- BY-ORDERS RELOCATION -->
+            <article class="hifi-block">
+              <h3>Relocation – By Orders</h3>
+              <p>
+                This variant speeds up relocation by grouping movements by order. Operators follow 
+                a clearer, more linear sequence with fewer screen transitions — while all required 
+                backend validations remain intact.
+              </p>
+
+              <figure class="media-card media-card--wide">
+                <img src="assets/handheld/hifi/relocation-by-orders.png"
+                    alt="Relocation by orders hi-fi flow">
+                <figcaption>
+                  Relocation – By Orders · Optimized UI flow
+                </figcaption>
+              </figure>
+            </article>
+
+            <!-- SCAN-ONLY VARIANT -->
+            <article class="hifi-block">
+              <h3>Relocation – Scan-Only Variant</h3>
+              <p>
+                The most efficient workflow: operators simply scan the <strong>storage place</strong>,
+                then the <strong>product</strong>. The system handles the logic invisibly, reducing
+                time per item and preventing sequence errors. It respects all backend rules while
+                removing unnecessary touch interactions.
+              </p>
+
+              <figure class="media-card media-card--wide">
+                <img src="assets/handheld/hifi/relocation-by-scanning.png"
+                    alt="Relocation scan-only variant">
+                <figcaption>
+                  Relocation – Scan Only · Rapid UI flow for high-efficiency operations
+                </figcaption>
+              </figure>
+            </article>
+
+            <!-- FULL CANVAS (OPTIONAL) -->
+            <article class="hifi-block">
+              <h3>All relocation variants in one view</h3>
+              <p>
+                This canvas consolidates the three relocation paths, making it easy for developers
+                and stakeholders to compare complexity, identify bottlenecks, and validate logic.
+              </p>
+
+              <figure class="media-card media-card--wide">
+                <img src="assets/handheld/hifi/Relocation.png"
+                    alt="Full relocation hi-fi flow overview">
+                <figcaption>
+                  Relocation – Combined Overview · All scenarios and UI branches
+                </figcaption>
+              </figure>
+            </article>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PRODUCT IN ACTION -->
 <section class="section" id="showcase">
   <div class="container section-inner">
@@ -642,12 +1153,49 @@
             <li>Visual and sound feedback replaced the need for written instructions.</li>
             <li>Sequential flow reinforced the business rule without adding friction.</li>
             <li>New operators adopted the system faster than with the desktop UI.</li>
+            <li>
+                During testing, operators surfaced an operational scenario not captured in initial interviews: 
+                the need to book goods even when no incoming order exists in WEMALO. 
+                This exception happens in real warehouse practice and previously relied on manual workarounds.
+            </li>
+
           </ul>
           <p class="case-note">
-            Handheld PWA didn’t just reduce errors and time — it aligned human interaction with system rules,
-            without additional training.
+            This insight highlighted a real-world operational edge case. 
+            It led to a dedicated design sprint to define a new flow for 
+            <strong>“Booking without incoming order”</strong> — preserving traceability and
+            business rules while supporting how warehouses actually work.
           </p>
         </article>
+
+        <article class="testing-iteration">
+          <h3>From testing to design sprint: Booking without incoming order</h3>
+          <p>
+            Testing surfaced a high-impact operational edge case: operators frequently needed to book goods
+            even when no incoming order existed in WEMALO. This scenario wasn’t verbalized during early
+            interviews because it had become a normalized workaround inside the warehouse.
+          </p>
+
+          <p>
+            To address it properly — without breaking traceability or backend rules — we ran a focused design
+            sprint with warehouse operators and WEMALO admins. The sprint explored how to:
+          </p>
+
+          <ul class="case-bullets">
+            <li>Map the real workaround and identify where traceability was being lost.</li>
+            <li>Define the minimum required data to allow booking without an incoming order.</li>
+            <li>Align the new flow with existing backend validations and sequence rules.</li>
+            <li>Preserve scanning-first logic to keep the mental model consistent across all modules.</li>
+          </ul>
+
+          <p class="case-note">
+            The resulting flow — <strong>“Booking without incoming order”</strong> — is included in 
+            <strong>Hi-fi flows → Booking</strong>. It formalizes a previously off-system process while 
+            keeping operators fast and the system reliable.
+          </p>
+        </article>
+
+
       </div>
     </section>
 
@@ -658,6 +1206,9 @@
           <h2>Outcomes</h2>
           <ul class="case-bullets">
             <li>~40% reduction in average time per task.</li>
+            <li>↓ Walking distance per operator: –35% (from 300 stetps to 195 steps aprox for Testing Task)</li>
+            <li>Faster onboarding for new operators.</li>
+            <li>↓ Supervisor interventions: –40% (from 1 to 2 interverts per task to 0 or 1)</li>
             <li>WEMALO’s core business rule preserved with no backend changes.</li>
           </ul>
 
@@ -809,5 +1360,54 @@
     });
   });
 </script>
+<script>
+  // Tabs: Hi-fi flows
+  const hifiTabs = document.querySelector('.hifi-tabs');
+  if (hifiTabs) {
+    const tabLinks = hifiTabs.querySelectorAll('.hifi-tab-link');
+    const tabPanels = hifiTabs.querySelectorAll('.hifi-tab-panel');
+
+    tabLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const targetSelector = link.getAttribute('data-tab-target');
+        const targetPanel = hifiTabs.querySelector(targetSelector);
+
+        // reset
+        tabLinks.forEach(l => l.classList.remove('is-active'));
+        tabPanels.forEach(p => p.classList.remove('is-active'));
+
+        // activate
+        link.classList.add('is-active');
+        if (targetPanel) targetPanel.classList.add('is-active');
+      });
+    });
+  }
+</script>
+<script>
+  (function () {
+    const track = document.querySelector('.persona-track');
+    const cards = track ? track.querySelectorAll('.persona-card') : [];
+    const prevBtn = document.querySelector('.persona-arrow--left');
+    const nextBtn = document.querySelector('.persona-arrow--right');
+
+    if (!track || cards.length === 0 || !prevBtn || !nextBtn) return;
+
+    function getScrollAmount() {
+      const card = cards[0];
+      const gap = 40; // aprox: gap entre cards
+      return card.getBoundingClientRect().width + gap;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+    });
+  })();
+</script>
+
+
 </body>
 </html>
