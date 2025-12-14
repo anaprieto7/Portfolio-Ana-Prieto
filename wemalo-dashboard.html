@@ -41,7 +41,7 @@
           </h1>
           <p class="case-hero-subtitle">
             WEMALO Dashboard is the B2B portal where warehouse clients manage their
-            inventory, orders and returns within the WEMALO ecosystem. Unlike the internal WMS,
+            inventory and orders within the WEMALO ecosystem. Unlike the internal WMS,
             this dashboard is built for merchants and warehouse managers who need full visibility
             without using the internal warehouse system.
           </p>
@@ -117,8 +117,7 @@
             <h3>Overview</h3>
             <p>
               WEMALO Dashboard is the external interface for clients of the WEMALO ecosystem.
-              It gives merchants and warehouse managers visibility over inventory, orders
-              and returns — without exposing the internal WMS complexity.
+              It gives merchants and warehouse managers visibility over inventoryand orders, without exposing the internal WMS complexity.
             </p>
             <p>
               The challenge was not to add more features, but to <strong>make the existing
@@ -183,12 +182,12 @@
             <h3>Merchant</h3>
             <p>
               Client who manages their own inventory, creates inbound orders, and monitors
-              orders and returns.
+              orders.
             </p>
             <ul class="case-bullets">
-              <li>Needs clear views of stock, orders and returns.</li>
+              <li>Needs clear views of stock, orders.</li>
               <li>Focuses on product health and end-customer impact.</li>
-              <li>Wants simple flows for inbound and returns.</li>
+              <li>Wants simple flows for create inbound Orders</li>
             </ul>
           </article>
         </div>
@@ -240,7 +239,6 @@
               <li>Orders</li>
               <li>Inbound Orders</li>
               <li>Inventory</li>
-              <li>Returns</li>
               <li>Settings</li>
             </ul>
             <p class="case-note">
@@ -255,7 +253,7 @@
               <h3>Interaction design</h3>
             </div>
             <p>
-              I redesigned core flows (order creation, stock review, returns) with
+              I redesigned core flows (order creation, stock review) with
               reusable patterns that reduce cognitive load:
             </p>
             <ul class="case-bullets">
@@ -356,12 +354,246 @@
               <li>Dashboard cards per role (Admin vs Merchant) with relevant KPIs.</li>
               <li>Orders and Inbound split clearly by responsibility and state.</li>
               <li>Inventory views tailored to “what do I need to act on now?”.</li>
-              <li>Returns integrated with warehouse flows while staying understandable for merchants.</li>
             </ul>
           </article>
         </div>
       </div>
     </section>
+
+
+    <section class="section" id="flows">
+  <div class="container section-inner">
+    <header class="section-header">
+      <h2>Before → After user flows</h2>
+      <p>
+        The biggest UX win was reducing cognitive load and steps: fewer screens, clearer hierarchy,
+        and actions placed where decisions happen.
+      </p>
+    </header>
+
+    <div class="flow-pipeline-grid">
+
+      <!-- FLOW 1 -->
+      <article
+        class="flow-card"
+        data-flow
+        data-steps-before="5"
+        data-steps-after="3"
+        data-improve='["Actions moved into the table decision layer","Status visible at scan-level","Fewer context switches"]'
+        data-before='[
+          {"icon":"list","label":"Open Orders"},
+          {"icon":"tabs","label":"Scan multiple tabs"},
+          {"icon":"detail","label":"Open detail page"},
+          {"icon":"search","label":"Search / jump pages"},
+          {"icon":"action","label":"Action in secondary screen"}
+        ]'
+        data-after='[
+          {"icon":"list","label":"Open Orders (defaults)"},
+          {"icon":"status","label":"Status + exceptions table"},
+          {"icon":"inline","label":"Inline row actions"},
+          {"icon":"sidepanel","label":"Review details in context"}
+        ]'
+      >
+        <header class="flow-card__head">
+          <div class="flow-card__title">
+            <h3>Flow 1 · Find & act on an order</h3>
+            <p class="flow-card__sub">Actions moved into the decision context (less navigation hopping).</p>
+          </div>
+
+          <div class="flow-steps-counter" aria-label="Steps reduction">
+            <span class="counter-label">Steps</span>
+            <span class="counter-from" data-counter-from>5</span>
+            <span class="counter-arrow">→</span>
+            <span class="counter-to" data-counter-to>3</span>
+          </div>
+        </header>
+
+        <!-- BEFORE (top) -->
+        <div class="flow-row">
+          <div class="flow-row__label">
+            <span class="flow-pill flow-pill--before">Before</span>
+            <span class="flow-row__note">Pain: actions were far from the decision context</span>
+          </div>
+
+          <div class="pipeline-canvas" data-canvas="before" aria-label="Before flow diagram">
+            <svg class="pipeline-lines" viewBox="0 0 1000 160" preserveAspectRatio="none" aria-hidden="true">
+              <path class="pipeline-path pipeline-path--soft" d="M 60 80 L 940 80" />
+              <path class="pipeline-path" d="M 60 80 L 940 80" />
+            </svg>
+            <div class="pipeline-steps" data-steps-before></div>
+          </div>
+        </div>
+
+        <!-- AFTER (bottom) -->
+        <div class="flow-row">
+          <div class="flow-row__label">
+            <span class="flow-pill flow-pill--after">After</span>
+            <span class="flow-row__note">Win: inline actions + fewer screens</span>
+          </div>
+
+          <div class="pipeline-canvas" data-canvas="after" aria-label="After flow diagram">
+            <svg class="pipeline-lines" viewBox="0 0 1000 160" preserveAspectRatio="none" aria-hidden="true">
+              <path class="pipeline-path pipeline-path--soft" d="M 60 80 L 940 80" />
+              <path class="pipeline-path" d="M 60 80 L 940 80" />
+            </svg>
+            <div class="pipeline-steps" data-steps-after></div>
+          </div>
+        </div>
+
+        <div class="flow-improve">
+          <div class="flow-improve__label">Where it improved</div>
+          <div class="flow-improve__chips" data-improve></div>
+        </div>
+      </article>
+
+      <!-- FLOW 2 -->
+      <article
+        class="flow-card"
+        data-flow
+        data-steps-before="5"
+        data-steps-after="4"
+        data-improve='["Progressive disclosure by decisions","Inline validation earlier","Review step prevents surprises"]'
+        data-before='[
+          {"icon":"form","label":"Generic form"},
+          {"icon":"fields","label":"Long mixed fields"},
+          {"icon":"jump","label":"Jump to products"},
+          {"icon":"error","label":"Errors after submit"},
+          {"icon":"repeat","label":"Repeat for variations"}
+        ]'
+        data-after='[
+          {"icon":"entry","label":"Inbound → Create"},
+          {"icon":"steps","label":"Progressive decisions"},
+          {"icon":"validate","label":"Inline validation"},
+          {"icon":"review","label":"Review summary"}
+        ]'
+      >
+        <header class="flow-card__head">
+          <div class="flow-card__title">
+            <h3>Flow 2 · Create an inbound order</h3>
+            <p class="flow-card__sub">Clear “what’s next” + earlier validation = less rework.</p>
+          </div>
+
+          <div class="flow-steps-counter" aria-label="Steps reduction">
+            <span class="counter-label">Steps</span>
+            <span class="counter-from" data-counter-from>5</span>
+            <span class="counter-arrow">→</span>
+            <span class="counter-to" data-counter-to>3</span>
+          </div>
+        </header>
+
+        <div class="flow-row">
+          <div class="flow-row__label">
+            <span class="flow-pill flow-pill--before">Before</span>
+            <span class="flow-row__note">Late errors + repeated rework</span>
+          </div>
+
+          <div class="pipeline-canvas" data-canvas="before">
+            <svg class="pipeline-lines" viewBox="0 0 1000 160" preserveAspectRatio="none" aria-hidden="true">
+              <path class="pipeline-path pipeline-path--soft" d="M 60 80 L 940 80" />
+              <path class="pipeline-path" d="M 60 80 L 940 80" />
+            </svg>
+            <div class="pipeline-steps" data-steps-before></div>
+          </div>
+        </div>
+
+        <div class="flow-row">
+          <div class="flow-row__label">
+            <span class="flow-pill flow-pill--after">After</span>
+            <span class="flow-row__note">Progressive decisions + predictable submit</span>
+          </div>
+
+          <div class="pipeline-canvas" data-canvas="after">
+            <svg class="pipeline-lines" viewBox="0 0 1000 160" preserveAspectRatio="none" aria-hidden="true">
+              <path class="pipeline-path pipeline-path--soft" d="M 60 80 L 940 80" />
+              <path class="pipeline-path" d="M 60 80 L 940 80" />
+            </svg>
+            <div class="pipeline-steps" data-steps-after></div>
+          </div>
+        </div>
+
+        <div class="flow-improve">
+          <div class="flow-improve__label">Where it improved</div>
+          <div class="flow-improve__chips" data-improve></div>
+        </div>
+      </article>
+
+      <!-- FLOW 3 -->
+      <article
+        class="flow-card"
+        data-flow
+        data-steps-before="5"
+        data-steps-after="4"
+        data-improve='["Insights before raw lists","Exceptions highlighted","Actions attached to context"]'
+        data-before='[
+          {"icon":"inv","label":"Open inventory"},
+          {"icon":"dense","label":"Dense list"},
+          {"icon":"hunt","label":"Hunt anomalies"},
+          {"icon":"multi","label":"Open multiple details"},
+          {"icon":"outside","label":"Decide outside system"}
+        ]'
+        data-after='[
+          {"icon":"split","label":"List + Insights"},
+          {"icon":"highlight","label":"Exceptions highlighted"},
+          {"icon":"kpi","label":"Role-based KPIs"},
+          {"icon":"filters","label":"Filters + saved views"}
+        ]'
+      >
+        <header class="flow-card__head">
+          <div class="flow-card__title">
+            <h3>Flow 3 · Understand inventory health</h3>
+            <p class="flow-card__sub">Decision-first: insights before raw lists.</p>
+          </div>
+
+          <div class="flow-steps-counter" aria-label="Steps reduction">
+            <span class="counter-label">Steps</span>
+            <span class="counter-from" data-counter-from>5</span>
+            <span class="counter-arrow">→</span>
+            <span class="counter-to" data-counter-to>3</span>
+          </div>
+        </header>
+
+        <div class="flow-row">
+          <div class="flow-row__label">
+            <span class="flow-pill flow-pill--before">Before</span>
+            <span class="flow-row__note">Data without meaning → slow decisions</span>
+          </div>
+
+          <div class="pipeline-canvas" data-canvas="before">
+            <svg class="pipeline-lines" viewBox="0 0 1000 160" preserveAspectRatio="none" aria-hidden="true">
+              <path class="pipeline-path pipeline-path--soft" d="M 60 80 L 940 80" />
+              <path class="pipeline-path" d="M 60 80 L 940 80" />
+            </svg>
+            <div class="pipeline-steps" data-steps-before></div>
+          </div>
+        </div>
+
+        <div class="flow-row">
+          <div class="flow-row__label">
+            <span class="flow-pill flow-pill--after">After</span>
+            <span class="flow-row__note">Insights + actions attached to context</span>
+          </div>
+
+          <div class="pipeline-canvas" data-canvas="after">
+            <svg class="pipeline-lines" viewBox="0 0 1000 160" preserveAspectRatio="none" aria-hidden="true">
+              <path class="pipeline-path pipeline-path--soft" d="M 60 80 L 940 80" />
+              <path class="pipeline-path" d="M 60 80 L 940 80" />
+            </svg>
+            <div class="pipeline-steps" data-steps-after></div>
+          </div>
+        </div>
+
+        <div class="flow-improve">
+          <div class="flow-improve__label">Where it improved</div>
+          <div class="flow-improve__chips" data-improve></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+
 
     <!-- BEFORE / AFTER -->
     <section class="section section-alt" id="before">
@@ -384,6 +616,22 @@
             <figcaption>
               <strong>After</strong><br />
               Clean layout, KPIs and modules tailored to each user type.
+            </figcaption>
+          </figure>
+        </div>
+                <div class="media-grid">
+          <figure class="media-card">
+            <img src="assets/wemalo-d/orders-before.png" alt="Before dashboard redesign" />
+            <figcaption>
+              <strong>Before</strong><br />
+              A fragmented order detail experience with with shares that did not belong to the order's status, duplicated information and high cognitive load. Users had to scan multiple sections and switch context to understand the state and decide next steps.
+            </figcaption>
+          </figure>
+          <figure class="media-card">
+            <img src="assets/wemalo-d/orders-after.png" alt="After dashboard redesign" />
+            <figcaption>
+              <strong>After</strong><br />
+              A consolidated, action-oriented order detail view where status, actions and context live in one place. Primary actions are visible, information is grouped by relevance, and users can decide and act without leaving the screen.
             </figcaption>
           </figure>
         </div>
@@ -454,7 +702,7 @@
           </p>
           <ul class="case-bullets">
             <li>~45% reduction in average information search time.</li>
-            <li>Order creation flows reduced from 5 steps to 2.</li>
+            <li>Order creation flows reduced from 5 steps to 4.</li>
             <li>Higher task success rate during usability walkthroughs, users completed flows without requesting clarification</li>
           </ul>
         </article>
@@ -521,7 +769,7 @@
           <h2>More work around WEMALO Dashboard</h2>
           <p>
             The client portal is one piece of a connected ecosystem — from warehouse backbone
-            to mobile operations and returns.
+            to mobile operations.
           </p>
         </header>
 

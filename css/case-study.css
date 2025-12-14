@@ -27,6 +27,12 @@
   --shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.16);
 
    overflow-x: hidden; 
+ 
+  --icon-accent: #C7923E;
+  --icon-accent-soft: #D6A85A;
+  --icon-accent-strong: #B37A2B;
+
+ 
 }
 
 
@@ -1614,7 +1620,7 @@ section-label {
 /* MOCKUP HERO - OPCIÓN 1 EDITORIAL      */
 /* -------------------------------------- */
 .case-hero-mockup {
-  padding: 1.5rem 0 3rem; /* poco arriba, más aire abajo */
+  padding: 1.5rem 0 0 0; /* poco arriba, más aire abajo */
 }
 
 .mockup-browser {
@@ -1889,7 +1895,9 @@ section-label {
   grid-template-columns: 1.2fr repeat(6, 1fr);
 }
 
-
+.journey-image-block {
+  margin-bottom: 0.6rem;
+}
 
 /* CABECERA DE PASOS CON BANDA DE COLOR */
 .journey-steps-row {
@@ -2501,3 +2509,1393 @@ section-label {
   }
 }
 
+/* ===================================== */
+/* USER JOURNEY — HORIZONTAL CAROUSEL     */
+/* ===================================== */
+
+.journey-carousel {
+  position: relative;
+  margin-top: 2.5rem;
+  width: 90vw;
+  max-width: 90vw;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Track horizontal */
+.journey-track {
+  display: flex;
+  gap: 3rem;
+  overflow: hidden;
+  padding: 1rem 0;
+  margin: 0 auto;
+  width: 85%;                     /* <- ocupa ~85% del viewport */
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+/* Cada card (imagen del journey) */
+.journey-card {
+  flex: 0 0 85%;                   /* tamaño visible ~85% */
+  max-width: 85%;
+  scroll-snap-align: center;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  transition: transform 0.35s ease, opacity 0.35s ease, box-shadow 0.35s ease;
+  transform-origin: center;
+}
+
+/* Efecto Apple TV */
+
+
+.journey-card:hover {
+  transform: scale(1.05);
+  opacity: 1;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.22);
+  z-index: 3;
+}
+
+.journey-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Flechas */
+.journey-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border-soft);
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--text-main);
+  transition: 0.25s ease;
+  z-index: 20;
+}
+
+.journey-arrow:hover {
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* Posiciones */
+.journey-arrow--left {
+  left: 2rem;
+}
+.journey-arrow--right {
+  right: 2rem;
+}
+
+/* Mobile: swipe, no zoom */
+@media (max-width: 768px) {
+
+  .journey-track {
+    width: 100%;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 1rem;
+  }
+
+  .journey-card {
+    flex: 0 0 90%;
+    max-width: 90%;
+    transform: none;
+    opacity: 1;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+
+  .journey-track:hover .journey-card,
+  .journey-card:hover {
+    transform: none;
+    opacity: 1;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+
+  .journey-arrow {
+    display: none;
+  }
+}
+
+/* =========================
+   EXECUTIVE SUMMARY (Retoure24)
+   ========================= */
+
+.exec-header {
+  max-width: 920px;
+  margin-bottom: 2rem;
+}
+
+.exec-kicker {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin: 0 0 0.6rem 0;
+  position: relative;
+  padding-left: 14px;
+}
+
+.exec-kicker::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 2px;
+  background: var(--accent);
+  opacity: 0.7;
+}
+
+.exec-title {
+  margin: 0 0 0.7rem 0;
+}
+
+.exec-lead {
+  color: var(--text-subtle);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Grid */
+.exec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: stretch;
+  margin-top: 1.5rem;
+}
+
+/* Cards */
+.exec-card {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--border-soft);
+  border-radius: 18px;
+  padding: 1.6rem 1.6rem 1.3rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.exec-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 44px rgba(0,0,0,0.10);
+}
+
+.exec-card--tinted {
+  background: linear-gradient(
+    180deg,
+    rgba(199,146,62,0.10),
+    rgba(255,255,255,0.55)
+  );
+}
+/* Icon list (What I built) */
+.exec-list--icons {
+  gap: 0.9rem;
+}
+
+.exec-list--icons li {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  align-items: start;
+  gap: 0.7rem;
+  padding-left: 0;
+}
+
+.exec-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
+  opacity: 0.9;
+  margin-top: 0.15rem;
+}
+
+.exec-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Hover subtle enhancement */
+.exec-card:hover .exec-icon {
+  opacity: 1;
+}
+
+/* Card header */
+.exec-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.exec-card-title {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.exec-pill {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  background: rgba(255,255,255,0.7);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.exec-pill--dark {
+  background: rgba(0,0,0,0.05);
+  color: var(--text-main);
+}
+
+/* Lists */
+.exec-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.65rem;
+  color: var(--text-subtle);
+}
+
+.exec-list li {
+  position: relative;
+  padding-left: 1.55rem;
+  line-height: 1.55;
+}
+
+/* Check bullets */
+.exec-list--check li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0.05rem;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: 0.95;
+}
+
+/* Dot bullets */
+.exec-list--dot li::before {
+  content: "•";
+  position: absolute;
+  left: 0.15rem;
+  top: -0.05rem;
+  font-size: 1.2rem;
+  color: var(--accent);
+  opacity: 0.75;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .exec-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =============================== */
+/* KEY INSIGHTS — 2 COLUMN GRID */
+/* =============================== */
+
+.case-insights {
+  margin-top: 3.5rem;
+}
+
+.case-insights h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  letter-spacing: -0.01em;
+}
+
+/* GRID */
+.insights-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem 3rem; /* row / column gap */
+}
+
+/* ITEM */
+.insight-item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  column-gap: 1rem;
+  align-items: flex-start;
+}
+
+.insight-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-subtle, #6f6f6f);
+  opacity: 0.9;
+  transform: translateY(2px);
+}
+
+.insight-item p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--text-main, #1a1a1a);
+}
+
+/* Highlight */
+.insight-item strong {
+  color: var(--accent, #c7923e);
+  font-weight: 600;
+}
+
+/* Línea divisoria sutil (solo vertical rhythm, no cajas) */
+.insight-item {
+  position: relative;
+}
+
+.insight-item::after {
+  content: "";
+  position: absolute;
+  bottom: -1.25rem;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--border-soft, rgba(0,0,0,0.08));
+}
+
+/* Quitamos línea en los últimos elementos */
+.insight-item:nth-last-child(-n + 2)::after {
+  display: none;
+}
+.insight-icon svg {
+  stroke: var(--accent) !important;
+  fill: none; /* si son outline */
+}
+
+
+
+/* =============================== */
+/* RESPONSIVE */
+/* =============================== */
+
+@media (max-width: 900px) {
+  .insights-list {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .insight-item::after {
+    display: none;
+  }
+}
+
+.decision-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.decision-item {
+  padding: 2rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  background: var(--page-bg-alt);
+}
+
+.decision-item h3 {
+  margin-bottom: 0.25rem;
+}
+
+.decision-tradeoff {
+  font-size: 0.9rem;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+.decision-rationale {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-subtle);
+}
+
+
+.shift-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  align-items: start;
+}
+
+.shift-column {
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-soft);
+  background: var(--page-bg);
+}
+
+.shift-column h3 {
+  margin-bottom: 0.25rem;
+}
+
+.shift-label {
+  font-size: 0.9rem;
+  color: var(--text-subtle);
+  margin-bottom: 1rem;
+}
+
+.shift-column ul {
+  padding-left: 1.2rem;
+}
+
+.shift-column li {
+  margin-bottom: 0.75rem;
+}
+
+.shift-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--accent);
+  padding-top: 3rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .shift-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shift-divider {
+    padding: 0;
+    margin: 1rem 0;
+  }
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.metrics-column {
+  padding: 2rem;
+  border-radius: 16px;
+  background: var(--page-bg);
+  border: 1px solid var(--border-soft);
+}
+
+.metrics-column h3 {
+  margin-bottom: 1rem;
+}
+
+.metrics-column ul {
+  padding-left: 1.2rem;
+}
+
+.metrics-column li {
+  margin-bottom: 0.75rem;
+}
+
+.metrics-column em {
+  font-style: italic;
+  color: var(--text-subtle);
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics-column {
+    margin-bottom: 2rem;
+  }
+}
+
+/* =============================== */
+/* FLOW DIAGRAMS (ICON + ARROWS)   */
+/* =============================== */
+
+.flow-diagrams {
+  display: grid;
+  gap: 1.6rem;
+  margin-top: 1.5rem;
+}
+
+.flow-diagram {
+  border: 1px solid var(--border-soft);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 18px;
+  padding: 1.25rem 1.25rem 1.1rem;
+}
+
+.section-alt .flow-diagram {
+  background: rgba(0,0,0,0.06);
+}
+
+.flow-diagram__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.flow-diagram__head h3 {
+  margin: 0;
+}
+
+.flow-diagram__sub {
+  margin: 0.35rem 0 0;
+  color: var(--text-subtle);
+  max-width: 60ch;
+}
+
+/* Toggle */
+.flow-diagram__controls {
+  display: inline-flex;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.6);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.flow-toggle {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0.55rem 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.flow-toggle.is-active {
+  background: var(--accent-soft);
+  color: var(--text-main);
+}
+
+/* Lanes */
+.flow-lanes {
+  display: grid;
+  gap: 1rem;
+}
+
+.flow-lane {
+  display: none;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 16px;
+  padding: 0.95rem;
+  background: rgba(255,255,255,0.7);
+}
+
+.section-alt .flow-lane {
+  background: rgba(255,255,255,0.55);
+}
+
+.flow-lane.is-active {
+  display: block;
+}
+
+.flow-lane__label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.pill--before {
+  background: rgba(0,0,0,0.06);
+}
+
+.pill--after {
+  background: var(--accent-soft);
+}
+
+.lane-note {
+  color: var(--text-subtle);
+  font-size: 0.92rem;
+}
+
+/* Rail */
+.flow-rail {
+  display: flex;
+  align-items: stretch;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.flow-step {
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.95);
+  border-radius: 14px;
+  padding: 0.7rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  text-align: left;
+}
+
+.flow-step:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.10);
+}
+
+.flow-step.is-focused {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.flow-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: rgba(255,255,255,0.7);
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+}
+
+.flow-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.flow-text {
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.92rem;
+  line-height: 1.25;
+  max-width: 28ch;
+}
+
+.flow-arrow {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-subtle);
+  opacity: 0.9;
+  font-weight: 800;
+  padding: 0 0.1rem;
+}
+
+/* Metrics */
+.flow-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.95rem;
+}
+
+.metric-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.7);
+  border-radius: 999px;
+  padding: 0.32rem 0.65rem;
+  color: var(--text-subtle);
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .flow-diagram__head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .flow-diagram__controls {
+    align-self: flex-start;
+  }
+  .flow-text {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .flow-step {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .flow-arrow {
+    display: none; /* en mobile se entiende igual */
+  }
+}
+.journey-horizontal {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 2rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.9);
+}
+
+
+/* =============================== */
+/* FLOW PIPELINE (SVG CONNECTOR)   */
+/* =============================== */
+
+.flow-pipeline {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  border-radius: 18px;
+  border: 1px solid var(--border-soft);
+  background: rgba(255,255,255,0.04);
+}
+
+.section-alt .flow-pipeline {
+  background: rgba(0,0,0,0.05);
+}
+
+.flow-pipeline__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.flow-pipeline__sub {
+  color: var(--text-subtle);
+  max-width: 52ch;
+}
+
+.flow-pipeline__toggle {
+  display: inline-flex;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.flow-toggle {
+  border: 0;
+  background: transparent;
+  padding: 0.5rem 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.flow-toggle.is-active {
+  background: var(--accent-soft);
+}
+
+/* CANVAS */
+.pipeline-canvas {
+  position: relative;
+  margin: 1.5rem 0 1.5rem;
+}
+
+/* SVG line */
+.pipeline-lines {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+}
+
+.pipeline-path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transition: stroke-dashoffset 1.2s ease;
+}
+
+/* when active */
+.flow-pipeline.is-animated .pipeline-path {
+  stroke-dashoffset: 0;
+}
+
+/* STEPS */
+.pipeline-steps {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+}
+
+.pipeline-step {
+  text-align: center;
+}
+
+.pipeline-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--page-bg);
+  border: 3px solid var(--accent);
+  display: inline-block;
+  margin-bottom: 0.6rem;
+}
+
+.pipeline-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* METRICS */
+.pipeline-metrics {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.metric-chip {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  background: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .pipeline-steps {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .pipeline-lines {
+    display: none; /* en mobile no forzamos el pipeline */
+  }
+}
+
+
+/* =============================== */
+/* FLOWS — DUAL (Before top / After bottom) */
+/* =============================== */
+
+.flow-pipeline--dual{
+  padding: 1.55rem;
+}
+
+.flow-dual-stack{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* Panel wrappers */
+.flow-panel{
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.06);
+  overflow: hidden;
+  background: rgba(255,255,255,0.18);
+}
+
+.section-alt .flow-panel{
+  background: rgba(0,0,0,0.06);
+}
+
+.flow-panel__kicker{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .8rem;
+  padding: .9rem 1rem;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  background: rgba(255,255,255,0.35);
+}
+
+.flow-panel__note{
+  color: var(--text-subtle);
+  font-size: .9rem;
+}
+
+/* Make the canvas feel like “diagram space” */
+.flow-panel .pipeline-canvas{
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: rgba(255,255,255,0.20);
+}
+
+/* Counter pill */
+.flow-step-counter{
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.counter-pill{
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .45rem .75rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  background: rgba(255,255,255,0.55);
+  font-weight: 700;
+}
+
+.counter-label{
+  font-weight: 600;
+  color: var(--text-subtle);
+  font-size: .85rem;
+}
+
+.counter-from,
+.counter-to{
+  min-width: 1.6ch;
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+.counter-arrow{
+  color: var(--accent);
+}
+
+/* Where it improved */
+.flow-improved{
+  border: 1px solid rgba(0,0,0,0.06);
+  background: rgba(255,255,255,0.22);
+  border-radius: 16px;
+  padding: 1rem 1rem 1.05rem;
+}
+
+.flow-improved__title{
+  margin: 0 0 .65rem;
+  font-size: 1rem;
+}
+
+.flow-improved__list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: .55rem;
+}
+
+.flow-improved__item{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .65rem;
+  align-items: start;
+  padding: .7rem .8rem;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: rgba(255,255,255,0.55);
+}
+
+.flow-improved__dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  margin-top: .35rem;
+  background: var(--accent);
+  box-shadow: 0 0 0 6px rgba(199,146,62,0.16);
+}
+
+.flow-improved__label{
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.flow-improved__desc{
+  display: block;
+  color: var(--text-subtle);
+  font-weight: 500;
+  margin-top: .15rem;
+}
+
+/* Responsive tune */
+@media (max-width: 980px){
+  .flow-panel__kicker{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .flow-step-counter{
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+/* =============================== */
+/* FLOWS — PIPELINE (BEFORE TOP / AFTER BOTTOM) */
+/* =============================== */
+
+.flow-pipeline-grid {
+  display: grid;
+  gap: 1.6rem;
+  margin-top: 2rem;
+}
+
+.flow-card {
+  border: 1px solid var(--border-soft);
+  border-radius: 18px;
+  background: rgba(255,255,255,0.04);
+  padding: 1.35rem 1.35rem 1.1rem;
+}
+
+.flow-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1.2rem;
+}
+
+.flow-card__title h3 {
+  margin: 0 0 .25rem 0;
+}
+
+.flow-card__sub {
+  margin: 0;
+  color: var(--text-subtle);
+}
+
+/* Steps counter (animated via JS) */
+.flow-steps-counter {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .55rem .85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  background: rgba(255,255,255,0.55);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  font-weight: 600;
+}
+
+.flow-steps-counter .counter-label {
+  color: var(--text-subtle);
+  font-weight: 500;
+}
+
+.flow-steps-counter .counter-arrow {
+  color: var(--accent);
+}
+
+/* Rows */
+.flow-row {
+  border: 1px solid rgba(0,0,0,0.06);
+  background: rgba(255,255,255,0.35);
+  border-radius: 16px;
+  padding: .95rem .95rem 1rem;
+  margin-top: .85rem;
+}
+
+.flow-row__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: .65rem;
+}
+
+.flow-row__note {
+  color: var(--text-subtle);
+  font-size: .95rem;
+  text-align: right;
+}
+
+/* Before / After pills */
+.flow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .35rem .7rem;
+  border-radius: 999px;
+  font-size: .85rem;
+  font-weight: 650;
+  border: 1px solid var(--border-soft);
+  background: #fff;
+}
+
+.flow-pill--before { opacity: .85; }
+.flow-pill--after {
+  border-color: rgba(199, 146, 62, 0.35);
+  background: rgba(199, 146, 62, 0.10);
+  color: var(--text-main);
+}
+
+/* Canvas */
+.pipeline-canvas {
+  position: relative;
+  height: 140px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.30);
+  border: 1px solid rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+/* Connector lines */
+.pipeline-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pipeline-path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
+  opacity: 0.95;
+}
+
+.pipeline-path--soft {
+  stroke: rgba(0,0,0,0.10);
+  stroke-width: 3.5;
+  stroke-dasharray: none;
+  stroke-dashoffset: 0;
+  opacity: 1;
+}
+
+.is-animate .pipeline-path:not(.pipeline-path--soft) {
+  animation: pipeline-draw 900ms ease forwards;
+}
+
+@keyframes pipeline-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Steps layout */
+.pipeline-steps {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(var(--n, 5), 1fr);
+  align-items: center;
+  padding: 0 2rem;
+  z-index: 2;
+}
+
+.pipeline-step {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  justify-self: center;
+  transform: translateY(0);
+}
+
+.step-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(0,0,0,0.08);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+}
+
+.step-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--accent); /* IMPORTANT: this drives SVG via currentColor */
+}
+
+.step-label {
+  font-size: .95rem;
+  color: var(--text-main);
+  max-width: 160px;
+  line-height: 1.25;
+}
+
+/* Improve chips */
+.flow-improve {
+  margin-top: 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: rgba(255,255,255,0.30);
+  padding: .95rem;
+}
+
+.flow-improve__label {
+  font-weight: 700;
+  margin-bottom: .65rem;
+}
+
+.flow-improve__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+}
+
+.improve-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .45rem .7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(199, 146, 62, 0.35);
+  background: rgba(199, 146, 62, 0.10);
+  color: var(--text-main);
+  font-size: .92rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .flow-card__head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pipeline-steps {
+    padding: 0 1.1rem;
+  }
+
+  .step-label {
+    max-width: 120px;
+    font-size: .9rem;
+  }
+}
+/* ===============================
+   FLOW PIPELINE — LABEL DEBAJO
+   =============================== */
+
+/* contenedor del step */
+.pipeline-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+}
+
+/* icono se mantiene sobre la línea */
+.step-badge {
+  z-index: 2;
+}
+
+/* badge del texto */
+.step-label {
+  margin-top: 10px; /* separación clara del icono */
+  padding: .35rem .75rem;
+
+  font-size: .82rem;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+
+  color: var(--text-main);
+}
+
+/* AFTER: acento visual suave */
+.flow-after .step-label {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(255,255,255,0.98);
+}
+.section-alt .flow-after .step-label {
+  background: rgba(199,146,62,0.10);
+}
+
+.pipeline-step-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+
+  background: #fff;
+  border: 1px solid var(--border-soft);
+
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: center;
+
+  /* 🔑 aquí está la magia */
+  white-space: normal;       /* permite salto de línea */
+  word-break: keep-all;      /* NO cortar palabras */
+  overflow-wrap: normal;
+  hyphens: none;
+
+  max-width: 220px;          /* límite suave, no forzado */
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.pipeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+
+.pipeline-step-label--after {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(255,255,255,0.98);
+}
+.section-alt .pipeline-step-label--after {
+  background: rgba(199,146,62,0.10);
+}
+
+
+
+
+.figma-embed-wrapper {
+  margin-top: 2.5rem;
+}
+
+.figma-embed {
+  width: 100%;
+  height: 80vh;            /* 👈 CLAVE */
+  min-height: 720px;       /* para desktop */
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 14px;
+  background: #fff;
+}
+
+/* Si usas browser mockup */
+.browser-mockup-body {
+  overflow: visible;       /* 👈 MUY IMPORTANTE */
+}

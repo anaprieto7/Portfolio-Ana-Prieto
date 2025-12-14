@@ -187,14 +187,6 @@
           </article>
         </div>
 
-        <article>
-             <figure class="media-card">
-              <img src="assets/handheld/context/Synerlogicsjpg.jpg" alt="Desktop-only warehouse workflow before Handheld" />
-              <figcaption>
-                Desktop-only workflows forced operators to move back with goods and forth between fixed stations.
-              </figcaption>
-            </figure>
-          </article>
 
         <!-- RESEARCH FINDINGS & DESIGN CHALLENGE -->
         <div class="section-divider"></div>
@@ -274,6 +266,9 @@
       </div>
     </section>
 
+</section>
+<section class="hero-full-image">
+  <img src="assets/handheld/context/Synerlogicsjpg.jpg" alt="Desktop-only warehouse workflow before Handheld" />
 </section>
     <!-- USER PERSONAS -->
 
@@ -490,25 +485,34 @@
             </p>
           </header>
 
-        <div class="journey-images-container">
+        <div class="journey-carousel">
 
-          <!-- BEFORE -->
-          <article class="journey-image-block">
+          <button class="journey-arrow journey-arrow--left" aria-label="Previous">
+            ←
+          </button>
 
-            <div class="journey-image-card">
-              <img src="/assets/handheld/journey-before.png" alt="User Journey Before Handheld PWA">
-            </div>
-          </article>
+          <div class="journey-track">
+            
+            <!-- BEFORE -->
+            <article class="journey-card">
+              <img src="/assets/handheld/journey-before.png" 
+                  alt="User Journey Before Handheld PWA">
+            </article>
 
-          <!-- AFTER -->
-          <article class="journey-image-block">
+            <!-- AFTER -->
+            <article class="journey-card">
+              <img src="/assets/handheld/journey-after.png" 
+                  alt="User Journey After Handheld PWA">
+            </article>
 
-            <div class="journey-image-card">
-              <img src="/assets/handheld/journey-after.png" alt="User Journey After Handheld PWA">
-            </div>
-          </article>
+          </div>
+
+          <button class="journey-arrow journey-arrow--right" aria-label="Next">
+            →
+          </button>
 
         </div>
+
       </div>
     </section>
 
@@ -1407,6 +1411,33 @@
     });
   })();
 </script>
+<script>
+  const journeyTrack = document.querySelector('.journey-track');
+  const cards = document.querySelectorAll('.journey-card');
+  let index = 0;
+
+  const btnLeft = document.querySelector('.journey-arrow--left');
+  const btnRight = document.querySelector('.journey-arrow--right');
+
+  function scrollToCard(i) {
+    const cardWidth = cards[0].offsetWidth + 48; // ancho + gap
+    journeyTrack.scrollTo({
+      left: i * cardWidth,
+      behavior: "smooth"
+    });
+  }
+
+  btnLeft.addEventListener("click", () => {
+    index = Math.max(0, index - 1);
+    scrollToCard(index);
+  });
+
+  btnRight.addEventListener("click", () => {
+    index = Math.min(cards.length - 1, index + 1);
+    scrollToCard(index);
+  });
+</script>
+
 
 
 </body>

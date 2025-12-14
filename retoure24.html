@@ -85,6 +85,99 @@
   </div>
 </section>
 
+<section class="section" id="exec-summary">
+  <div class="container section-inner">
+    <header class="exec-header">
+      <p class="exec-kicker">Executive summary</p>
+      <h2 class="exec-title">A multi-tenant returns system for multi-store operations</h2>
+      <p class="exec-lead">
+        Retoure24 is a multi-tenant returns platform designed to bring multi-store returns,
+        configuration and reporting into one operational system — usable for both WEMALO-integrated
+        merchants and independent clients.
+      </p>
+    </header>
+
+    <div class="exec-grid">
+      <!-- Card 1 -->
+      <article class="exec-card">
+        <div class="exec-card-head">
+          <h3 class="exec-card-title">What I built</h3>
+          <span class="exec-pill">Scope</span>
+        </div>
+
+        <ul class="exec-list exec-list--icons">
+          <li>
+            <span class="exec-icon">
+              <!-- IA / Structure -->
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="4" width="7" height="6" rx="1.5"/>
+                <rect x="14" y="4" width="7" height="6" rx="1.5"/>
+                <rect x="3" y="14" width="7" height="6" rx="1.5"/>
+                <path d="M10 7h4M6.5 10v4M17.5 10v4"/>
+              </svg>
+            </span>
+            Information architecture for Setup / Returns / Dashboard modules
+          </li>
+
+          <li>
+            <span class="exec-icon">
+              <!-- Dashboard / Multi-store -->
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="6" rx="2"/>
+                <rect x="3" y="14" width="8" height="6" rx="2"/>
+                <rect x="13" y="14" width="8" height="6" rx="2"/>
+              </svg>
+            </span>
+            Multi-store dashboards and role-aware views
+          </li>
+
+          <li>
+            <span class="exec-icon">
+              <!-- Timeline / Traceability -->
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="6" cy="12" r="2"/>
+                <circle cx="12" cy="12" r="2"/>
+                <circle cx="18" cy="12" r="2"/>
+                <path d="M8 12h2M14 12h2"/>
+              </svg>
+            </span>
+            Per-return traceability (timeline, notes, events)
+          </li>
+
+          <li>
+            <span class="exec-icon">
+              <!-- Settings / Landing pages -->
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19 12a7 7 0 0 0-.1-1l2-1.5-2-3.4-2.3.8a7 7 0 0 0-1.7-1l-.3-2.4H9.4l-.3 2.4a7 7 0 0 0-1.7 1l-2.3-.8-2 3.4L5.1 11a7 7 0 0 0 0 2l-2 1.5 2 3.4 2.3-.8a7 7 0 0 0 1.7 1l.3 2.4h4.2l.3-2.4a7 7 0 0 0 1.7-1l2.3.8 2-3.4L18.9 13a7 7 0 0 0 .1-1z"/>
+              </svg>
+            </span>
+            Store-specific landing pages and email tracking configuration
+          </li>
+        </ul>
+      </article>
+
+
+      <!-- Card 2 -->
+      <article class="exec-card exec-card--tinted">
+        <div class="exec-card-head">
+          <h3 class="exec-card-title">Key constraints</h3>
+          <span class="exec-pill exec-pill--dark">Constraints</span>
+        </div>
+
+        <ul class="exec-list exec-list--dot">
+          <li><strong>Multi-tenant complexity</strong> (shops, warehouses, roles, permissions)</li>
+          <li><strong>Operational UX</strong>: dense data, speed, low error tolerance</li>
+          <li><strong>Scalability</strong>: same patterns must work for 1 store and 20+ stores</li>
+          <li><strong>Implementation-ready UI</strong> (React + Chakra UI components)</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+
 
 
 
@@ -198,59 +291,128 @@
         </div>
 
         <article>
-          <h3>Interviews & problem clusters</h3>
-          <div class="case-quotes">
-            <blockquote>
-              <p>“Once the customer sends the return, I lose visibility of which step it’s in.”</p>
-              <footer>David · WEMALO client</footer>
-            </blockquote>
-            <blockquote>
-              <p>“I want to manage all return landing pages from one place.”</p>
-              <footer>Oliver · WEMALO client</footer>
-            </blockquote>
-            <blockquote>
-              <p>“I track all stores in a spreadsheet and end up losing information and time.”</p>
-              <footer>Laura · Independent merchant</footer>
-            </blockquote>
-          </div>
-                  <!-- Personas & Journeys -->
-        <div class="personas-grid">
-          <figure class="persona-card media-card">
-            <img src="assets/retoure24/Persona 1.png" alt="Persona 1 – WEMALO client" />
-            <figcaption>Persona — WEMALO Client</figcaption>
-          </figure>
+              <h3>Interviews & problem clusters</h3>
+              <div class="case-quotes">
+                <blockquote>
+                  <p>“Once the customer sends the return, I lose visibility of which step it’s in.”</p>
+                  <footer>David · WEMALO client</footer>
+                </blockquote>
+                <blockquote>
+                  <p>“I want to manage all return landing pages from one place.”</p>
+                  <footer>Oliver · WEMALO client</footer>
+                </blockquote>
+                <blockquote>
+                  <p>“I track all stores in a spreadsheet and end up losing information and time.”</p>
+                  <footer>Laura · Independent merchant</footer>
+                </blockquote>
+              </div>
+                      <!-- Personas & Journeys -->
+            <div class="personas-grid">
+              <figure class="persona-card media-card">
+                <img src="assets/retoure24/Persona 1.png" alt="Persona 1 – WEMALO client" />
+                <figcaption>Persona — WEMALO Client</figcaption>
+              </figure>
 
-          <figure class="persona-card media-card">
-            <img src="assets/retoure24/Persona 2.png" alt="Persona 2 – Independent merchant" />
-            <figcaption>Persona — Independent Merchant</figcaption>
-          </figure>
+              <figure class="persona-card media-card">
+                <img src="assets/retoure24/Persona 2.png" alt="Persona 2 – Independent merchant" />
+                <figcaption>Persona — Independent Merchant</figcaption>
+              </figure>
 
-          <figure class="persona-card media-card">
-            <img src="assets/retoure24/User Journey Map- Persona-1.png" alt="User Journey – WEMALO Client" />
-            <figcaption>User Journey — Warehouse-integrated merchant</figcaption>
-          </figure>
+              <figure class="persona-card media-card">
+                <img src="assets/retoure24/User Journey Map- Persona-1.png" alt="User Journey – WEMALO Client" />
+                <figcaption>User Journey — Warehouse-integrated merchant</figcaption>
+              </figure>
 
-          <figure class="persona-card media-card">
-            <img src="assets/retoure24/User Journey Map-Persona-2.png" alt="User Journey – Independent" />
-            <figcaption>User Journey — Independent merchant</figcaption>
-          </figure>
-        </div>
+              <figure class="persona-card media-card">
+                <img src="assets/retoure24/User Journey Map-Persona-2.png" alt="User Journey – Independent" />
+                <figcaption>User Journey — Independent merchant</figcaption>
+              </figure>
+            </div>
 
-          <h4>Problem clusters</h4>
-          <ul class="case-bullets">
-            <li>Decentralized management: multiple tools, channels and landing pages.</li>
-            <li>Lack of visibility and control over status, progress and performance.</li>
-            <li>Manual, error-prone management of returns across several stores.</li>
-          </ul>
+              <h4>Problem clusters</h4>
+              <ul class="case-bullets">
+                <li>Decentralized management: multiple tools, channels and landing pages.</li>
+                <li>Lack of visibility and control over status, progress and performance.</li>
+                <li>Manual, error-prone management of returns across several stores.</li>
+              </ul>
 
-          <p class="case-note">
-            Design challenge: create an end-to-end platform that unifies processes, 
-            shows full traceability and scales for both integrated and independent merchants 
-            — while preserving clarity and per-store customization.
-          </p>
+              <p class="case-note">
+                Design challenge: create an end-to-end platform that unifies processes, 
+                shows full traceability and scales for both integrated and independent merchants 
+                — while preserving clarity and per-store customization.
+              </p>
         </article>
+        <!-- KEY INSIGHTS (Retoure24) -->
+        <article class="case-insights" id="key-insights">
+          <h3>Key insights</h3>
+
+          <ul class="insights-list">
+            <li class="insight-item">
+              <span class="insight-icon" aria-hidden="true">
+                <!-- multi-tools -->
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path d="M8 7h8M8 12h8M8 17h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M5.5 4.5h13A2.5 2.5 0 0 1 21 7v10a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17V7a2.5 2.5 0 0 1 2.5-2.5Z"
+                        stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+              </span>
+              <p><strong>Multi-store returns were managed across too many places</strong> (emails, spreadsheets, shop backends), creating fragmented ownership and missed steps.</p>
+            </li>
+
+            <li class="insight-item">
+              <span class="insight-icon" aria-hidden="true">
+                <!-- visibility / tracking -->
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12s-3.5 6.5-9.5 6.5S2.5 12 2.5 12Z"
+                        stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  <path d="M12 15.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Z"
+                        stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+              </span>
+              <p><strong>Status visibility broke after the customer shipped the parcel</strong>, forcing merchants to manually chase updates and check multiple systems.</p>
+            </li>
+
+            <li class="insight-item">
+              <span class="insight-icon" aria-hidden="true">
+                <!-- reporting / chart -->
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path d="M5 19V10m7 9V6m7 13v-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M4 19.5h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <p><strong>Reporting became inconsistent across stores</strong> because each store had different rules, templates and tracking habits—making comparisons unreliable.</p>
+            </li>
+
+            <li class="insight-item">
+              <span class="insight-icon" aria-hidden="true">
+                <!-- duplication / copy -->
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path d="M9 9h10v10H9V9Z" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M5 15H4.8A1.8 1.8 0 0 1 3 13.2V4.8A1.8 1.8 0 0 1 4.8 3h8.4A1.8 1.8 0 0 1 15 4.8V5"
+                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <p><strong>Manual duplication of data caused errors</strong> (copy/paste between tools, re-entering IDs, reasons and decisions), increasing rework and audit risk.</p>
+            </li>
+
+            <li class="insight-item">
+              <span class="insight-icon" aria-hidden="true">
+                <!-- settings / scalability -->
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                  <path d="M12 15.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Z"
+                        stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M19.4 12a7.6 7.6 0 0 0-.08-1l2-1.5-2-3.4-2.4 1a7.9 7.9 0 0 0-1.72-1l-.36-2.6H9.2l-.36 2.6c-.6.24-1.18.57-1.72 1l-2.4-1-2 3.4 2 1.5c-.05.33-.08.66-.08 1s.03.67.08 1l-2 1.5 2 3.4 2.4-1c.54.43 1.12.76 1.72 1l.36 2.6h5.6l.36-2.6c.6-.24 1.18-.57 1.72-1l2.4 1 2-3.4-2-1.5c.05-.33.08-.66.08-1Z"
+                        stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" opacity=".9"/>
+                </svg>
+              </span>
+              <p><strong>Configuration didn’t scale</strong>: landing pages, email templates, shippers and rules needed per store—but merchants lacked a single control center.</p>
+            </li>
+          </ul>
+        </article>
+
       </div>
     </section>
+
 
     <!-- SOLUTION -->
     <section class="section" id="solution">
@@ -296,6 +458,70 @@
             </p>
           </article>
         </div>
+
+            <!-- DECISION FRAMEWORK -->
+        <section class="section" id="decision-framework">
+          <div class="container section-inner">
+            <header class="section-header">
+              <h2>Design decisions & trade-offs</h2>
+              <p>
+                Key product decisions made to balance scalability, operational clarity and long-term maintainability.
+              </p>
+            </header>
+
+            <div class="decision-list">
+
+              <article class="decision-item">
+                <h3>Multi-store overview vs isolated store views</h3>
+                <p class="decision-tradeoff">Trade-off: clarity vs scalability</p>
+                <p>
+                  I chose a global multi-store dashboard with drill-down instead of isolated store views.
+                  This avoids duplicated logic, enables cross-store comparison, and scales naturally from
+                  1 to 20+ stores—while still allowing store-level focus when needed.
+                </p>
+              </article>
+
+              <article class="decision-item">
+                <h3>Timeline-based return detail vs flat status fields</h3>
+                <p class="decision-tradeoff">Trade-off: implementation effort vs traceability</p>
+                <p>
+                  Returns were designed around a chronological timeline (status changes, notes, events)
+                  rather than static fields. This supports auditability, collaboration, and reduces ambiguity
+                  when exceptions occur.
+                </p>
+              </article>
+
+              <article class="decision-item">
+                <h3>Structured operational flows vs full flexibility</h3>
+                <p class="decision-tradeoff">Trade-off: freedom vs error prevention</p>
+                <p>
+                  Operational flows were intentionally structured and state-driven to prevent invalid actions.
+                  While this limits free behavior, it significantly reduces errors and rework in high-volume
+                  return processing.
+                </p>
+              </article>
+
+              <article class="decision-item">
+                <h3>Unified setup modules vs scattered configuration</h3>
+                <p class="decision-tradeoff">Trade-off: initial complexity vs long-term maintainability</p>
+                <p>
+                  Configuration was centralized into setup modules for stores, landing pages, emails and shippers.
+                  This avoids fragmented configuration and enables consistent scaling across stores.
+                </p>
+              </article>
+
+              <article class="decision-item">
+                <h3>Design system foundation vs custom UI per view</h3>
+                <p class="decision-tradeoff">Trade-off: visual freedom vs speed and consistency</p>
+                <p>
+                  Chakra UI was used as a foundation to ensure consistency, accessibility and faster implementation.
+                  Visual identity was achieved through tokens and composition rather than one-off components.
+                </p>
+              </article>
+
+            </div>
+          </div>
+        </section>
 
         <article id="flows">
           <h3>Core flows</h3>
@@ -385,6 +611,9 @@
         </article>
       </div>
     </section>
+
+
+
 
     <!-- PRODUCT SHOWCASE -->
     <section class="section section-alt" id="showcase">
@@ -550,28 +779,85 @@ export default function KpiCard()&#123;
       </div>
     </section>
 
-    <!-- OUTCOMES -->
-    <section class="section section-alt" id="outcomes">
-      <div class="container section-inner case-grid-2">
-        <div>
-          <h2>Outcomes</h2>
-          <ul class="case-bullets">
-            <li>~50% reduction in time to process returns.</li>
-            <li>Merchants manage 5+ stores from a single interface.</li>
-            <li>Email automations save ~10 hours/week per merchant.</li>
-            <li>High satisfaction reported in qualitative feedback (high NPS).</li>
-          </ul>
-        </div>
-        <div>
-          <h3>What this project shows about my work</h3>
-          <ul class="case-bullets">
-            <li>Ability to define product strategy and IA for multi-tenant SaaS.</li>
-            <li>End-to-end ownership: research, UX, UI and React/Chakra UI implementation.</li>
-            <li>Comfort working with complex, operational and data-heavy products.</li>
-          </ul>
+    <!-- CONCEPTUAL SHIFT -->
+    <section class="section section-alt" id="conceptual-shift">
+      <div class="container section-inner">
+        <header class="section-header">
+          <h2>Before → After</h2>
+          <p>
+            A conceptual shift from fragmented, reactive return handling to a unified operational system.
+          </p>
+        </header>
+
+        <div class="shift-grid">
+          
+          <div class="shift-column shift-before">
+            <h3>Before</h3>
+            <p class="shift-label">Fragmented & reactive</p>
+            <ul>
+              <li>Returns managed across emails, spreadsheets and shop backends</li>
+              <li>Status visibility breaks after the customer ships the parcel</li>
+              <li>Each store follows different rules and workflows</li>
+              <li>Reporting is manual and inconsistent</li>
+              <li>Problems are discovered late, after escalation</li>
+            </ul>
+          </div>
+
+          <div class="shift-divider">
+            <span>→</span>
+          </div>
+
+          <div class="shift-column shift-after">
+            <h3>After</h3>
+            <p class="shift-label">Unified & traceable</p>
+            <ul>
+              <li>One system for returns, configuration and reporting</li>
+              <li>Each return follows a clear, state-driven lifecycle</li>
+              <li>Multi-store data is standardized and comparable</li>
+              <li>Reporting is consistent and export-ready</li>
+              <li>Decisions are made with real-time visibility</li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </section>
+
+
+    <!-- OUTCOMES -->
+
+    <!-- METRICS & VALIDATION -->
+    <section class="section section-alt" id="outcomes">
+  <div class="container section-inner">
+    <header class="section-header">
+      <h2>Outcomes</h2>
+      <p>Validating design decisions and measuring impact.</p>
+    </header>
+    <!-- Quantitative Metrics -->
+    <div class="metrics-grid">
+      <div class="metrics-column">
+        <h3>Quantitative Results</h3>
+        <ul class="case-bullets">
+          <li><strong>50% reduction in return processing time</strong></li>
+          <li><strong>5+ stores managed from a single interface</strong></li>
+          <li><strong>10 hours saved per merchant per week</strong></li>
+          <li><strong>High satisfaction reported (NPS: 80+)</strong></li>
+        </ul>
+      </div>
+
+      <!-- Qualitative Metrics -->
+      <div class="metrics-column">
+        <h3>Qualitative Feedback</h3>
+        <ul class="case-bullets">
+          <li><em>“Now I can see the status of all my returns in one place and no longer rely on spreadsheets.”</em></li>
+          <li><em>“The process is so much faster and simpler.”</em></li>
+          <li><em>“In usability testing, I completed the flow 30% faster than before.”</em></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+    </section>
+
   </main>
 
   <!-- MORE CASE STUDIES -->
