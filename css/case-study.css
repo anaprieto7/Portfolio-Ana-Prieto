@@ -547,7 +547,7 @@ section-label {
 
 .media-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25vw, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
   gap: 1.4rem;
 }
 
