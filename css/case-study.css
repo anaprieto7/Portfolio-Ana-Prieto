@@ -3899,3 +3899,373 @@ section-label {
 .browser-mockup-body {
   overflow: visible;       /* 👈 MUY IMPORTANTE */
 }
+
+
+
+/* =============================== */
+/* ACCESSIBILITY SECTION           */
+/* =============================== */
+
+.accessibility-section {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-soft);
+}
+
+.accessibility-intro {
+  color: var(--text-subtle);
+  margin-bottom: 1.8rem;
+  max-width: 700px;
+}
+
+/* TABLA */
+.accessibility-table-wrapper {
+  overflow-x: auto;
+  margin: 2rem 0;
+  border-radius: 14px;
+  border: 1px solid var(--border-soft);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.accessibility-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.accessibility-table th {
+  background: rgba(0, 0, 0, 0.03);
+  padding: 1rem 1.2rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.accessibility-table td {
+  padding: 0.9rem 1.2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  color: var(--text-subtle);
+}
+
+.accessibility-table tr:last-child td {
+  border-bottom: none;
+}
+
+.accessibility-table tr:hover {
+  background: rgba(199, 146, 62, 0.05);
+}
+
+/* Estados */
+.status-yes {
+  color: #2d5c36;
+  font-weight: 600;
+  background: rgba(80, 140, 90, 0.12);
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  display: inline-block;
+}
+
+.status-partial {
+  color: #8a6d3b;
+  font-weight: 600;
+  background: rgba(255, 193, 7, 0.12);
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  display: inline-block;
+}
+
+/* PRINCIPIOS GRID */
+.accessibility-principles {
+  margin: 2.5rem 0;
+}
+
+.accessibility-principles h4 {
+  margin-bottom: 1.2rem;
+}
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.principle-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  padding: 1.3rem 1.2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.principle-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+}
+
+.principle-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.6rem;
+  opacity: 0.9;
+}
+
+.principle-card h5 {
+  margin: 0 0 0.4rem 0;
+  font-size: 1rem;
+}
+
+.principle-card p {
+  font-size: 0.85rem;
+  color: var(--text-subtle);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* IMPACTO */
+.accessibility-impact {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: linear-gradient(
+    to bottom right,
+    rgba(199, 146, 62, 0.08),
+    rgba(199, 146, 62, 0.02)
+  );
+  border: 1px solid rgba(199, 146, 62, 0.15);
+}
+
+.accessibility-impact h4 {
+  margin-top: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .accessibility-table {
+    font-size: 0.85rem;
+  }
+  
+  .accessibility-table th,
+  .accessibility-table td {
+    padding: 0.7rem 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .accessibility-table-wrapper {
+    border-radius: 12px;
+  }
+  
+  .principle-card {
+    padding: 1rem 0.9rem;
+  } 
+}
+
+/* Estados adicionales para la tabla */
+.status-contextual {
+  color: #8a6d3b;
+  font-weight: 600;
+  background: rgba(255, 193, 7, 0.12);
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  display: inline-block;
+}
+
+/* Tooltip para explicación contextual */
+.tooltip {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dotted currentColor;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 240px;
+  background-color: var(--text-main);
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 0.8rem;
+  position: absolute;
+  z-index: 100;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.8rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--text-main) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Nota al pie de la tabla */
+.table-footnote {
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  margin: 0.8rem 1.2rem 0;
+  font-style: italic;
+}
+
+/* Símbolo de advertencia */
+.status-contextual::before {
+  content: "⚠️ ";
+  margin-right: 0.2rem;
+}
+
+
+/* =============================== */
+/* ACCESSIBILITY SECTION (WEMALO WMS) */
+/* =============================== */
+
+.accessibility-features {
+  display: grid;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.accessibility-feature {
+  padding: 1rem 1.1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--border-soft);
+}
+
+.accessibility-feature h4 {
+  margin: 0 0 0.3rem 0;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.accessibility-feature p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--text-subtle);
+  line-height: 1.5;
+}
+
+/* CLOUDSCAPE DETAILS */
+.cloudscape-details {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-soft);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.feature-item {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  padding: 1.2rem 1.1rem;
+}
+
+.feature-item h4 {
+  margin: 0 0 0.6rem 0;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.feature-item ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  list-style: disc;
+}
+
+.feature-item li {
+  font-size: 0.85rem;
+  color: var(--text-subtle);
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+}
+
+/* IMPACT METRICS */
+.accessibility-impact {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-soft);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+  margin: 1.8rem 0;
+}
+
+.metric-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  padding: 1.3rem 1.2rem;
+  text-align: center;
+}
+
+.metric-card h4 {
+  margin: 0 0 0.7rem 0;
+  font-size: 0.9rem;
+  color: var(--text-subtle);
+  font-weight: 500;
+}
+
+.metric-number {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 0.3rem 0;
+  line-height: 1;
+}
+
+.metric-desc {
+  font-size: 0.82rem;
+  color: var(--text-subtle);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .metric-number {
+    font-size: 1.8rem;
+  }
+}
