@@ -286,28 +286,92 @@
         </header>
 
         <div class="media-grid">
+          <!-- Column 1 -->
           <div class="case-principle-block">
             <h3>Functional groups</h3>
             <ul class="case-bullets">
-              <li>
-                <strong>Stammdaten</strong> — master data for users, warehouses, clients and products.
-              </li>
-              <li>
-                <strong>Konfiguration</strong> — shipping profiles, packaging, data exchange and services.
-              </li>
-              <li>
-                <strong>WE (Goods In)</strong> — receiving, scanning, returns registration and quick entries.
-              </li>
-              <li>
-                <strong>Lagerverwaltung</strong> — relocations, inventory counts, refurbishment, stock state.
-              </li>
-              <li>
-                <strong>WA (Goods Out)</strong> — picking, packing, KO-box, transports, docks.</li>
-              <li>
-                <strong>Berichte</strong> — movements, history, services, automated reports, serials.</li>
+              <li><strong>Stammdaten</strong> — master data for users, warehouses, clients and products.</li>
+              <li><strong>Konfiguration</strong> — shipping profiles, packaging, data exchange and services.</li>
+              <li><strong>WE (Goods In)</strong> — receiving, scanning, returns registration and quick entries.</li>
+              <li><strong>Lagerverwaltung</strong> — relocations, inventory counts, refurbishment, stock state.</li>
+              <li><strong>WA (Goods Out)</strong> — picking, packing, KO-box, transports, docks.</li>
+              <li><strong>Berichte</strong> — movements, history, services, automated reports, serials.</li>
+            </ul>
+
+            <!-- Bridge text (connects to diagrams) -->
+            <p class="case-note">
+              To avoid treating these modules as isolated screens, I mapped the system’s
+              <strong>data layers</strong> and <strong>master data relationships</strong> to understand
+              how configuration impacts operations and reporting.
+            </p>
+          </div>
+          <div class="case-principle-block">
+            <h3>UX audit – key findings</h3>
+            <ul class="case-bullets">
+              <li>Information hierarchy did not reflect the underlying system structure.</li>
+              <li>Interaction patterns were inconsistent across modules.</li>
+              <li>High data density lacked sufficient visual guidance.</li>
+              <li>Functionality was strong, but UX guidance was weak.</li>
             </ul>
           </div>
 
+        </div>
+        <!-- Full-width block INSIDE the grid -->
+          <div class="case-principle-block span-2">
+            <h3>System architecture & master data model</h3>
+            <p>
+              Before starting the visual redesign, I mapped the conceptual system structure to understand
+              how master data, operational processes and reporting are connected. These diagrams describe
+              the system from a UX and product perspective and were used to align design decisions with
+              technical and operational constraints.
+            </p>
+
+            <div class="diagram-stack">
+              <figure class="diagram-item">
+                <img
+                  src="assets/wemalo-wms/data-layer-overview.png"
+                  alt="WEMALO WMS data layer overview showing master data, operational processes and reporting layers"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <strong>Data layer overview.</strong>
+                  Master data influences operational execution, which generates reporting and KPIs.
+                  Changes propagate forward without affecting historical data.
+                </figcaption>
+              </figure>
+
+              <figure class="diagram-item">
+                <img
+                  src="assets/wemalo-wms/conceptual-structure-wms.png"
+                  alt="Conceptual structure diagram showing relationships between users, clients, warehouses, products, services and movements"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <strong>Conceptual structure.</strong>
+                  Master data relationships and data propagation across the system.
+                  Products are assigned to clients; users operate within warehouses.
+                </figcaption>
+              </figure>
+
+              <figure class="diagram-item">
+                <img
+                  src="assets/wemalo-wms/admin-reporting-flow.png"
+                  alt="Administrative and reporting flow showing how configuration drives operations and reporting"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <strong>Administrative & reporting flow.</strong>
+                  Administrative configuration drives operational execution and directly affects reporting and historical data.
+                </figcaption>
+              </figure>
+            </div>
+
+            <p class="case-note">
+              These diagrams focus on <strong>conceptual structure</strong>,
+              not on backend or database implementation details.
+            </p>
+          </div>
+          <!-- Column 2 -->
           <div class="case-principle-block">
             <h3>Main conclusion</h3>
             <p>
@@ -324,9 +388,9 @@
               without touching core logic.
             </p>
           </div>
-        </div>
       </div>
     </section>
+
 
     <!-- REDESIGN PROCESS -->
     <section class="section section-alt" id="redesign">
