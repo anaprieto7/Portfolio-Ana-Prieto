@@ -305,13 +305,17 @@
             </p>
           </div>
           <div class="case-principle-block">
-            <h3>UX audit – key findings</h3>
+            <h3>UX audit – detailed findings</h3>
             <ul class="case-bullets">
-              <li>Information hierarchy did not reflect the underlying system structure.</li>
-              <li>Interaction patterns were inconsistent across modules.</li>
-              <li>High data density lacked sufficient visual guidance.</li>
-              <li>Functionality was strong, but UX guidance was weak.</li>
+              <li><strong>Navigation:</strong> mixed use of top and side navigation without clear patterns.</li>
+              <li><strong>Filters:</strong> inconsistent placement and behavior across modules.</li>
+              <li><strong>Tables:</strong> dense, with poor spacing, typography and no visual hierarchy.</li>
+              <li><strong>Actions:</strong> redundant buttons and unclear primary vs. secondary actions.</li>
             </ul>
+
+            <p class="case-note">
+              These issues were symptoms of a deeper problem: the visual layer did not reflect the system’s functional structure or user needs.
+            </p>  
           </div>
 
         </div>
@@ -326,7 +330,7 @@
             </p>
 
             <div class="diagram-stack">
-              <figure class="diagram-item">
+              <figure class="diagram-item media-card">
                 <img
                   src="assets/wemalo-wms/data-layer-overview.png"
                   alt="WEMALO WMS data layer overview showing master data, operational processes and reporting layers"
@@ -339,7 +343,7 @@
                 </figcaption>
               </figure>
 
-              <figure class="diagram-item">
+              <figure class="diagram-item media-card">
                 <img
                   src="assets/wemalo-wms/conceptual-structure-wms.png"
                   alt="Conceptual structure diagram showing relationships between users, clients, warehouses, products, services and movements"
@@ -352,7 +356,7 @@
                 </figcaption>
               </figure>
 
-              <figure class="diagram-item">
+              <figure class="diagram-item media-card">
                 <img
                   src="assets/wemalo-wms/admin-reporting-flow.png"
                   alt="Administrative and reporting flow showing how configuration drives operations and reporting"
@@ -370,23 +374,61 @@
               not on backend or database implementation details.
             </p>
           </div>
-          <!-- Column 2 -->
-          <div class="case-principle-block">
-            <h3>Main conclusion</h3>
-            <p>
-              The system already covered the full logistics chain. The problem wasn’t functionality,
-              it was visual design:
-            </p>
-            <ul class="case-bullets">
-              <li>Too much information on flat, undifferentiated screens.</li>
-              <li>Little hierarchy between navigation, filters and content.</li>
-              <li>Inconsistent patterns across modules.</li>
-            </ul>
-            <p class="case-note">
-              The redesign focused on <strong>hierarchy, consistency and visual scalability</strong>,
-              without touching core logic.
-            </p>
+
+          <div class="case-principle-block span-2">
+              <div class="dependency-layout">
+                  <!-- LEFT 70% -->
+                  <div class="dependency-text">
+                    <h3>System Dependencies & Cross-Role Alignment</h3>
+                    <p>
+                      WEMALO WMS operates across two core layers:
+                      the Handheld (operational execution) and the Web Interface (supervision and management).
+                      Both interfaces serve different roles but rely on the same domain logic and state transitions.
+                    </p>
+
+                    <ul class="case-bullets">
+                      <li>Validates quantities and business rules.</li>
+                      <li>Updates the order state in the backend.</li>
+                      <li>Creates inventory movements.</li>
+                      <li>Triggers reporting updates and KPIs.</li>
+                      <li>Changes the visual state and available actions on the web interface.</li>
+                    </ul>
+
+                    <p>
+                      Before designing the interfaces, I mapped these dependencies to ensure
+                      that what operators execute is accurately reflected in the Web Interface.
+                    </p>
+                  </div>
+
+                  <!-- RIGHT 30% -->
+                  <figure class="diagram-item media-card diagram-small">
+                    <div class="diagram-frame">
+                      <img
+                        src="assets/wemalo-wms/order-status-dependency.png"
+                        alt="Diagram showing how a booking action in the handheld interface updates order state, inventory and supervisor KPIs."
+                        loading="lazy"
+                      />
+                    </div>
+
+                    <figcaption>
+                      <strong>Order status dependency.</strong>
+                      How a single booking action impacts inventory, order state and KPIs across the system.
+                    </figcaption>
+                  </figure>
+                </div>
+
+        </div>
+
+        <!-- Column 2 -->
+        <div class="case-principle-block">
+          <div class="feature-item">
+          <h3>Main conclusion</h3>
+          <p>
+            The system had a solid functional structure and powerful features, but the visual layer did not reflect this complexity or support users in navigating it.
+            The redesign needed to create a clear visual hierarchy, consistent patterns and modular layouts that aligned with the system’s architecture and user workflows.
+          </p>
           </div>
+        </div>
       </div>
     </section>
 
@@ -463,21 +505,27 @@
         </header>
         
     <div class="media-grid improvements-media">
-      <figure class="media-card">
-        <img src="assets/wemalo-wms/adding-new-user.png" alt="Adding new user" />
+      <figure class="media-card diagram-small">
+        <div class="diagram-frame">
+          <img src="assets/wemalo-wms/adding-new-user.png" alt="Adding new user" />
+        </div>
         <figcaption>
           Decision flow for enterprise user creation driven by role selection, contextual permissions and validation to ensure correct configuration.
         </figcaption>
       </figure>
 
-      <figure class="media-card">
-        <img src="assets/wemalo-wms/Find-a-order-at-wemalo.png" alt="Find a order at wemalo" />
+      <figure class="media-card diagram-small">
+        <div class="diagram-frame">
+          <img src="assets/wemalo-wms/Find-a-order-at-wemalo.png" alt="Find a order at wemalo" />
+        </div>
         <figcaption>
          Decision flow for locating orders in a data-dense system, focused on visual scanning, contextual filtering and system feedback to support fast decision
         </figcaption>
       </figure>
-       <figure class="media-card">
-        <img src="assets/wemalo-wms/Managing-out-orders-by-state.png" alt="Managing out orders by state" />
+       <figure class="media-card diagram-small">
+        <div class="diagram-frame">
+          <img src="assets/wemalo-wms/Managing-out-orders-by-state.png" alt="Managing out orders by state" />
+        </div>
         <figcaption>
           State-based decision flow where available actions and information priority are defined by the current order status, reducing errors and uncertainty.
         </figcaption>
@@ -538,22 +586,28 @@
                 For a B2B warehouse management system used by diverse operators, accessibility isn't optional. 
                 Cloudscape provided:
               </p>
-            <figure class="media-card">
-              <img src="assets/wemalo-wms/wemalo-tables.png" alt="WEMALO tables" />
+            <figure class="media-card diagram-small">
+              <div class="diagram-frame">
+                <img src="assets/wemalo-wms/wemalo-tables.png" alt="WEMALO tables" />
+              </div>
               <figcaption>
                 <strong>Table system</strong><br />
                 Sticky headers, hover states and color system adapted to WEMALO.
               </figcaption>
             </figure>
-            <figure class="media-card">
-              <img src="assets/wemalo-wms/Goods Receipts orders-filters.png" alt="WEMALO filters" />
+            <figure class="media-card diagram-small">
+              <div class="diagram-frame">
+                <img src="assets/wemalo-wms/Goods Receipts orders-filters.png" alt="WEMALO filters" />
+              </div>
               <figcaption>
                 <strong>Filter system</strong><br />
                 Logical and Dynamic filters.
               </figcaption>
             </figure>
-            <figure class="media-card">
-              <img src="assets/wemalo-wms/navigation.png" alt="WEMALO navigation" />
+            <figure class="media-card diagram-small">
+              <div class="diagram-frame">
+                <img src="assets/wemalo-wms/navigation.png" alt="WEMALO navigation" />
+              </div>
               <figcaption>
                 <strong>Navigation components</strong><br />
                 Modular navigation aligned with WEMALO’s functional structure.
@@ -635,8 +689,8 @@
     </div>
 
     <!-- Before/After Images -->
-    <div class="media-grid improvements-media">
-      <figure class="media-card">
+    <div class="media-grid improvements-media ">
+      <figure class="media-card diagram-small">
         <img src="assets/wemalo-wms/before-Incoming-Goods-List.png" alt="Before redesign" />
         <figcaption>
           <strong>Before</strong><br />
@@ -644,7 +698,7 @@
         </figcaption>
       </figure>
 
-      <figure class="media-card">
+      <figure class="media-card diagram-small">
         <img src="assets/wemalo-wms/wemalo-tables.png" alt="After redesign" />
         <figcaption>
           <strong>After</strong><br />
@@ -653,7 +707,7 @@
       </figure>
     </div>
     <div class="media-grid improvements-media">
-      <figure class="media-card">
+      <figure class="media-card diagram-small">
         <img src="assets/wemalo-wms/before-outgoing-list.png" alt="Before redesign" />
         <figcaption>
           <strong>Before</strong><br />
@@ -661,7 +715,7 @@
         </figcaption>
       </figure>
 
-      <figure class="media-card">
+      <figure class="media-card diagram-small">
         <img src="assets/wemalo-wms/outgoing-list.png" alt="After redesign" />
         <figcaption>
           <strong>After</strong><br />

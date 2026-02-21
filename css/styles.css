@@ -1322,10 +1322,11 @@ body.home .footer-inner {
   border-radius: var(--radius-lg);
   background: rgba(8, 9, 15, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 1rem;
 }
 
 .case-principle-block h4 {
-  margin: 0 0 0.5rem;
+  margin: 1rem 0 0.5rem;
 }
 
 .case-mini-principle {
